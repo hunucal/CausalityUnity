@@ -33,8 +33,8 @@ public class Camera_Follow : MonoBehaviour
     {
         transform.position = Player.transform.position + currentOffset;
 
-        float movementX = Input.GetAxis("Horizontal") * angularSpeed * Time.deltaTime;
-        float movementY = Input.GetAxis("Vertical") * angularSpeed * Time.deltaTime;
+        float movementX = Input.GetAxis("HorizontalTurn") * angularSpeed * Time.deltaTime;
+        float movementY = Input.GetAxis("VerticalTurn") * angularSpeed * Time.deltaTime;
         if (!Mathf.Approximately(movementX, 0f))
         {
             transform.RotateAround(Player.transform.position, Vector3.up, movementX);
