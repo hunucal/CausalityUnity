@@ -32,7 +32,8 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
+/Causality/Temp/
 *.apk
 *.unitypackage
-Causality/Temp/
+
 Causality/Library/
