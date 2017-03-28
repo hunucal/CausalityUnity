@@ -6,33 +6,13 @@ public class Camera_Follow : MonoBehaviour
 {
     private GameObject Player;
     public float distanceFromTarget;
-    public float height;
-    public float heightDampening;
-    public float rotationDampening;
+    public float height;  
     public float lookSpeed;
     public float angularSpeed;
-    private float rotationCurrentAngle;
-    private float rotationWantedAngle;
-    private float heightWanted;
-    private float heightCurrent;
+    public Vector3 initialOffset;
 
-    [SerializeField]
-    [HideInInspector]
-    private Vector3 initialOffset;
     private Vector3 currentOffset;
     // Use this for initialization
-
-    [ContextMenu("Set Current Offset")]
-    private void SetCurrentOffset()
-    {
-        if (Player == null)
-        {
-            return;
-        }
-
-        initialOffset = transform.position - Player.transform.position;
-    }
-
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
