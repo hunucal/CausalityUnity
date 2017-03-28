@@ -18,6 +18,12 @@ ExportedObj/
 *.booproj
 *.svd
 
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.DS_store
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -28,3 +34,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Causality/Temp/
