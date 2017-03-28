@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
         CharacterController controller = GetComponent<CharacterController>();
         CurrentSpeed = speed;
         if (controller.isGrounded)
