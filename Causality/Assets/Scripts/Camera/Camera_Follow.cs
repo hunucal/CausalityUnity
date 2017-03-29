@@ -40,12 +40,19 @@ public class Camera_Follow : MonoBehaviour
             transform.RotateAround(Player.transform.position, Vector3.up, movementX);
             currentOffset = transform.position - Player.transform.position;
         }
-        else if (!Mathf.Approximately(movementY, 0f))
+        else
         {
-            transform.RotateAround(Player.transform.position, Vector3.right, movementY);
-            currentOffset = transform.position - Player.transform.position;
+            transform.RotateAround(Player.transform.position, Vector3.up, Time.deltaTime);
         }
-
+        if (!Mathf.Approximately(movementY, 0f))
+        {
+            if(movementY < 90 ||movementY > -90)
+            {
+                transform.RotateAround(Player.transform.position, Vector3.right, movementY);
+                currentOffset = transform.position - Player.transform.position;
+            }
+        }
+        transform.LookAt(Player.transform);
     }
 
 }
