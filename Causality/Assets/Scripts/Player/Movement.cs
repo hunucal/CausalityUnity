@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour {
     private float CurrentSpeed = 0;
     private float RollCD;
 
-    //private Rigidbody rb;
+    
     CharacterController controller;
 
     //Stick directions
@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //rb = GetComponent<Rigidbody>();
+        
     }
 
     void FixedUpdate()
@@ -116,9 +116,9 @@ public class Movement : MonoBehaviour {
 
     void Move(float x, float z)
     {
-        
+
         //Rotate towards stick direction
-        if (Rotate(x, z))
+        Rotate(x, z);
         {
             //Move in new direction
             moveDirection = new Vector3(x, 0, z);
@@ -127,21 +127,24 @@ public class Movement : MonoBehaviour {
      
     }
 
-    private bool Rotate(float x, float z)
+    private void Rotate(float x, float z)
     {
        
         newAngle = Vector3.Angle(Vector3.forward, new Vector3(x, 0, z)); //Gets global angle
         if (x < 0) { newAngle = -newAngle; } //flip angle if left side
         Vector3 newAngles = new Vector3(0f, newAngle, 0f);
-        
-        transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, newAngles, 0.9f);
-        Debug.Log(newAngles);
-        Debug.Log(transform.localEulerAngles);
 
-        if (Mathf.Equals(transform.localEulerAngles, newAngles))
-            return true;
-        else
-         return false;
+        transform.localEulerAngles = newAngles;
+
+        //Debug.Log("newAngles");
+        //Debug.Log(newAngles);
+        //Debug.Log("Euler");
+        //Debug.Log(transform.localEulerAngles);
+
+        //if (Mathf.Equals(transform.localEulerAngles, newAngles))
+        //    return true;
+        //else
+        // return false;
         //TODO normalize and smooth
     }
 
