@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour {
     private float horizontalForce;
 
     //Rotation variables
+    private Vector3 tmpDirection = Vector3.zero;
     private Vector3 playerAim;
     private Vector3 rotationDifVec;
     private float newAngle;
@@ -56,17 +57,20 @@ public class Movement : MonoBehaviour {
 
     // Update is called once per frame
     void LateUpdate () {
-
+        tmpDirection = Vector3.zero;
         controller = GetComponent<CharacterController>();
         CurrentSpeed = Movement_Speed;
         if (controller.isGrounded)
         {
             MovementAnalog();
         }
+        
+            moveDirection.y -= gravity * Time.fixedDeltaTime;
         roll();
-
-        moveDirection.y -= gravity * Time.fixedDeltaTime;
+       
+       
         controller.Move(moveDirection * Time.fixedDeltaTime);
+
     }
     void roll()
     {
@@ -100,7 +104,7 @@ public class Movement : MonoBehaviour {
     {
         horizontalForce = Input.GetAxis("Horizontal");
         verticalForce = Input.GetAxis("Vertical");
-
+       
         //Move
         if (verticalForce != 0 || horizontalForce != 0)
         {
@@ -114,27 +118,34 @@ public class Movement : MonoBehaviour {
         StickToWorldspace(this.transform, gamecam.transform, ref direction, ref speed);
     }
 
-    void Move(float x, float z)
+    void Move(float hor, float ver)
     {
+        
+        tmpDirection.z = ver * CurrentSpeed;
+        transform.Rotate(0, hor, 0);
 
+        moveDirection = transform.TransformDirection(tmpDirection);
         //Rotate towards stick direction
-        Rotate(x, z);
-        {
-            //Move in new direction
-            moveDirection = new Vector3(x, 0, z);
-            moveDirection *= CurrentSpeed;
-        }
-     
+        //Rotate(hor, ver);
+        //{
+        //    //Move in new direction
+        //    moveDirection = new Vector3(hor, 0, z);
+        //    moveDirection *= CurrentSpeed;
+        //}
+
     }
 
     private void Rotate(float x, float z)
     {
        
         newAngle = Vector3.Angle(Vector3.forward, new Vector3(x, 0, z)); //Gets global angle
+
         if (x < 0) { newAngle = -newAngle; } //flip angle if left side
         Vector3 newAngles = new Vector3(0f, newAngle, 0f);
 
         transform.localEulerAngles = newAngles;
+       // transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, newAngles, 0.1f);
+
 
         //Debug.Log("newAngles");
         //Debug.Log(newAngles);
