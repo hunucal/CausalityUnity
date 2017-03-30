@@ -5,6 +5,9 @@ using System;
 public class Camera_Follow : MonoBehaviour
 {
     [SerializeField]
+    private float angularSpeed;
+
+    [SerializeField]
     private float distanceAway;
     [SerializeField]
     private float distanceUp;
@@ -12,8 +15,6 @@ public class Camera_Follow : MonoBehaviour
     private float smooth;
     [SerializeField]
     private Transform followXform;
-    [SerializeField]
-    private Vector3 offset = new Vector3(0f, 1.5f, 0f);
 
     // Private global only
     private Vector3 lookDir;
@@ -23,6 +24,7 @@ public class Camera_Follow : MonoBehaviour
     private Vector3 velocityCamSmooth = Vector3.zero;
     [SerializeField]
     private float canSmoothDampTime = 0.1f;
+    
 
     void start()
     {
@@ -32,7 +34,6 @@ public class Camera_Follow : MonoBehaviour
 
     void update()
     {
-
     }
 
     void OnDrawGizmos()
@@ -42,7 +43,8 @@ public class Camera_Follow : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector3 characterOffset = followXform.position + offset;
+        Vector3 characterOffset = followXform.position + new Vector3(0f, distanceUp, 0f);
+       
 
         // Calculate diraction from camera to player, kill Y, and normalize to give a valid direction with unit magnitude
         lookDir = characterOffset - this.transform.position;
@@ -58,6 +60,8 @@ public class Camera_Follow : MonoBehaviour
        // Debug.DrawRay(follow.position, -1f * follow.forward * distanceAway, Color.blue);
         Debug.DrawLine(followXform.position, targetPosition, Color.magenta);
 
+        CompensateForWalls(characterOffset, ref targetPosition);
+
         // Making a smooth transistion between its current position and the position it wants to be in
         smoothPosition(this.transform.position, targetPosition);
 
@@ -69,5 +73,19 @@ public class Camera_Follow : MonoBehaviour
     {
         // Makng a smooth transition between cameras current position to the position it wants to be in
         this.transform.position = Vector3.SmoothDamp(fromPos, toPos, ref velocityCamSmooth, canSmoothDampTime);
+    }
+
+    private void CompensateForWalls(Vector3 fromObject, ref Vector3 toTarget)
+    {
+        Debug.DrawLine(fromObject, toTarget, Color.cyan);
+
+        // Compensate for walls between camera
+        RaycastHit wallHit = new RaycastHit();
+        
+        if(Physics.Linecast(fromObject, toTarget, out wallHit))
+        {
+            Debug.DrawRay(wallHit.point, Vector3.left, Color.red);
+            toTarget = new Vector3(wallHit.point.x, toTarget.y, wallHit.point.z);
+        }
     }
 }
