@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
 
-public class Behaviour : MonoBehaviour {
+public class BossMainScript : MonoBehaviour {
     private StateMachine finiteStateMachine;
 
     private moveState bossMovingState;
@@ -53,14 +53,17 @@ public class Behaviour : MonoBehaviour {
         }
         if (stateChange)
         {
-            if (!UnityEngine.UnassignedReferenceException.ReferenceEquals(lastState, null)) // check if last state does not equal null
+            // check if last state does not equal null
+            if (!UnityEngine.UnassignedReferenceException.ReferenceEquals(lastState, null)) 
             {
                 if (lastState == bossIdleState)
                     finiteStateMachine.ChangeState(bossMovingState);
                 else if (lastState == bossMovingState)
                     finiteStateMachine.ChangeState(bossIdleState);
             }
-            else if (UnityEngine.UnassignedReferenceException.ReferenceEquals(lastState, null)) // if laststate is null set state to idle
+            // if laststate is null set state to idle
+
+            else if (UnityEngine.UnassignedReferenceException.ReferenceEquals(lastState, null)) 
             {
                 finiteStateMachine.ChangeState(bossIdleState);
             }

@@ -94,8 +94,9 @@ public class moveState : State
         {
             //rotate boss object towards player rotation so that it faces the player at all times
             float angle = Vector3.Angle(currentPosition, target);
-            Quaternion towardsPlayer = playerObject.transform.rotation;
-            bossObjet.transform.rotation = Quaternion.RotateTowards(bossObjet.transform.rotation, towardsPlayer, bossRotationVelocity * Time.deltaTime);
+            Vector3 targetDir = bossObjet.transform.position - target;
+            Vector3 newDir = Vector3.RotateTowards(bossObjet.transform.forward, targetDir, bossRotationVelocity * Time.deltaTime, 0.0f);
+            bossObjet.transform.rotation = Quaternion.LookRotation(newDir);
         }
         if (!Mathf.Equals(currentPosition, target))
         {
