@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-    public float Movement_Speed = 6.0f;
+    public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     private Vector3 moveDirection = Vector3.zero;
+<<<<<<< HEAD
 
     [SerializeField]
     private Camera_Follow gamecam;
@@ -19,6 +20,8 @@ public class Movement : MonoBehaviour {
     private float direction = 0f;
     private float speed = 0.0f;
 
+=======
+>>>>>>> 2a83fa5e5636abde138e8cdab49a76e42e13b22b
     private bool Roll;
     private bool Charge;
     private float RollTimer;
@@ -26,6 +29,7 @@ public class Movement : MonoBehaviour {
     private float Rollspeed = 15f;
     private float CurrentSpeed = 0;
     private float RollCD;
+<<<<<<< HEAD
 
     
     CharacterController controller;
@@ -59,10 +63,37 @@ public class Movement : MonoBehaviour {
 
         controller = GetComponent<CharacterController>();
         CurrentSpeed = Movement_Speed;
+=======
+	// Use this for initialization
+	void Start () {
+        
+    }
+	
+	// Update is called once per frame
+	void LateUpdate () {
+        CharacterController controller = GetComponent<CharacterController>();
+        CurrentSpeed = speed;
+>>>>>>> 2a83fa5e5636abde138e8cdab49a76e42e13b22b
         if (controller.isGrounded)
         {
-            MovementAnalog();
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, -Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= CurrentSpeed;
+
+            if (RollCD <= 0)
+            {
+                if (Input.GetButton("A Button"))
+                {
+                    Roll = true;
+                    RollCD = 5;
+                }
+            }
+            else
+            {
+                RollCD -= Time.fixedDeltaTime;
+            }
         }
+<<<<<<< HEAD
         roll();
 
         moveDirection.y -= gravity * Time.fixedDeltaTime;
@@ -146,6 +177,23 @@ public class Movement : MonoBehaviour {
         //else
         // return false;
         //TODO normalize and smooth
+=======
+
+        if (Roll)
+        {
+            moveDirection = transform.forward / 5f * Rollspeed;
+            CurrentSpeed = Rollspeed;
+            RollTimer += Time.fixedDeltaTime;
+            if (RollTime < RollTimer)
+            {
+                Roll = false;
+                RollTimer = 0;
+            }
+        }
+
+        moveDirection.y -= gravity * Time.fixedDeltaTime;
+        controller.Move(moveDirection * Time.fixedDeltaTime);
+>>>>>>> 2a83fa5e5636abde138e8cdab49a76e42e13b22b
     }
 
     public void StickToWorldspace(Transform root, Transform camera, ref float directionOut, ref float speedOut)
