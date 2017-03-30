@@ -7,7 +7,7 @@ public class StateMachine : MonoBehaviour {
     private State lastState;
     // Use this for initialization
     void Start () {
-        currentState = new State();
+       currentState = new State();
         lastState = new State();
 	}
 	
@@ -23,9 +23,15 @@ public class StateMachine : MonoBehaviour {
         lastState = currentState;
         currentState = stateToChange;
     }
-    public void RunningState()
+    public bool RunState()
     {
-        if (currentState != null)
-            currentState.RunState();
+        if (currentState.RunState())
+            return true;
+        else
+            return false;
+    }
+    public State GetCurrentState()
+    {
+        return currentState;
     }
 }
