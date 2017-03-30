@@ -4,66 +4,70 @@ using UnityEngine;
 using System;
 public class Camera_Follow : MonoBehaviour
 {
-    private GameObject Player;
-    public float distanceFromTarget;
-    public float height;  
-    public float lookSpeed;
-    public float angularSpeed;
-    public Vector3 initialOffset;
-    public float minY;
-    public float maxY;
+    [SerializeField]
+    private float distanceAway;
+    [SerializeField]
+    private float distanceUp;
+    [SerializeField]
+    private float smooth;
+    [SerializeField]
+    private Transform followXform;
+    [SerializeField]
+    private Vector3 offset = new Vector3(0f, 1.5f, 0f);
 
-    private float angle;
-    private bool moveX, moveY;
-    private Vector3 currentOffset;
-    // Use this for initialization
-    void Start()
+    // Private global only
+    private Vector3 lookDir;
+    private Vector3 targetPosition;
+
+    // Smoothing and damping
+    private Vector3 velocityCamSmooth = Vector3.zero;
+    [SerializeField]
+    private float canSmoothDampTime = 0.1f;
+
+    void start()
     {
-        angle = 0f;
-        moveX = false;
-        moveY = false;
-        Player = GameObject.FindGameObjectWithTag("Player");
-        if (Player == null)
-        {
-            Debug.LogError("Assign a target for the camera in Unity's inspector");
-        }
-
-        currentOffset = initialOffset;
+        followXform = GameObject.FindWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void update()
     {
 
     }
+
+    void OnDrawGizmos()
+    {
+
+    }
+
     void LateUpdate()
     {
-        transform.position = Player.transform.position + currentOffset;
+        Vector3 characterOffset = followXform.position + offset;
 
-        float movementX = Input.GetAxis("HorizontalTurn") * angularSpeed * Time.deltaTime;
-        float movementY = Input.GetAxis("VerticalTurn") * angularSpeed * Time.deltaTime;
-        if (!moveY)
-        {
-            if (!Mathf.Approximately(movementX, 0f))
-            {
-                transform.RotateAround(Player.transform.position, Vector3.up, movementX);
-                currentOffset = transform.position - Player.transform.position;
-                moveX = true;
-            }
-        }
-        if (Mathf.Approximately(movementX, 0f))
-            moveX = false;
-        if (Mathf.Approximately(movementY, 0f))
-            moveY = false;
-        if (!moveX)
-        {
-            if (!Mathf.Approximately(movementY, 0f))
-            {
-                transform.RotateAround(Player.transform.position, Vector3.right, movementY);
-                currentOffset = transform.position - Player.transform.position;
-                moveY = true;
-            }
-        }
-        transform.LookAt(Player.transform);
+        // Calculate diraction from camera to player, kill Y, and normalize to give a valid direction with unit magnitude
+        lookDir = characterOffset - this.transform.position;
+        lookDir.y = 0;
+        lookDir.Normalize();
+        Debug.DrawRay(this.transform.position, lookDir, Color.green);
+
+
+
+        // Setting the target to be the correct offset from the hovercraft
+        targetPosition = followXform.position + followXform.up * distanceUp - followXform.forward * distanceAway;
+       // Debug.DrawRay(follow.position, Vector3.up * distanceUp, Color.red);
+       // Debug.DrawRay(follow.position, -1f * follow.forward * distanceAway, Color.blue);
+        Debug.DrawLine(followXform.position, targetPosition, Color.magenta);
+
+        // Making a smooth transistion between its current position and the position it wants to be in
+        smoothPosition(this.transform.position, targetPosition);
+
+        // make sure the camera is looking the right way
+        transform.LookAt(followXform);
+    }
+
+    private void smoothPosition(Vector3 fromPos, Vector3 toPos)
+    {
+        // Makng a smooth transition between cameras current position to the position it wants to be in
+        this.transform.position = Vector3.SmoothDamp(fromPos, toPos, ref velocityCamSmooth, canSmoothDampTime);
     }
 }
