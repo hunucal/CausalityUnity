@@ -10,11 +10,18 @@ public class Camera_Follow : MonoBehaviour
     public float lookSpeed;
     public float angularSpeed;
     public Vector3 initialOffset;
+    public float minY;
+    public float maxY;
 
+    private float angle;
+    private bool moveX, moveY;
     private Vector3 currentOffset;
     // Use this for initialization
     void Start()
     {
+        angle = 0f;
+        moveX = false;
+        moveY = false;
         Player = GameObject.FindGameObjectWithTag("Player");
         if (Player == null)
         {
@@ -35,24 +42,28 @@ public class Camera_Follow : MonoBehaviour
 
         float movementX = Input.GetAxis("HorizontalTurn") * angularSpeed * Time.deltaTime;
         float movementY = Input.GetAxis("VerticalTurn") * angularSpeed * Time.deltaTime;
-        if (!Mathf.Approximately(movementX, 0f))
+        if (!moveY)
         {
-            transform.RotateAround(Player.transform.position, Vector3.up, movementX);
-            currentOffset = transform.position - Player.transform.position;
+            if (!Mathf.Approximately(movementX, 0f))
+            {
+                transform.RotateAround(Player.transform.position, Vector3.up, movementX);
+                currentOffset = transform.position - Player.transform.position;
+                moveX = true;
+            }
         }
-        else
+        if (Mathf.Approximately(movementX, 0f))
+            moveX = false;
+        if (Mathf.Approximately(movementY, 0f))
+            moveY = false;
+        if (!moveX)
         {
-            transform.RotateAround(Player.transform.position, Vector3.up, Time.deltaTime);
-        }
-        if (!Mathf.Approximately(movementY, 0f))
-        {
-            if(movementY < 90 ||movementY > -90)
+            if (!Mathf.Approximately(movementY, 0f))
             {
                 transform.RotateAround(Player.transform.position, Vector3.right, movementY);
                 currentOffset = transform.position - Player.transform.position;
+                moveY = true;
             }
         }
         transform.LookAt(Player.transform);
     }
-
 }
