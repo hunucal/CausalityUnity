@@ -9,6 +9,16 @@ public class Movement : MonoBehaviour {
     public float gravity = 20.0f;
     private Vector3 moveDirection = Vector3.zero;
 
+    [SerializeField]
+    private Camera_Follow gamecam;
+    [SerializeField]
+    private float directionSpeed = 1.5f;
+    [SerializeField]
+    private float rotationDegreePerSecond = 120f;
+
+    private float direction = 0f;
+    private float speed = 0.0f;
+
     private bool Roll;
     private bool Charge;
     private float RollTimer;
@@ -18,7 +28,7 @@ public class Movement : MonoBehaviour {
     private float RollCD;
 
     //private Rigidbody rb;
-    //CharacterController controller;
+    CharacterController controller;
 
     //Stick directions
     private float verticalForce;
@@ -33,17 +43,33 @@ public class Movement : MonoBehaviour {
     void Start () {
         //rb = GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void LateUpdate () {
 
-        CharacterController controller = GetComponent<CharacterController>();
-        
+    void FixedUpdate()
+    {
+        if ((direction >= 0 && horizontalForce >= 0) || (direction < 0 && horizontalForce < 0))
+        {
+            Vector3 rotationAmount = Vector3.Lerp(Vector3.zero, new Vector3(0f, rotationDegreePerSecond * (horizontalForce < 0f ? -1f : 1f), 0f), Mathf.Abs(horizontalForce));
+            Quaternion deltaRotation = Quaternion.Euler(rotationAmount * Time.deltaTime);
+            this.transform.rotation = (this.transform.rotation * deltaRotation);
+        }
+    }
+
+    // Update is called once per frame
+    void LateUpdate () {
+
+        controller = GetComponent<CharacterController>();
         CurrentSpeed = Movement_Speed;
         if (controller.isGrounded)
         {
             MovementAnalog();
         }
+        roll();
+
+        moveDirection.y -= gravity * Time.fixedDeltaTime;
+        controller.Move(moveDirection * Time.fixedDeltaTime);
+    }
+    void roll()
+    {
         //    if (RollCD <= 0)
         //    {
         //        if (Input.GetButton("A Button"))
@@ -69,11 +95,7 @@ public class Movement : MonoBehaviour {
         //        RollTimer = 0;
         //    }
         //}
-
-        moveDirection.y -= gravity * Time.fixedDeltaTime;
-        controller.Move(moveDirection * Time.fixedDeltaTime);
     }
-
     void MovementAnalog()
     {
         horizontalForce = Input.GetAxis("Horizontal");
@@ -82,24 +104,73 @@ public class Movement : MonoBehaviour {
         //Move
         if (verticalForce != 0 || horizontalForce != 0)
         {
-            Move(horizontalForce, verticalForce);
+            Move(horizontalForce, -verticalForce);
         }
+        else
+        {
+            moveDirection = Vector3.zero;
+        }
+
+        StickToWorldspace(this.transform, gamecam.transform, ref direction, ref speed);
     }
 
     void Move(float x, float z)
     {
+        
         //Rotate towards stick direction
-        Rotate(x, -z);
-        //Move in new direction
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, -Input.GetAxis("Vertical"));
-        moveDirection *= CurrentSpeed;
+        if (Rotate(x, z))
+        {
+            //Move in new direction
+            moveDirection = new Vector3(x, 0, z);
+            moveDirection *= CurrentSpeed;
+        }
+     
     }
 
-    void Rotate(float x, float z)
+    private bool Rotate(float x, float z)
     {
+       
         newAngle = Vector3.Angle(Vector3.forward, new Vector3(x, 0, z)); //Gets global angle
         if (x < 0) { newAngle = -newAngle; } //flip angle if left side
-        transform.localEulerAngles = new Vector3(0f, newAngle, 0f);
+        Vector3 newAngles = new Vector3(0f, newAngle, 0f);
+        
+        transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, newAngles, 0.9f);
+        Debug.Log(newAngles);
+        Debug.Log(transform.localEulerAngles);
+
+        if (Mathf.Equals(transform.localEulerAngles, newAngles))
+            return true;
+        else
+         return false;
         //TODO normalize and smooth
+    }
+
+    public void StickToWorldspace(Transform root, Transform camera, ref float directionOut, ref float speedOut)
+    {
+        Vector3 rootDirection = root.forward;
+
+        Vector3 stickDirection = new Vector3(horizontalForce, 0, verticalForce);
+
+        speedOut = stickDirection.sqrMagnitude;
+
+        // Get camera rotation
+        Vector3 CameraDirection = camera.forward;
+        CameraDirection.y = 0.0f; // kill Y
+        Quaternion referentialShift = Quaternion.FromToRotation(Vector3.forward, CameraDirection);
+
+        // Convert joystick input in worldspace coordinates
+        Vector3 moveDirection = referentialShift * stickDirection;
+        Vector3 axisSign = Vector3.Cross(moveDirection, rootDirection);
+
+        Debug.DrawRay(new Vector3(root.position.x, root.position.y + 2f, root.position.z), moveDirection, Color.green);
+        Debug.DrawRay(new Vector3(root.position.x, root.position.y + 2f, root.position.z), axisSign, Color.red);
+        Debug.DrawRay(new Vector3(root.position.x, root.position.y + 2f, root.position.z), rootDirection, Color.magenta);
+        //Debug.DrawRay(new Vector3(root.position.x, root.position.y + 2f, root.position.z), stickDirection, Color.blue);
+
+        float angleRootToMove = Vector3.Angle(rootDirection, moveDirection) * (axisSign.y >= 0 ? -1f : 1f);
+
+        angleRootToMove /= 180f;
+
+        directionOut = angleRootToMove * directionSpeed;
     }
 }
