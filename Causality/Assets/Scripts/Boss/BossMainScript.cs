@@ -4,82 +4,53 @@ using UnityEngine;
 using UnityEngine.Analytics;
 
 public class BossMainScript : MonoBehaviour {
-    private StateMachine finiteStateMachine;
-
-    private moveState bossMovingState;
-    private IdleState bossIdleState;
-
-    private State lastState;
-
-    private bool initState;
-    private bool stateChange;
-    private bool runState;
 
     [SerializeField]private float bossMoveSpeed;
     [SerializeField]private float bossRotationSpeed;
+    [SerializeField]private float bossAggroRange;
+    //root node
+    SequencerNode rootNode;
 
+    //nodes
+    SequencerNode sequencer1, sequencer2, sequencer3, sequencer4;
+    SelectorNode selector1, selector2, selector3, selector4;
+    DecoratorNodeInvert decoratorInvert1, decoratorInvert2, decoratorInvert3, decoratorInvert4;
+    SucceederNode succeeder1, succeeder2, succeeder3, succeeder4;
+    RepeatSetTimesNode repeatSetTimes1, repeatSetTimes2, repeatSetTimes3, repeatSetTimes4;
+    RepeatUntilFailNode repeatUntilFail1, repeatUntilFail2, repeatUntilFail3, repeatUntilFail4;
 
-	// Use this for initialization
-	void Start () {
-        //state machine
-        finiteStateMachine = new StateMachine();
+    //behaviour nodes leaf
+    LeafNodeMove leafNodeMove;
+    LeafNodeIdle leafNodeIdle;
+    //behaviour nodes
+    NodeChooseAttack nodeChooseAttack;
+    // Use this for initialization
+    void Start () {
+     
+        //nodes
+        rootNode = new SequencerNode();
+        //sequensers
+        sequencer1 = new SequencerNode();
+        //behaviours
+        leafNodeIdle = new LeafNodeIdle();
+        leafNodeMove = new LeafNodeMove();
+        nodeChooseAttack = new NodeChooseAttack();
 
-        //states
-        bossMovingState = new moveState();
-        bossIdleState = new IdleState();
+        //nodes init and add children
+        leafNodeIdle.Init(bossAggroRange);
+        leafNodeMove.Init(bossMoveSpeed, bossRotationSpeed);
+        nodeChooseAttack.Init();
 
-
-        //bools
-        initState = true;
-        stateChange = false;
-        runState = false;
-	}
+        rootNode.AddChild(sequencer1);
+        sequencer1.AddChild(leafNodeIdle);
+        sequencer1.AddChild(leafNodeMove);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if(initState)
+        if(rootNode.Running() != Status.Terminated)
         {
-            //move state data
-            bossMovingState.setMovementDate(bossMoveSpeed, bossRotationSpeed);
-            bossMovingState.Init();
 
-            //idle state data
-            bossIdleState.setIdleDate(6f);
-            bossIdleState.Init();
-
-            //logic variables
-            stateChange = true;
-            initState = false;
-        }
-        if (stateChange)
-        {
-            // check if last state does not equal null
-            if (!UnityEngine.UnassignedReferenceException.ReferenceEquals(lastState, null)) 
-            {
-                if (lastState == bossIdleState)
-                    finiteStateMachine.ChangeState(bossMovingState);
-                else if (lastState == bossMovingState)
-                    finiteStateMachine.ChangeState(bossIdleState);
-            }
-            // if laststate is null set state to idle
-
-            else if (UnityEngine.UnassignedReferenceException.ReferenceEquals(lastState, null)) 
-            {
-                finiteStateMachine.ChangeState(bossIdleState);
-            }
-            runState = true;
-            stateChange = false;
-        }
-        if(runState)
-        {
-            if(!finiteStateMachine.RunState())
-            {
-                lastState = finiteStateMachine.GetCurrentState();
-                runState = false;
-                initState = true;
-                stateChange = false;
-            }
-        }
-
+        }      
 	}
 }
