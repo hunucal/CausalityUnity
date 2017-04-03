@@ -11,16 +11,16 @@ public class Actions : MonoBehaviour {
     private float damage;
     private float stamina;
 
-    //Get Attributes from
-    //Attribute Script attScript;
-
+    //Get scripts from
+    //Attribute Script attScript; 
+    private Movement moveScript;
     //Animations
     Animator setAnimator;
 
     // Use this for initialization
     void Start () {
         setAnimator = GetComponent<Animator>();
-        
+        moveScript = GetComponent<Movement>();
     }
 	
 	// Update is called once per frame
@@ -34,9 +34,14 @@ public class Actions : MonoBehaviour {
     void Inputs()
     {
         StopAttacking();
-        if (Input.GetButtonDown("A Button"))
-        { 
+        if (Input.GetButton("A Button"))
+        {
             //Select
+            moveScript.GetComponent<Movement>().SetRun(true);
+        }
+        else
+        {
+            moveScript.GetComponent<Movement>().SetRun(false);
         }
         if (Input.GetButtonDown("X Button"))
         {
