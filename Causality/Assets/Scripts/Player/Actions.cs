@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class Actions : MonoBehaviour {
     
-    //Player Attributes
-    private float defence;
-    private float strenght;
-    private float agility;
-    private float damage;
-    private float stamina;
 
     //Get scripts from
     //Attribute Script attScript; 
@@ -25,10 +19,7 @@ public class Actions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        //stamina = attScript.GetCompnenet<attScript>().stamina;
         Inputs();
-        //attScript.GetComponent<attScript>().stamina = stamina;
-        
 	}
 
     void Inputs()
@@ -46,6 +37,7 @@ public class Actions : MonoBehaviour {
         if (Input.GetButtonDown("X Button"))
         {
             //Sprint/Dash
+            moveScript.GetComponent<Movement>().ActivateRoll();
         }
         if (Input.GetButtonDown("B Button"))
         {
@@ -103,9 +95,7 @@ public class Actions : MonoBehaviour {
         {
         setAnimator.SetBool("HeavyAttack", true);
         setAnimator.SetBool("IsAttacking", true);
-        stamina -= 20; //TODO: Fix variable
         }
-        //Damage(20);
     }
     void StopAttacking()
     {
@@ -114,13 +104,15 @@ public class Actions : MonoBehaviour {
              setAnimator.SetBool("HeavyAttack", false);
              setAnimator.SetBool("IsAttacking", false);
              setAnimator.SetBool("FastAttack", false);
-             setAnimator.SetBool("Block", false);
+             
         }
-      
+        setAnimator.SetBool("Block", false);
+
     }
     void Block()
     {
         //Block with weapon
+        moveScript.GetComponent<Movement>().SetRun(false);
         setAnimator.SetBool("Block", true);
 
     }
@@ -138,7 +130,7 @@ public class Actions : MonoBehaviour {
     void Roll()
     {
         //Code Roll in movement use here?
-
+        moveScript.GetComponent<Movement>().Roll();
     }
 
     void Dash()
@@ -146,13 +138,5 @@ public class Actions : MonoBehaviour {
         //Code Dash in movement use here?
 
     }
-    void DamageGiven(float x, float edef)
-    {
-        //Calculate Damage
-        damage = x + strenght * agility / edef;
-    }
-    void DamageTaken(float x, float estr, float eagi)
-    {
-        damage = x + estr * eagi / defence;
-    }
+   
 }
