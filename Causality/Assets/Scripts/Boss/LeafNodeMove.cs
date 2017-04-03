@@ -69,11 +69,11 @@ public class LeafNodeMove : Node {
 
             Vector3 targetDir = agent.transform.position - target;
             targetDir.y = 0f;
-
+            
             Vector3 newDir = Vector3.RotateTowards(bossObjet.transform.forward, targetDir, bossRotationVelocity * Time.deltaTime, 0.0f);
             agent.transform.rotation = Quaternion.LookRotation(newDir);
 
-            agent.transform.LookAt(targetDir); // lookat direction == vector direction boss -> player
+            //agent.transform.LookAt(targetDir); // lookat direction == vector direction boss -> player
 
             agent.updateRotation = true;
         }
@@ -87,7 +87,9 @@ public class LeafNodeMove : Node {
             currentPosition = agent.transform.position;
             //if agents pathstatus is complete and player is within distance. return true for attack state 
             if (Vector3.Distance(agent.transform.position, goal.position) < 2f)
-                return true;
+            {
+                    return true;
+            }
         }
         return false;
     }

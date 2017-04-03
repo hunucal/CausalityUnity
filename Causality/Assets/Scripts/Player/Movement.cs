@@ -25,7 +25,12 @@ public class Movement : MonoBehaviour
     private float horizontalForce;
 
     //Rotation and Movement variables
-    public float movementSpeed = 6.0f;
+    [SerializeField]
+    private float runspeed = 10.0f;
+    [SerializeField]
+    private float walkspeed = 6.0f;
+
+    private float movementSpeed;
     private Vector3 tmpDirection = Vector3.zero;
     private Vector3 playerAim;
     private Vector3 rotationDifVec;
@@ -35,10 +40,18 @@ public class Movement : MonoBehaviour
     private float gravity = 20.0f;
     private Vector3 moveDirection = Vector3.zero;
     private Animator Anim;
+    private bool run;
+
+    //Get Attributes
+    [SerializeField]
+    private Stat attri;
+
     // Use this for initialization
     void Start()
     {
         Anim = GetComponent<Animator>();
+        run = false;
+        movementSpeed = walkspeed;
     }
 
     // Update is called once per frame
@@ -95,6 +108,28 @@ public class Movement : MonoBehaviour
         //    }
         //}
     }
+
+
+    void Run()
+    {
+        //attri.CurrentValStamina -= 2.0f * Time.fixedDeltaTime;
+        movementSpeed = 10.0f;
+        Anim.SetBool("Run", true);
+    }
+    void Walk()
+    {
+        movementSpeed = 6.0f;
+        Anim.SetBool("Run", false);
+        Anim.SetBool("Walk", true);
+    }
+
+    
+    public void SetRun(bool b)
+    {
+        run = b;
+    }
+
+
     void MovementAnalog()
     {
         //Get Axis From Horizontal and Vertical from left stick
@@ -107,8 +142,13 @@ public class Movement : MonoBehaviour
             if(Anim.GetBool("IsAttacking") == false)
             {
                 //Move
+                if (run)
+                    Run();
+                else
+                    Walk();
+
                 Move(horizontalForce, -verticalForce);
-                Anim.SetBool("Walk", true);
+                
             }
         }
         else
