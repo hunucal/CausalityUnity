@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/MainAxel.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/MainJoni.unity
-=======
-- path: Assets/Scenes/MainRobin.unity
->>>>>>> 5361a5349641082fbef149dc5ce063668f377e83
->>>>>>> 195a2e3169066883f606ccedd15106f45c2b8d3e
   isLoaded: 1
   isActive: 1
