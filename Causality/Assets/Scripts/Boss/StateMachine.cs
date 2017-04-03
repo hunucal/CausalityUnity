@@ -25,10 +25,16 @@ public class StateMachine : MonoBehaviour {
     }
     public bool RunState()
     {
-        if (currentState.RunState())
-            return true;
-        else
+        if (UnityEngine.UnassignedReferenceException.Equals(currentState, null))
+        {
             return false;
+        }else
+        {
+            if (currentState.RunState())
+                return true;
+            else
+                return false;
+        }
     }
     public State GetCurrentState()
     {

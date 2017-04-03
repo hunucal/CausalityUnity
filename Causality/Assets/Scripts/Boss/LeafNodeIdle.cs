@@ -22,8 +22,10 @@ public class LeafNodeIdle : Node {
     {
         if (GetAggroRange())
             return Status.Success;
-
-        return Status.Terminated;
+        else if (!GetAggroRange())
+            return Status.Failure;
+        else
+            return Status.Running;
     }
     private bool GetAggroRange()
     {
