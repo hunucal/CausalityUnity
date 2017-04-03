@@ -1,0 +1,2636 @@
+fileFormatVersion: 2
+guid: c2bd3193d5bad094fb75a15dfabf969c
+timeCreated: 1491207426
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Blake:Base HumanHead
+    100002: Blake:Base HumanLCalf
+    100004: Blake:Base HumanLCollarbone
+    100006: Blake:Base HumanLDigit11
+    100008: Blake:Base HumanLDigit12
+    100010: Blake:Base HumanLDigit13
+    100012: Blake:Base HumanLDigit14
+    100014: Blake:Base HumanLDigit21
+    100016: Blake:Base HumanLDigit22
+    100018: Blake:Base HumanLDigit23
+    100020: Blake:Base HumanLDigit31
+    100022: Blake:Base HumanLDigit32
+    100024: Blake:Base HumanLDigit33
+    100026: Blake:Base HumanLDigit41
+    100028: Blake:Base HumanLDigit42
+    100030: Blake:Base HumanLDigit43
+    100032: Blake:Base HumanLDigit51
+    100034: Blake:Base HumanLDigit52
+    100036: Blake:Base HumanLDigit53
+    100038: Blake:Base HumanLFoot
+    100040: Blake:Base HumanLForearm
+    100042: Blake:Base HumanLPalm
+    100044: Blake:Base HumanLThigh
+    100046: Blake:Base HumanLUpperarm
+    100048: Blake:Base HumanNeck1
+    100050: Blake:Base HumanNeck2
+    100052: Blake:Base HumanPelvis
+    100054: Blake:Base HumanPelvisBone001
+    100056: Blake:Base HumanPelvisBone001Bone001
+    100058: Blake:Base HumanPelvisBone001Bone001Bone001
+    100060: Blake:Base HumanPelvisBone001Bone001Bone001Bone001
+    100062: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone001
+    100064: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone002
+    100066: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone003
+    100068: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone2
+    100070: Blake:Base HumanPelvisBone001Bone001Bone001Bone002
+    100072: Blake:Base HumanPelvisBone001Bone001Bone001Bone003
+    100074: Blake:Base HumanPelvisBone001Bone001Bone001Bone004
+    100076: Blake:Base HumanPelvisBone001Bone001Bone002
+    100078: Blake:Base HumanPelvisBone001Bone001Bone003
+    100080: Blake:Base HumanPelvisBone001Bone001Bone004
+    100082: Blake:Base HumanPelvisBone001Bone002
+    100084: Blake:Base HumanPelvisBone001Bone003
+    100086: Blake:Base HumanPelvisBone001Bone004
+    100088: Blake:Base HumanPelvisBone002
+    100090: Blake:Base HumanPelvisBone003
+    100092: Blake:Base HumanPelvisBone004
+    100094: Blake:Base HumanRCalf
+    100096: Blake:Base HumanRCollarbone
+    100098: Blake:Base HumanRDigit11
+    100100: Blake:Base HumanRDigit12
+    100102: Blake:Base HumanRDigit13
+    100104: Blake:Base HumanRDigit14
+    100106: Blake:Base HumanRDigit21
+    100108: Blake:Base HumanRDigit22
+    100110: Blake:Base HumanRDigit23
+    100112: Blake:Base HumanRDigit31
+    100114: Blake:Base HumanRDigit32
+    100116: Blake:Base HumanRDigit33
+    100118: Blake:Base HumanRDigit41
+    100120: Blake:Base HumanRDigit42
+    100122: Blake:Base HumanRDigit43
+    100124: Blake:Base HumanRDigit51
+    100126: Blake:Base HumanRDigit52
+    100128: Blake:Base HumanRDigit53
+    100130: Blake:Base HumanRFoot
+    100132: Blake:Base HumanRForearm
+    100134: Blake:Base HumanRibcage
+    100136: Blake:Base HumanRPalm
+    100138: Blake:Base HumanRThigh
+    100140: Blake:Base HumanRUpperarm
+    100142: Blake:Base HumanSpine1
+    100144: Blake:Base HumanSpine2
+    100146: Blake:Base HumanSpine3
+    100148: Blake:Base HumanSpine4
+    100150: Blake:Body
+    100152: //RootNode
+    100154: Blake_Ctrl:ChestEndEffector
+    100156: Blake_Ctrl:ChestOriginEffector
+    100158: Blake_Ctrl:Head
+    100160: Blake_Ctrl:HeadEffector
+    100162: Blake_Ctrl:Hips
+    100164: Blake_Ctrl:HipsEffector
+    100166: Blake_Ctrl:LeftAnkleEffector
+    100168: Blake_Ctrl:LeftArm
+    100170: Blake_Ctrl:LeftElbowEffector
+    100172: Blake_Ctrl:LeftFoot
+    100174: Blake_Ctrl:LeftFootEffector
+    100176: Blake_Ctrl:LeftForeArm
+    100178: Blake_Ctrl:LeftHand
+    100180: Blake_Ctrl:LeftHandIndex1
+    100182: Blake_Ctrl:LeftHandIndex2
+    100184: Blake_Ctrl:LeftHandIndex3
+    100186: Blake_Ctrl:LeftHandIndexEffector
+    100188: Blake_Ctrl:LeftHandMiddle1
+    100190: Blake_Ctrl:LeftHandMiddle2
+    100192: Blake_Ctrl:LeftHandMiddle3
+    100194: Blake_Ctrl:LeftHandMiddleEffector
+    100196: Blake_Ctrl:LeftHandPinky1
+    100198: Blake_Ctrl:LeftHandPinky2
+    100200: Blake_Ctrl:LeftHandPinky3
+    100202: Blake_Ctrl:LeftHandPinkyEffector
+    100204: Blake_Ctrl:LeftHandRing1
+    100206: Blake_Ctrl:LeftHandRing2
+    100208: Blake_Ctrl:LeftHandRing3
+    100210: Blake_Ctrl:LeftHandRingEffector
+    100212: Blake_Ctrl:LeftHandThumb1
+    100214: Blake_Ctrl:LeftHandThumb2
+    100216: Blake_Ctrl:LeftHandThumb3
+    100218: Blake_Ctrl:LeftHandThumbEffector
+    100220: Blake_Ctrl:LeftHipEffector
+    100222: Blake_Ctrl:LeftKneeEffector
+    100224: Blake_Ctrl:LeftLeg
+    100226: Blake_Ctrl:LeftShoulder
+    100228: Blake_Ctrl:LeftShoulderEffector
+    100230: Blake_Ctrl:LeftToeBase
+    100232: Blake_Ctrl:LeftUpLeg
+    100234: Blake_Ctrl:LeftWristEffector
+    100236: Blake_Ctrl:Neck
+    100238: Blake_Ctrl:Neck1
+    100240: Blake_Ctrl:Reference
+    100242: Blake_Ctrl:RightAnkleEffector
+    100244: Blake_Ctrl:RightArm
+    100246: Blake_Ctrl:RightElbowEffector
+    100248: Blake_Ctrl:RightFoot
+    100250: Blake_Ctrl:RightFootEffector
+    100252: Blake_Ctrl:RightForeArm
+    100254: Blake_Ctrl:RightHand
+    100256: Blake_Ctrl:RightHandIndex1
+    100258: Blake_Ctrl:RightHandIndex2
+    100260: Blake_Ctrl:RightHandIndex3
+    100262: Blake_Ctrl:RightHandIndexEffector
+    100264: Blake_Ctrl:RightHandMiddle1
+    100266: Blake_Ctrl:RightHandMiddle2
+    100268: Blake_Ctrl:RightHandMiddle3
+    100270: Blake_Ctrl:RightHandMiddleEffector
+    100272: Blake_Ctrl:RightHandPinky1
+    100274: Blake_Ctrl:RightHandPinky2
+    100276: Blake_Ctrl:RightHandPinky3
+    100278: Blake_Ctrl:RightHandPinkyEffector
+    100280: Blake_Ctrl:RightHandRing1
+    100282: Blake_Ctrl:RightHandRing2
+    100284: Blake_Ctrl:RightHandRing3
+    100286: Blake_Ctrl:RightHandRingEffector
+    100288: Blake_Ctrl:RightHandThumb1
+    100290: Blake_Ctrl:RightHandThumb2
+    100292: Blake_Ctrl:RightHandThumb3
+    100294: Blake_Ctrl:RightHandThumbEffector
+    100296: Blake_Ctrl:RightHipEffector
+    100298: Blake_Ctrl:RightKneeEffector
+    100300: Blake_Ctrl:RightLeg
+    100302: Blake_Ctrl:RightShoulder
+    100304: Blake_Ctrl:RightShoulderEffector
+    100306: Blake_Ctrl:RightToeBase
+    100308: Blake_Ctrl:RightUpLeg
+    100310: Blake_Ctrl:RightWristEffector
+    100312: Blake_Ctrl:Spine
+    100314: Blake_Ctrl:Spine1
+    100316: Blake_Ctrl:Spine2
+    100318: Blake_Ctrl:Spine3
+    100320: Blake_Ctrl:Spine4
+    100322: pCube1
+    100324: pCube2
+    100326: pCube3
+    100328: pCube4
+    100330: pCylinder1
+    100332: Plane
+    100334: polySurface1
+    100336: polySurface10
+    100338: polySurface11
+    100340: polySurface2
+    100342: polySurface3
+    100344: polySurface4
+    100346: polySurface5
+    100348: polySurface6
+    100350: polySurface7
+    100352: polySurface8
+    100354: polySurface9
+    100356: pPipe1
+    100358: pSphere1
+    100360: Stam2_Head
+    100362: Stam2_Hips
+    100364: Stam2_LeftArm
+    100366: Stam2_LeftFoot
+    100368: Stam2_LeftForeArm
+    100370: Stam2_LeftHand
+    100372: Stam2_LeftLeg
+    100374: Stam2_LeftShoulder
+    100376: Stam2_LeftToeBase
+    100378: Stam2_LeftUpLeg
+    100380: Stam2_Neck
+    100382: Stam2_RightArm
+    100384: Stam2_RightFoot
+    100386: Stam2_RightForeArm
+    100388: Stam2_RightHand
+    100390: Stam2_RightLeg
+    100392: Stam2_RightShoulder
+    100394: Stam2_RightToeBase
+    100396: Stam2_RightUpLeg
+    100398: Stam2_Spine
+    100400: Stam2_Spine1
+    100402: Sword
+    100404: transform1
+    100406: transform10
+    100408: transform11
+    100410: transform12
+    100412: transform13
+    100414: transform14
+    100416: transform15
+    100418: transform16
+    100420: transform17
+    100422: transform2
+    100424: transform3
+    100426: transform4
+    100428: transform5
+    100430: transform6
+    100432: transform7
+    100434: transform8
+    100436: transform9
+    400000: Blake:Base HumanHead
+    400002: Blake:Base HumanLCalf
+    400004: Blake:Base HumanLCollarbone
+    400006: Blake:Base HumanLDigit11
+    400008: Blake:Base HumanLDigit12
+    400010: Blake:Base HumanLDigit13
+    400012: Blake:Base HumanLDigit14
+    400014: Blake:Base HumanLDigit21
+    400016: Blake:Base HumanLDigit22
+    400018: Blake:Base HumanLDigit23
+    400020: Blake:Base HumanLDigit31
+    400022: Blake:Base HumanLDigit32
+    400024: Blake:Base HumanLDigit33
+    400026: Blake:Base HumanLDigit41
+    400028: Blake:Base HumanLDigit42
+    400030: Blake:Base HumanLDigit43
+    400032: Blake:Base HumanLDigit51
+    400034: Blake:Base HumanLDigit52
+    400036: Blake:Base HumanLDigit53
+    400038: Blake:Base HumanLFoot
+    400040: Blake:Base HumanLForearm
+    400042: Blake:Base HumanLPalm
+    400044: Blake:Base HumanLThigh
+    400046: Blake:Base HumanLUpperarm
+    400048: Blake:Base HumanNeck1
+    400050: Blake:Base HumanNeck2
+    400052: Blake:Base HumanPelvis
+    400054: Blake:Base HumanPelvisBone001
+    400056: Blake:Base HumanPelvisBone001Bone001
+    400058: Blake:Base HumanPelvisBone001Bone001Bone001
+    400060: Blake:Base HumanPelvisBone001Bone001Bone001Bone001
+    400062: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone001
+    400064: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone002
+    400066: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone003
+    400068: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone2
+    400070: Blake:Base HumanPelvisBone001Bone001Bone001Bone002
+    400072: Blake:Base HumanPelvisBone001Bone001Bone001Bone003
+    400074: Blake:Base HumanPelvisBone001Bone001Bone001Bone004
+    400076: Blake:Base HumanPelvisBone001Bone001Bone002
+    400078: Blake:Base HumanPelvisBone001Bone001Bone003
+    400080: Blake:Base HumanPelvisBone001Bone001Bone004
+    400082: Blake:Base HumanPelvisBone001Bone002
+    400084: Blake:Base HumanPelvisBone001Bone003
+    400086: Blake:Base HumanPelvisBone001Bone004
+    400088: Blake:Base HumanPelvisBone002
+    400090: Blake:Base HumanPelvisBone003
+    400092: Blake:Base HumanPelvisBone004
+    400094: Blake:Base HumanRCalf
+    400096: Blake:Base HumanRCollarbone
+    400098: Blake:Base HumanRDigit11
+    400100: Blake:Base HumanRDigit12
+    400102: Blake:Base HumanRDigit13
+    400104: Blake:Base HumanRDigit14
+    400106: Blake:Base HumanRDigit21
+    400108: Blake:Base HumanRDigit22
+    400110: Blake:Base HumanRDigit23
+    400112: Blake:Base HumanRDigit31
+    400114: Blake:Base HumanRDigit32
+    400116: Blake:Base HumanRDigit33
+    400118: Blake:Base HumanRDigit41
+    400120: Blake:Base HumanRDigit42
+    400122: Blake:Base HumanRDigit43
+    400124: Blake:Base HumanRDigit51
+    400126: Blake:Base HumanRDigit52
+    400128: Blake:Base HumanRDigit53
+    400130: Blake:Base HumanRFoot
+    400132: Blake:Base HumanRForearm
+    400134: Blake:Base HumanRibcage
+    400136: Blake:Base HumanRPalm
+    400138: Blake:Base HumanRThigh
+    400140: Blake:Base HumanRUpperarm
+    400142: Blake:Base HumanSpine1
+    400144: Blake:Base HumanSpine2
+    400146: Blake:Base HumanSpine3
+    400148: Blake:Base HumanSpine4
+    400150: Blake:Body
+    400152: //RootNode
+    400154: Blake_Ctrl:ChestEndEffector
+    400156: Blake_Ctrl:ChestOriginEffector
+    400158: Blake_Ctrl:Head
+    400160: Blake_Ctrl:HeadEffector
+    400162: Blake_Ctrl:Hips
+    400164: Blake_Ctrl:HipsEffector
+    400166: Blake_Ctrl:LeftAnkleEffector
+    400168: Blake_Ctrl:LeftArm
+    400170: Blake_Ctrl:LeftElbowEffector
+    400172: Blake_Ctrl:LeftFoot
+    400174: Blake_Ctrl:LeftFootEffector
+    400176: Blake_Ctrl:LeftForeArm
+    400178: Blake_Ctrl:LeftHand
+    400180: Blake_Ctrl:LeftHandIndex1
+    400182: Blake_Ctrl:LeftHandIndex2
+    400184: Blake_Ctrl:LeftHandIndex3
+    400186: Blake_Ctrl:LeftHandIndexEffector
+    400188: Blake_Ctrl:LeftHandMiddle1
+    400190: Blake_Ctrl:LeftHandMiddle2
+    400192: Blake_Ctrl:LeftHandMiddle3
+    400194: Blake_Ctrl:LeftHandMiddleEffector
+    400196: Blake_Ctrl:LeftHandPinky1
+    400198: Blake_Ctrl:LeftHandPinky2
+    400200: Blake_Ctrl:LeftHandPinky3
+    400202: Blake_Ctrl:LeftHandPinkyEffector
+    400204: Blake_Ctrl:LeftHandRing1
+    400206: Blake_Ctrl:LeftHandRing2
+    400208: Blake_Ctrl:LeftHandRing3
+    400210: Blake_Ctrl:LeftHandRingEffector
+    400212: Blake_Ctrl:LeftHandThumb1
+    400214: Blake_Ctrl:LeftHandThumb2
+    400216: Blake_Ctrl:LeftHandThumb3
+    400218: Blake_Ctrl:LeftHandThumbEffector
+    400220: Blake_Ctrl:LeftHipEffector
+    400222: Blake_Ctrl:LeftKneeEffector
+    400224: Blake_Ctrl:LeftLeg
+    400226: Blake_Ctrl:LeftShoulder
+    400228: Blake_Ctrl:LeftShoulderEffector
+    400230: Blake_Ctrl:LeftToeBase
+    400232: Blake_Ctrl:LeftUpLeg
+    400234: Blake_Ctrl:LeftWristEffector
+    400236: Blake_Ctrl:Neck
+    400238: Blake_Ctrl:Neck1
+    400240: Blake_Ctrl:Reference
+    400242: Blake_Ctrl:RightAnkleEffector
+    400244: Blake_Ctrl:RightArm
+    400246: Blake_Ctrl:RightElbowEffector
+    400248: Blake_Ctrl:RightFoot
+    400250: Blake_Ctrl:RightFootEffector
+    400252: Blake_Ctrl:RightForeArm
+    400254: Blake_Ctrl:RightHand
+    400256: Blake_Ctrl:RightHandIndex1
+    400258: Blake_Ctrl:RightHandIndex2
+    400260: Blake_Ctrl:RightHandIndex3
+    400262: Blake_Ctrl:RightHandIndexEffector
+    400264: Blake_Ctrl:RightHandMiddle1
+    400266: Blake_Ctrl:RightHandMiddle2
+    400268: Blake_Ctrl:RightHandMiddle3
+    400270: Blake_Ctrl:RightHandMiddleEffector
+    400272: Blake_Ctrl:RightHandPinky1
+    400274: Blake_Ctrl:RightHandPinky2
+    400276: Blake_Ctrl:RightHandPinky3
+    400278: Blake_Ctrl:RightHandPinkyEffector
+    400280: Blake_Ctrl:RightHandRing1
+    400282: Blake_Ctrl:RightHandRing2
+    400284: Blake_Ctrl:RightHandRing3
+    400286: Blake_Ctrl:RightHandRingEffector
+    400288: Blake_Ctrl:RightHandThumb1
+    400290: Blake_Ctrl:RightHandThumb2
+    400292: Blake_Ctrl:RightHandThumb3
+    400294: Blake_Ctrl:RightHandThumbEffector
+    400296: Blake_Ctrl:RightHipEffector
+    400298: Blake_Ctrl:RightKneeEffector
+    400300: Blake_Ctrl:RightLeg
+    400302: Blake_Ctrl:RightShoulder
+    400304: Blake_Ctrl:RightShoulderEffector
+    400306: Blake_Ctrl:RightToeBase
+    400308: Blake_Ctrl:RightUpLeg
+    400310: Blake_Ctrl:RightWristEffector
+    400312: Blake_Ctrl:Spine
+    400314: Blake_Ctrl:Spine1
+    400316: Blake_Ctrl:Spine2
+    400318: Blake_Ctrl:Spine3
+    400320: Blake_Ctrl:Spine4
+    400322: pCube1
+    400324: pCube2
+    400326: pCube3
+    400328: pCube4
+    400330: pCylinder1
+    400332: Plane
+    400334: polySurface1
+    400336: polySurface10
+    400338: polySurface11
+    400340: polySurface2
+    400342: polySurface3
+    400344: polySurface4
+    400346: polySurface5
+    400348: polySurface6
+    400350: polySurface7
+    400352: polySurface8
+    400354: polySurface9
+    400356: pPipe1
+    400358: pSphere1
+    400360: Stam2_Head
+    400362: Stam2_Hips
+    400364: Stam2_LeftArm
+    400366: Stam2_LeftFoot
+    400368: Stam2_LeftForeArm
+    400370: Stam2_LeftHand
+    400372: Stam2_LeftLeg
+    400374: Stam2_LeftShoulder
+    400376: Stam2_LeftToeBase
+    400378: Stam2_LeftUpLeg
+    400380: Stam2_Neck
+    400382: Stam2_RightArm
+    400384: Stam2_RightFoot
+    400386: Stam2_RightForeArm
+    400388: Stam2_RightHand
+    400390: Stam2_RightLeg
+    400392: Stam2_RightShoulder
+    400394: Stam2_RightToeBase
+    400396: Stam2_RightUpLeg
+    400398: Stam2_Spine
+    400400: Stam2_Spine1
+    400402: Sword
+    400404: transform1
+    400406: transform10
+    400408: transform11
+    400410: transform12
+    400412: transform13
+    400414: transform14
+    400416: transform15
+    400418: transform16
+    400420: transform17
+    400422: transform2
+    400424: transform3
+    400426: transform4
+    400428: transform5
+    400430: transform6
+    400432: transform7
+    400434: transform8
+    400436: transform9
+    7400000: Run
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Run' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Blake_Ctrl:LeftLeg' has translation animation that
+      will be discarded.\n\t'Blake_Ctrl:RightLeg' has translation animation that will
+      be discarded.\n\t'Blake_Ctrl:Spine' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'Blake_Ctrl:Spine3' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Blake_Ctrl:Spine4'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Blake_Ctrl:LeftForeArm'
+      has translation animation that will be discarded.\n\t'Blake_Ctrl:RightForeArm'
+      has translation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Blake:Base HumanPelvis
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanLThigh
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanLThigh/Blake:Base HumanLCalf
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanLThigh/Blake:Base HumanLCalf/Blake:Base
+          HumanLFoot
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanLThigh/Blake:Base HumanLCalf/Blake:Base
+          HumanLFoot/Blake:Base HumanLDigit11
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone001
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone001/Blake:Base HumanPelvisBone001Bone001
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone001/Blake:Base HumanPelvisBone001Bone001/Blake:Base
+          HumanPelvisBone001Bone001Bone001
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone001/Blake:Base HumanPelvisBone001Bone001/Blake:Base
+          HumanPelvisBone001Bone001Bone001/Blake:Base HumanPelvisBone001Bone001Bone001Bone001
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone001/Blake:Base HumanPelvisBone001Bone001/Blake:Base
+          HumanPelvisBone001Bone001Bone001/Blake:Base HumanPelvisBone001Bone001Bone001Bone001/Blake:Base
+          HumanPelvisBone001Bone001Bone001Bone001Bone001
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone002
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone002/Blake:Base HumanPelvisBone001Bone002
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone002/Blake:Base HumanPelvisBone001Bone002/Blake:Base
+          HumanPelvisBone001Bone001Bone002
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone002/Blake:Base HumanPelvisBone001Bone002/Blake:Base
+          HumanPelvisBone001Bone001Bone002/Blake:Base HumanPelvisBone001Bone001Bone001Bone002
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone002/Blake:Base HumanPelvisBone001Bone002/Blake:Base
+          HumanPelvisBone001Bone001Bone002/Blake:Base HumanPelvisBone001Bone001Bone001Bone002/Blake:Base
+          HumanPelvisBone001Bone001Bone001Bone001Bone2
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone003
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone003/Blake:Base HumanPelvisBone001Bone003
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone003/Blake:Base HumanPelvisBone001Bone003/Blake:Base
+          HumanPelvisBone001Bone001Bone003
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone003/Blake:Base HumanPelvisBone001Bone003/Blake:Base
+          HumanPelvisBone001Bone001Bone003/Blake:Base HumanPelvisBone001Bone001Bone001Bone003
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone003/Blake:Base HumanPelvisBone001Bone003/Blake:Base
+          HumanPelvisBone001Bone001Bone003/Blake:Base HumanPelvisBone001Bone001Bone001Bone003/Blake:Base
+          HumanPelvisBone001Bone001Bone001Bone001Bone002
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone004
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone004/Blake:Base HumanPelvisBone001Bone004
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone004/Blake:Base HumanPelvisBone001Bone004/Blake:Base
+          HumanPelvisBone001Bone001Bone004
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone004/Blake:Base HumanPelvisBone001Bone004/Blake:Base
+          HumanPelvisBone001Bone001Bone004/Blake:Base HumanPelvisBone001Bone001Bone001Bone004
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanPelvisBone004/Blake:Base HumanPelvisBone001Bone004/Blake:Base
+          HumanPelvisBone001Bone001Bone004/Blake:Base HumanPelvisBone001Bone001Bone001Bone004/Blake:Base
+          HumanPelvisBone001Bone001Bone001Bone001Bone003
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanRThigh
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanRThigh/Blake:Base HumanRCalf
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanRThigh/Blake:Base HumanRCalf/Blake:Base
+          HumanRFoot
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanRThigh/Blake:Base HumanRCalf/Blake:Base
+          HumanRFoot/Blake:Base HumanRDigit11
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit12
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit12/Blake:Base HumanLDigit13
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit12/Blake:Base HumanLDigit13/Blake:Base HumanLDigit14
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit21
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit21/Blake:Base HumanLDigit22
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit21/Blake:Base HumanLDigit22/Blake:Base HumanLDigit23
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit31
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit31/Blake:Base HumanLDigit32
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit31/Blake:Base HumanLDigit32/Blake:Base HumanLDigit33
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit41
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit41/Blake:Base HumanLDigit42
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit41/Blake:Base HumanLDigit42/Blake:Base HumanLDigit43
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit51
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit51/Blake:Base HumanLDigit52
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanLCollarbone/Blake:Base
+          HumanLUpperarm/Blake:Base HumanLForearm/Blake:Base HumanLPalm/Blake:Base
+          HumanLDigit51/Blake:Base HumanLDigit52/Blake:Base HumanLDigit53
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanNeck1
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanNeck1/Blake:Base
+          HumanNeck2
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanNeck1/Blake:Base
+          HumanNeck2/Blake:Base HumanHead
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit12
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit12/Blake:Base HumanRDigit13
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit12/Blake:Base HumanRDigit13/Blake:Base HumanRDigit14
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit21
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit21/Blake:Base HumanRDigit22
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit21/Blake:Base HumanRDigit22/Blake:Base HumanRDigit23
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit31
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit31/Blake:Base HumanRDigit32
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit31/Blake:Base HumanRDigit32/Blake:Base HumanRDigit33
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit41
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit41/Blake:Base HumanRDigit42
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit41/Blake:Base HumanRDigit42/Blake:Base HumanRDigit43
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit51
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit51/Blake:Base HumanRDigit52
+        weight: 0
+      - path: Blake:Base HumanPelvis/Blake:Base HumanSpine1/Blake:Base HumanSpine2/Blake:Base
+          HumanSpine3/Blake:Base HumanSpine4/Blake:Base HumanRibcage/Blake:Base HumanRCollarbone/Blake:Base
+          HumanRUpperarm/Blake:Base HumanRForearm/Blake:Base HumanRPalm/Blake:Base
+          HumanRDigit51/Blake:Base HumanRDigit52/Blake:Base HumanRDigit53
+        weight: 0
+      - path: Blake:Body
+        weight: 0
+      - path: Blake_Ctrl:Reference
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:ChestEndEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:ChestOriginEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:HeadEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:LeftUpLeg
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:LeftUpLeg/Blake_Ctrl:LeftLeg
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:LeftUpLeg/Blake_Ctrl:LeftLeg/Blake_Ctrl:LeftFoot
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:LeftUpLeg/Blake_Ctrl:LeftLeg/Blake_Ctrl:LeftFoot/Blake_Ctrl:LeftToeBase
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:RightUpLeg
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:RightUpLeg/Blake_Ctrl:RightLeg
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:RightUpLeg/Blake_Ctrl:RightLeg/Blake_Ctrl:RightFoot
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:RightUpLeg/Blake_Ctrl:RightLeg/Blake_Ctrl:RightFoot/Blake_Ctrl:RightToeBase
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandIndex1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandIndex1/Blake_Ctrl:LeftHandIndex2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandIndex1/Blake_Ctrl:LeftHandIndex2/Blake_Ctrl:LeftHandIndex3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandMiddle1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandMiddle1/Blake_Ctrl:LeftHandMiddle2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandMiddle1/Blake_Ctrl:LeftHandMiddle2/Blake_Ctrl:LeftHandMiddle3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandPinky1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandPinky1/Blake_Ctrl:LeftHandPinky2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandPinky1/Blake_Ctrl:LeftHandPinky2/Blake_Ctrl:LeftHandPinky3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandRing1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandRing1/Blake_Ctrl:LeftHandRing2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandRing1/Blake_Ctrl:LeftHandRing2/Blake_Ctrl:LeftHandRing3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandThumb1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandThumb1/Blake_Ctrl:LeftHandThumb2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:LeftShoulder/Blake_Ctrl:LeftArm/Blake_Ctrl:LeftForeArm/Blake_Ctrl:LeftHand/Blake_Ctrl:LeftHandThumb1/Blake_Ctrl:LeftHandThumb2/Blake_Ctrl:LeftHandThumb3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:Neck
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:Neck/Blake_Ctrl:Neck1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:Neck/Blake_Ctrl:Neck1/Blake_Ctrl:Head
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandIndex1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandIndex1/Blake_Ctrl:RightHandIndex2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandIndex1/Blake_Ctrl:RightHandIndex2/Blake_Ctrl:RightHandIndex3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandMiddle1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandMiddle1/Blake_Ctrl:RightHandMiddle2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandMiddle1/Blake_Ctrl:RightHandMiddle2/Blake_Ctrl:RightHandMiddle3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandPinky1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandPinky1/Blake_Ctrl:RightHandPinky2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandPinky1/Blake_Ctrl:RightHandPinky2/Blake_Ctrl:RightHandPinky3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandRing1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandRing1/Blake_Ctrl:RightHandRing2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandRing1/Blake_Ctrl:RightHandRing2/Blake_Ctrl:RightHandRing3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandThumb1
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandThumb1/Blake_Ctrl:RightHandThumb2
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:Hips/Blake_Ctrl:Spine/Blake_Ctrl:Spine1/Blake_Ctrl:Spine2/Blake_Ctrl:Spine3/Blake_Ctrl:Spine4/Blake_Ctrl:RightShoulder/Blake_Ctrl:RightArm/Blake_Ctrl:RightForeArm/Blake_Ctrl:RightHand/Blake_Ctrl:RightHandThumb1/Blake_Ctrl:RightHandThumb2/Blake_Ctrl:RightHandThumb3
+        weight: 1
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:HipsEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftAnkleEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftElbowEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftFootEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftHandIndexEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftHandMiddleEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftHandPinkyEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftHandRingEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftHandThumbEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftHipEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftKneeEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftShoulderEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:LeftWristEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightAnkleEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightElbowEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightFootEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightHandIndexEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightHandMiddleEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightHandPinkyEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightHandRingEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightHandThumbEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightHipEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightKneeEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightShoulderEffector
+        weight: 0
+      - path: Blake_Ctrl:Reference/Blake_Ctrl:RightWristEffector
+        weight: 0
+      - path: pCube1
+        weight: 0
+      - path: pCube1/transform8
+        weight: 0
+      - path: pCube2
+        weight: 0
+      - path: pCube2/transform5
+        weight: 0
+      - path: pCube3
+        weight: 0
+      - path: pCube3/transform7
+        weight: 0
+      - path: pCube4
+        weight: 0
+      - path: pCube4/transform9
+        weight: 0
+      - path: pCylinder1
+        weight: 0
+      - path: pCylinder1/transform2
+        weight: 0
+      - path: Plane
+        weight: 0
+      - path: polySurface1
+        weight: 0
+      - path: polySurface1/transform3
+        weight: 0
+      - path: polySurface2
+        weight: 0
+      - path: polySurface2/transform6
+        weight: 0
+      - path: polySurface3
+        weight: 0
+      - path: polySurface3/transform11
+        weight: 0
+      - path: polySurface4
+        weight: 0
+      - path: polySurface4/transform10
+        weight: 0
+      - path: polySurface5
+        weight: 0
+      - path: polySurface5/polySurface6
+        weight: 0
+      - path: polySurface5/polySurface6/transform17
+        weight: 0
+      - path: polySurface5/polySurface7
+        weight: 0
+      - path: polySurface5/polySurface7/transform16
+        weight: 0
+      - path: polySurface5/polySurface8
+        weight: 0
+      - path: polySurface5/polySurface8/transform15
+        weight: 0
+      - path: polySurface5/polySurface9
+        weight: 0
+      - path: polySurface5/polySurface9/transform14
+        weight: 0
+      - path: polySurface5/polySurface10
+        weight: 0
+      - path: polySurface5/polySurface10/transform13
+        weight: 0
+      - path: polySurface5/transform12
+        weight: 0
+      - path: polySurface11
+        weight: 0
+      - path: pPipe1
+        weight: 0
+      - path: pPipe1/transform4
+        weight: 0
+      - path: pSphere1
+        weight: 0
+      - path: pSphere1/transform1
+        weight: 0
+      - path: Stam2_Hips
+        weight: 0
+      - path: Stam2_Hips/Stam2_LeftUpLeg
+        weight: 0
+      - path: Stam2_Hips/Stam2_LeftUpLeg/Stam2_LeftLeg
+        weight: 0
+      - path: Stam2_Hips/Stam2_LeftUpLeg/Stam2_LeftLeg/Stam2_LeftFoot
+        weight: 0
+      - path: Stam2_Hips/Stam2_LeftUpLeg/Stam2_LeftLeg/Stam2_LeftFoot/Stam2_LeftToeBase
+        weight: 0
+      - path: Stam2_Hips/Stam2_RightUpLeg
+        weight: 0
+      - path: Stam2_Hips/Stam2_RightUpLeg/Stam2_RightLeg
+        weight: 0
+      - path: Stam2_Hips/Stam2_RightUpLeg/Stam2_RightLeg/Stam2_RightFoot
+        weight: 0
+      - path: Stam2_Hips/Stam2_RightUpLeg/Stam2_RightLeg/Stam2_RightFoot/Stam2_RightToeBase
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_LeftShoulder
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_LeftShoulder/Stam2_LeftArm
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_LeftShoulder/Stam2_LeftArm/Stam2_LeftForeArm
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_LeftShoulder/Stam2_LeftArm/Stam2_LeftForeArm/Stam2_LeftHand
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_Neck
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_Neck/Stam2_Head
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_RightShoulder
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_RightShoulder/Stam2_RightArm
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_RightShoulder/Stam2_RightArm/Stam2_RightForeArm
+        weight: 0
+      - path: Stam2_Hips/Stam2_Spine/Stam2_Spine1/Stam2_RightShoulder/Stam2_RightArm/Stam2_RightForeArm/Stam2_RightHand
+        weight: 0
+      - path: Sword
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Blake_Ctrl:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:Spine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:Spine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:Neck1
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:Head
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Blake_Ctrl:RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Blake@Run(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanPelvis
+      parentName: Blake@Run(Clone)
+      position: {x: -0.004215456, y: 0.90394515, z: -0.23450635}
+      rotation: {x: -0.54949087, y: 0.42739463, z: 0.5591515, w: -0.45027024}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanLThigh
+      parentName: Blake:Base HumanPelvis
+      position: {x: -0.018083947, y: 0.00881974, z: 0.09804078}
+      rotation: {x: 0.09296714, y: 0.9846464, z: 0.13050184, w: 0.06926719}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanLCalf
+      parentName: Blake:Base HumanLThigh
+      position: {x: -0.49529675, y: 0.0000034694974, z: -0.0000009375396}
+      rotation: {x: 0.0035347408, y: -0.022784611, z: 0.18456356, w: 0.9825501}
+      scale: {x: 1.0000002, y: 0.9999998, z: 1}
+    - name: Blake:Base HumanLFoot
+      parentName: Blake:Base HumanLCalf
+      position: {x: -0.36497694, y: -0.0000000867386, z: -0.0000000010168477}
+      rotation: {x: 0.05710683, y: 0.11939515, z: -0.33308956, w: 0.9335604}
+      scale: {x: 0.9999996, y: 1.0000001, z: 1.0000001}
+    - name: Blake:Base HumanLDigit11
+      parentName: Blake:Base HumanLFoot
+      position: {x: -0.16767293, y: 0.00000018867729, z: 0.00000007084895}
+      rotation: {x: 0.020328784, y: 0.0051276945, z: -0.56561446, w: 0.8244033}
+      scale: {x: 0.99999964, y: 1.0000004, z: 1}
+    - name: Blake:Base HumanPelvisBone001
+      parentName: Blake:Base HumanPelvis
+      position: {x: -0.020305863, y: -0.065055065, z: 0.098099284}
+      rotation: {x: -0.044297017, y: 0.06733717, z: 0.9901453, w: 0.11452386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone001
+      parentName: Blake:Base HumanPelvisBone001
+      position: {x: -0.12283012, y: 0.000000019073486, z: 0.000000019073486}
+      rotation: {x: 0.00000018264953, y: 0.000000046377693, z: 0.02945188, w: 0.9995662}
+      scale: {x: 0.9999998, y: 1, z: 0.99999994}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001
+      parentName: Blake:Base HumanPelvisBone001Bone001
+      position: {x: -0.09980202, y: 0.000000019073486, z: 0.000000009536743}
+      rotation: {x: 0.0000001757315, y: 0.000000037278905, z: 0.021298572, w: 0.99977314}
+      scale: {x: 0.99999976, y: 1.0000001, z: 0.99999994}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone001
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone001
+      position: {x: -0.116232336, y: 0.000000019073486, z: 0}
+      rotation: {x: 0.0000001764856, y: 0.000000033527616, z: -0.00000001490117, w: 1}
+      scale: {x: 0.99999976, y: 1.0000001, z: 0.99999994}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone001
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone001Bone001
+      position: {x: -0.08021, y: 0, z: 0.000000009536743}
+      rotation: {x: 0.0000001764856, y: 0.000000033527616, z: -0.00000001490117, w: 1}
+      scale: {x: 0.99999976, y: 1.0000001, z: 0.99999994}
+    - name: Blake:Base HumanPelvisBone002
+      parentName: Blake:Base HumanPelvis
+      position: {x: -0.020305863, y: -0.065055065, z: -0.098099284}
+      rotation: {x: 0.044296984, y: -0.06733699, z: 0.9901454, w: 0.11452386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone002
+      parentName: Blake:Base HumanPelvisBone002
+      position: {x: -0.12283012, y: 0, z: 0.000000009536743}
+      rotation: {x: 0.0000001957921, y: 0.00000004303802, z: 0.029451877, w: 0.9995662}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone002
+      parentName: Blake:Base HumanPelvisBone001Bone002
+      position: {x: -0.099801935, y: 0, z: 0}
+      rotation: {x: 0.00000020514082, y: 0.000000034179283, z: 0.02129857, w: 0.99977314}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone002
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone002
+      position: {x: -0.11623241, y: 0, z: 0.000000019073486}
+      rotation: {x: 0.00000020582225, y: 0.000000029802326, z: -0.000000007450588,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone2
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone001Bone002
+      position: {x: -0.08021, y: 0, z: 0}
+      rotation: {x: 0.00000020582225, y: 0.000000029802326, z: -0.000000007450588,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1}
+    - name: Blake:Base HumanPelvisBone003
+      parentName: Blake:Base HumanPelvis
+      position: {x: -0.033714063, y: 0.053710222, z: 0.18608147}
+      rotation: {x: -0.11134178, y: 0.64372104, z: 0.736164, w: 0.17688648}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone003
+      parentName: Blake:Base HumanPelvisBone003
+      position: {x: -0.14902084, y: 0.000000076293944, z: 0.000000019073486}
+      rotation: {x: 0.00000017541228, y: 0.000000041963407, z: 0.06876233, w: 0.9976331}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone003
+      parentName: Blake:Base HumanPelvisBone001Bone003
+      position: {x: -0.10245048, y: 0.000000038146972, z: 0.0000000047683715}
+      rotation: {x: 0.00000018268642, y: 0.000000023835634, z: 0.038612876, w: 0.9992543}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone003
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone003
+      position: {x: -0.10945053, y: 0.000000038146972, z: 0.0000000047683715}
+      rotation: {x: 0.00000018839116, y: 0.000000015685037, z: 0.014039779, w: 0.9999015}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone002
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone001Bone003
+      position: {x: -0.077907525, y: 0.000000038146972, z: 0.000000007152557}
+      rotation: {x: 0.00000018766148, y: 0.000000016763774, z: -0.00000018626456,
+        w: 1}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanPelvisBone004
+      parentName: Blake:Base HumanPelvis
+      position: {x: -0.033714063, y: 0.053710222, z: -0.18608147}
+      rotation: {x: 0.11134155, y: -0.6437213, z: 0.7361639, w: 0.17688635}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanPelvisBone001Bone004
+      parentName: Blake:Base HumanPelvisBone004
+      position: {x: -0.14902069, y: -0.000000038146972, z: 0.000000023841856}
+      rotation: {x: 0.00000016749958, y: 0.00000006195578, z: 0.06876268, w: 0.99763304}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone004
+      parentName: Blake:Base HumanPelvisBone001Bone004
+      position: {x: -0.102450594, y: -0.000000038146972, z: 0}
+      rotation: {x: 0.00000017885388, y: 0.000000038599875, z: 0.03861323, w: 0.9992542}
+      scale: {x: 1.0000002, y: 0.99999976, z: 0.99999994}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone004
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone004
+      position: {x: -0.10945045, y: -0.000000038146972, z: 0.0000000047683715}
+      rotation: {x: 0.00000017470532, y: 0.000000028532728, z: 0.014040139, w: 0.9999015}
+      scale: {x: 1.0000002, y: 0.9999997, z: 0.99999994}
+    - name: Blake:Base HumanPelvisBone001Bone001Bone001Bone001Bone003
+      parentName: Blake:Base HumanPelvisBone001Bone001Bone001Bone004
+      position: {x: -0.077907525, y: 0, z: 0}
+      rotation: {x: 0.00000017555436, y: 0.000000022351768, z: 0.00000017136333, w: 1}
+      scale: {x: 1.0000001, y: 0.9999997, z: 0.99999994}
+    - name: Blake:Base HumanRThigh
+      parentName: Blake:Base HumanPelvis
+      position: {x: -0.018083999, y: 0.008819781, z: -0.098041065}
+      rotation: {x: -0.33994615, y: 0.93642676, z: -0.07544188, w: -0.04301231}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanRCalf
+      parentName: Blake:Base HumanRThigh
+      position: {x: -0.4952969, y: 0.000007812836, z: -0.0000013665102}
+      rotation: {x: 0.02719237, y: -0.034477286, z: 0.30336764, w: 0.9518614}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1.0000001}
+    - name: Blake:Base HumanRFoot
+      parentName: Blake:Base HumanRCalf
+      position: {x: -0.3649768, y: 0.00000008315939, z: -0.00000004522988}
+      rotation: {x: 0.0875914, y: -0.07228621, z: -0.6494966, w: 0.7518355}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: Blake:Base HumanRDigit11
+      parentName: Blake:Base HumanRFoot
+      position: {x: -0.16767325, y: -0.0000000111075895, z: 0.000000043575362}
+      rotation: {x: -0.00024273495, y: 0.020429602, z: -0.3705077, w: 0.9286047}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanSpine1
+      parentName: Blake:Base HumanPelvis
+      position: {x: -0.04763416, y: -0.0036444687, z: -0.000000007541006}
+      rotation: {x: -0.01778467, y: -0.0013268498, z: -0.11814704, w: 0.99283594}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    - name: Blake:Base HumanSpine2
+      parentName: Blake:Base HumanSpine1
+      position: {x: -0.1297476, y: -0.000000094977565, z: -0.000000011496928}
+      rotation: {x: -0.0356581, y: 0.00044007946, z: 0.19038637, w: 0.98106134}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000001}
+    - name: Blake:Base HumanSpine3
+      parentName: Blake:Base HumanSpine2
+      position: {x: -0.11052766, y: 0.000000089668845, z: 0.000000020940396}
+      rotation: {x: -0.033992857, y: 0.0107804695, z: 0.08480233, w: 0.9957594}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Blake:Base HumanSpine4
+      parentName: Blake:Base HumanSpine3
+      position: {x: -0.11877595, y: 0.000000010763201, z: 4.4701798e-10}
+      rotation: {x: -0.034160502, y: 0.01023147, z: -0.11881535, w: 0.99227583}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Blake:Base HumanRibcage
+      parentName: Blake:Base HumanSpine4
+      position: {x: -0.16005434, y: -0.00000009999808, z: -0.00000002049967}
+      rotation: {x: -0.03545153, y: 0.0038584217, z: -0.08140783, w: 0.9960427}
+      scale: {x: 0.99999887, y: 0.9999988, z: 0.9999999}
+    - name: Blake:Base HumanLCollarbone
+      parentName: Blake:Base HumanRibcage
+      position: {x: 0.018090704, y: 0.10578746, z: 0.031384733}
+      rotation: {x: 0.064538024, y: 0.7222795, z: 0.11659508, w: 0.6786404}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+    - name: Blake:Base HumanLUpperarm
+      parentName: Blake:Base HumanLCollarbone
+      position: {x: -0.16034095, y: 0.00000016260844, z: -0.000000059808514}
+      rotation: {x: 0.33781338, y: -0.05295215, z: -0.6459054, w: 0.6825573}
+      scale: {x: 1, y: 0.99999976, z: 1.0000002}
+    - name: Blake:Base HumanLForearm
+      parentName: Blake:Base HumanLUpperarm
+      position: {x: -0.31974855, y: 0.0000058279575, z: 0.0000055603186}
+      rotation: {x: -0.16890742, y: -0.12179624, z: -0.48996982, w: 0.84650195}
+      scale: {x: 1.0000002, y: 0.9999997, z: 0.9999999}
+    - name: Blake:Base HumanLPalm
+      parentName: Blake:Base HumanLForearm
+      position: {x: -0.31974825, y: -0.000000056830086, z: 0.00000011245364}
+      rotation: {x: -0.8223382, y: 0.17096895, z: -0.13465211, w: 0.525736}
+      scale: {x: 1, y: 0.9999999, z: 0.9999998}
+    - name: Blake:Base HumanLDigit12
+      parentName: Blake:Base HumanLPalm
+      position: {x: -0.033980127, y: -0.015673224, z: 0.045752108}
+      rotation: {x: 0.35954943, y: 0.4035226, z: 0.08902914, w: 0.8366406}
+      scale: {x: 0.99999857, y: 0.99999624, z: 1.0000049}
+    - name: Blake:Base HumanLDigit13
+      parentName: Blake:Base HumanLDigit12
+      position: {x: -0.05197531, y: -0.00000016587568, z: -0.00000019032986}
+      rotation: {x: 0.055770908, y: 0.021330412, z: 0.14942625, w: 0.98696834}
+      scale: {x: 0.99999934, y: 0.99999523, z: 1.0000052}
+    - name: Blake:Base HumanLDigit14
+      parentName: Blake:Base HumanLDigit13
+      position: {x: -0.057996493, y: -0.00000014786696, z: 0.00000019413893}
+      rotation: {x: 0.05236346, y: -0.12989022, z: 0.008323322, w: 0.99010974}
+      scale: {x: 1.0000017, y: 0.99999535, z: 1.0000029}
+    - name: Blake:Base HumanLDigit21
+      parentName: Blake:Base HumanLPalm
+      position: {x: -0.11734414, y: 0.0000002408788, z: 0.048403874}
+      rotation: {x: 0.04064265, y: 0.055504788, z: 0.51320505, w: 0.8555045}
+      scale: {x: 0.99999976, y: 0.9999999, z: 1.0000002}
+    - name: Blake:Base HumanLDigit22
+      parentName: Blake:Base HumanLDigit21
+      position: {x: -0.06501634, y: 0.00000022496513, z: -0.00000013783318}
+      rotation: {x: 0.00026954478, y: -0.00981817, z: 0.52561307, w: 0.8506671}
+      scale: {x: 0.9999988, y: 1.0000007, z: 1.0000004}
+    - name: Blake:Base HumanLDigit23
+      parentName: Blake:Base HumanLDigit22
+      position: {x: -0.050120834, y: -0.00000003277156, z: -0.000000038509224}
+      rotation: {x: -0.000177864, y: -0.009821298, z: 0.517224, w: 0.8557937}
+      scale: {x: 0.9999976, y: 1.000002, z: 1.0000002}
+    - name: Blake:Base HumanLDigit31
+      parentName: Blake:Base HumanLPalm
+      position: {x: -0.11800214, y: 0.01527346, z: 0.009531871}
+      rotation: {x: 0.022961373, y: 0.028800331, z: 0.51380306, w: 0.8571171}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Blake:Base HumanLDigit32
+      parentName: Blake:Base HumanLDigit31
+      position: {x: -0.073984794, y: 0.00000021847403, z: -0.000000086659824}
+      rotation: {x: 0.0031607442, y: -0.01108184, z: 0.5254437, w: 0.8507504}
+      scale: {x: 0.99999905, y: 1.0000007, z: 1.0000001}
+    - name: Blake:Base HumanLDigit33
+      parentName: Blake:Base HumanLDigit32
+      position: {x: -0.0569056, y: 0.00000019344797, z: -0.00000005190884}
+      rotation: {x: -0.0032338563, y: -0.011215695, z: 0.5170453, w: 0.8558785}
+      scale: {x: 0.9999978, y: 1.0000019, z: 1.0000002}
+    - name: Blake:Base HumanLDigit41
+      parentName: Blake:Base HumanLPalm
+      position: {x: -0.1165179, y: 0.010506853, z: -0.024945736}
+      rotation: {x: -0.015155246, y: -0.03941673, z: 0.51440805, w: 0.8565051}
+      scale: {x: 1.0000002, y: 0.9999999, z: 0.9999996}
+    - name: Blake:Base HumanLDigit42
+      parentName: Blake:Base HumanLDigit41
+      position: {x: -0.06536076, y: 0.00000028823473, z: -0.00000007361502}
+      rotation: {x: 0.024301387, y: 0.02632313, z: 0.5242277, w: 0.8508243}
+      scale: {x: 0.99999946, y: 1.0000005, z: 0.99999976}
+    - name: Blake:Base HumanLDigit43
+      parentName: Blake:Base HumanLDigit42
+      position: {x: -0.051270977, y: 0.00000010509673, z: -0.000000017146684}
+      rotation: {x: -0.0022929132, y: -0.027388345, z: 0.516356, w: 0.8559329}
+      scale: {x: 0.9999983, y: 1.0000015, z: 0.99999964}
+    - name: Blake:Base HumanLDigit51
+      parentName: Blake:Base HumanLPalm
+      position: {x: -0.118631035, y: 0.0030154067, z: -0.06260791}
+      rotation: {x: -0.039961413, y: -0.08223475, z: 0.50014687, w: 0.86110026}
+      scale: {x: 1.0000007, y: 0.99999964, z: 0.9999992}
+    - name: Blake:Base HumanLDigit52
+      parentName: Blake:Base HumanLDigit51
+      position: {x: -0.049028944, y: 0.00000015757186, z: -0.00000009164796}
+      rotation: {x: 0.0059239366, y: -0.00997721, z: 0.5226758, w: 0.8524526}
+      scale: {x: 1.0000006, y: 0.99999964, z: 0.9999993}
+    - name: Blake:Base HumanLDigit53
+      parentName: Blake:Base HumanLDigit52
+      position: {x: -0.045597468, y: 0.000000106112154, z: -0.000000065321125}
+      rotation: {x: -0.005873345, y: -0.009489454, z: 0.55690897, w: 0.8304986}
+      scale: {x: 0.9999997, y: 1.0000005, z: 0.9999993}
+    - name: Blake:Base HumanNeck1
+      parentName: Blake:Base HumanRibcage
+      position: {x: -0.00082752644, y: -0.0036446, z: -0.000000042266233}
+      rotation: {x: 0.014602038, y: -0.008276523, z: -0.07783473, w: 0.996825}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanNeck2
+      parentName: Blake:Base HumanNeck1
+      position: {x: -0.08707123, y: 0.00000029437788, z: 0.00000005559279}
+      rotation: {x: 0.015369576, y: -0.0067492886, z: 0.024031147, w: 0.9995703}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake:Base HumanHead
+      parentName: Blake:Base HumanNeck2
+      position: {x: -0.08707097, y: 0.000000034022936, z: -0.000000036732242}
+      rotation: {x: 0.056904502, y: -0.022419939, z: 0.14200507, w: 0.9879746}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Blake:Base HumanRCollarbone
+      parentName: Blake:Base HumanRibcage
+      position: {x: 0.018090686, y: 0.10578755, z: -0.031384792}
+      rotation: {x: -0.03531712, y: -0.7418874, z: 0.055736292, w: 0.66727}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Blake:Base HumanRUpperarm
+      parentName: Blake:Base HumanRCollarbone
+      position: {x: -0.16034093, y: -0.0000001601437, z: -0.00000015897912}
+      rotation: {x: -0.3921392, y: -0.15080526, z: -0.30963454, w: 0.85300124}
+      scale: {x: 1.0000002, y: 0.9999999, z: 0.9999998}
+    - name: Blake:Base HumanRForearm
+      parentName: Blake:Base HumanRUpperarm
+      position: {x: -0.3197486, y: -0.0000004359578, z: -0.000002702883}
+      rotation: {x: -0.009542932, y: -0.48753417, z: 0.73591846, w: -0.46972695}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: Blake:Base HumanRPalm
+      parentName: Blake:Base HumanRForearm
+      position: {x: -0.31974846, y: -0.00000006871463, z: 0.000000010961412}
+      rotation: {x: 0.9727762, y: 0.0032848045, z: -0.20689106, w: 0.10436395}
+      scale: {x: 1.0000005, y: 0.99999976, z: 0.9999997}
+    - name: Blake:Base HumanRDigit12
+      parentName: Blake:Base HumanRPalm
+      position: {x: -0.033980288, y: -0.015673343, z: -0.045752052}
+      rotation: {x: -0.38787365, y: -0.42241243, z: 0.2557261, w: 0.778284}
+      scale: {x: 1.0000005, y: 1.0000026, z: 0.9999969}
+    - name: Blake:Base HumanRDigit13
+      parentName: Blake:Base HumanRDigit12
+      position: {x: -0.051975407, y: 0.00000006275004, z: -0.00000014753121}
+      rotation: {x: -0.01929513, y: -0.12377029, z: 0.29412282, w: 0.9475233}
+      scale: {x: 0.99999964, y: 1.0000035, z: 0.9999968}
+    - name: Blake:Base HumanRDigit14
+      parentName: Blake:Base HumanRDigit13
+      position: {x: -0.057996683, y: 0.00000015195157, z: -0.00000007671425}
+      rotation: {x: -0.05761884, y: 0.03479313, z: 0.16081452, w: 0.98468685}
+      scale: {x: 0.999997, y: 1.0000044, z: 0.99999875}
+    - name: Blake:Base HumanRDigit21
+      parentName: Blake:Base HumanRPalm
+      position: {x: -0.117344044, y: -0.00000015722176, z: -0.048404038}
+      rotation: {x: -0.044684775, y: -0.05160101, z: 0.5641976, w: 0.82281333}
+      scale: {x: 1.0000013, y: 0.99999905, z: 0.9999996}
+    - name: Blake:Base HumanRDigit22
+      parentName: Blake:Base HumanRDigit21
+      position: {x: -0.06501641, y: -0.00000035173562, z: 0.00000010854468}
+      rotation: {x: -0.00029982743, y: 0.010822168, z: 0.57635444, w: 0.8171281}
+      scale: {x: 1.0000025, y: 0.99999774, z: 0.9999996}
+    - name: Blake:Base HumanRDigit23
+      parentName: Blake:Base HumanRDigit22
+      position: {x: -0.050120737, y: -0.00000019746184, z: -0.00000002832465}
+      rotation: {x: 0.00019342377, y: 0.010823418, z: 0.5682923, w: 0.8227555}
+      scale: {x: 1.0000036, y: 0.9999968, z: 0.9999996}
+    - name: Blake:Base HumanRDigit31
+      parentName: Blake:Base HumanRPalm
+      position: {x: -0.1180022, y: 0.015272683, z: -0.009531959}
+      rotation: {x: -0.025708362, y: -0.025529344, z: 0.5648906, w: 0.82437}
+      scale: {x: 1.0000013, y: 0.999999, z: 0.9999997}
+    - name: Blake:Base HumanRDigit32
+      parentName: Blake:Base HumanRDigit31
+      position: {x: -0.07398505, y: -0.0000002862575, z: 0.0000001043328}
+      rotation: {x: -0.0035090337, y: 0.012905797, z: 0.57616705, w: 0.81722254}
+      scale: {x: 1.0000027, y: 0.99999756, z: 0.99999976}
+    - name: Blake:Base HumanRDigit33
+      parentName: Blake:Base HumanRDigit32
+      position: {x: -0.05690579, y: -0.00000016676339, z: 0.00000014765098}
+      rotation: {x: 0.0035514783, y: 0.013050832, z: 0.5680962, w: 0.822851}
+      scale: {x: 1.0000038, y: 0.9999964, z: 0.9999999}
+    - name: Blake:Base HumanRDigit41
+      parentName: Blake:Base HumanRPalm
+      position: {x: -0.11651772, y: 0.010505813, z: 0.024945792}
+      rotation: {x: 0.016471371, y: 0.040252443, z: 0.5655336, w: 0.8235777}
+      scale: {x: 1.0000015, y: 0.9999989, z: 0.9999996}
+    - name: Blake:Base HumanRDigit42
+      parentName: Blake:Base HumanRDigit41
+      position: {x: -0.065361, y: -0.00000029049627, z: -0.000000048139597}
+      rotation: {x: -0.027333695, y: -0.022409642, z: 0.5748658, w: 0.81748396}
+      scale: {x: 1.0000031, y: 0.9999974, z: 0.9999997}
+    - name: Blake:Base HumanRDigit43
+      parentName: Blake:Base HumanRDigit42
+      position: {x: -0.051271185, y: -0.00000020047825, z: 0.000000164752}
+      rotation: {x: 0.0020750163, y: 0.02987806, z: 0.56738365, w: 0.8229088}
+      scale: {x: 1.0000044, y: 0.99999595, z: 0.9999998}
+    - name: Blake:Base HumanRDigit51
+      parentName: Blake:Base HumanRPalm
+      position: {x: -0.118630975, y: 0.0030142511, z: 0.06260779}
+      rotation: {x: 0.044071447, y: 0.08119115, z: 0.5516231, w: 0.8289618}
+      scale: {x: 1.0000013, y: 0.9999991, z: 0.9999995}
+    - name: Blake:Base HumanRDigit52
+      parentName: Blake:Base HumanRDigit51
+      position: {x: -0.049029045, y: -0.00000020047118, z: 0.000000025881048}
+      rotation: {x: -0.006505497, y: 0.012316606, z: 0.57348734, w: 0.819096}
+      scale: {x: 1.0000025, y: 0.9999979, z: 0.99999946}
+    - name: Blake:Base HumanRDigit53
+      parentName: Blake:Base HumanRDigit52
+      position: {x: -0.045597572, y: -0.00000009242689, z: -0.00000009566648}
+      rotation: {x: 0.0065614833, y: 0.011773838, z: 0.6063247, w: 0.795103}
+      scale: {x: 1.000004, y: 0.99999636, z: 0.99999946}
+    - name: Blake:Body
+      parentName: Blake@Run(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 8.837194, y: 8.837194, z: 8.837194}
+    - name: Blake_Ctrl:Reference
+      parentName: Blake@Run(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:ChestEndEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.011128925, y: 1.4048581, z: -0.054002132}
+      rotation: {x: 0.15495564, y: 0.17419991, z: 0.030245112, w: 0.9719714}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:ChestOriginEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.004784853, y: 0.95113975, z: -0.22711448}
+      rotation: {x: 0.12159518, y: 0.033928607, z: 0.009229928, w: 0.99195683}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:HeadEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.016276758, y: 1.6123128, z: -0.07262813}
+      rotation: {x: 0.061788905, y: 0.097392224, z: -0.011896218, w: 0.99325496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Hips
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.0042153057, y: 0.90394515, z: -0.00788939}
+      rotation: {x: -0.020999385, y: -0.067205414, z: 0.008848111, w: 0.99747896}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftUpLeg
+      parentName: Blake_Ctrl:Hips
+      position: {x: -0.09804078, y: 0.018114612, z: 0.008756582}
+      rotation: {x: 0.08758318, y: -0.14421351, z: -0.027606497, w: 0.9852764}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftLeg
+      parentName: Blake_Ctrl:LeftUpLeg
+      position: {x: -0.04208661, y: -0.493495, z: 0.003203108}
+      rotation: {x: 0.08487186, y: 0.0031114514, z: -0.042236667, w: 0.99549145}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftFoot
+      parentName: Blake_Ctrl:LeftLeg
+      position: {x: -0.013942754, y: -0.3613099, z: -0.0496892}
+      rotation: {x: 0.26685217, y: 0.13330247, z: 0.07905744, w: 0.95119417}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftToeBase
+      parentName: Blake_Ctrl:LeftFoot
+      position: {x: -0.012001876, y: -0.08588154, z: 0.14350788}
+      rotation: {x: -0.3233104, y: 0.013989557, z: -0.050349183, w: 0.944849}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightUpLeg
+      parentName: Blake_Ctrl:Hips
+      position: {x: 0.098041065, y: 0.01811466, z: 0.008756641}
+      rotation: {x: -0.09048316, y: 0.090947375, z: -0.01844059, w: 0.9915651}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightLeg
+      parentName: Blake_Ctrl:RightUpLeg
+      position: {x: 0.042083777, y: -0.4934954, z: 0.0032059848}
+      rotation: {x: 0.23303111, y: 0.039781217, z: -0.005662781, w: 0.9716388}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightFoot
+      parentName: Blake_Ctrl:RightLeg
+      position: {x: 0.013961824, y: -0.36130014, z: -0.049752727}
+      rotation: {x: -0.37450948, y: -0.048289485, z: -0.106833145, w: 0.91978115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightToeBase
+      parentName: Blake_Ctrl:RightFoot
+      position: {x: 0.011922091, y: -0.08587011, z: 0.14352177}
+      rotation: {x: -0.1093428, y: 0.01756567, z: 0.02207092, w: 0.9936038}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Spine
+      parentName: Blake_Ctrl:Hips
+      position: {x: 0.000000008761526, y: 0.047621153, z: -0.0038106446}
+      rotation: {x: 0.0045326473, y: 0.017822603, z: 0.00064099947, w: 0.9998307}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Spine1
+      parentName: Blake_Ctrl:Spine
+      position: {x: 0.000000008671065, y: 0.12649666, z: 0.0288626}
+      rotation: {x: 0.009057281, y: 0.035637766, z: 0.0012809619, w: 0.99932295}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Spine2
+      parentName: Blake_Ctrl:Spine1
+      position: {x: -0.000000004286627, y: 0.10879789, z: -0.019478235}
+      rotation: {x: 0.0090568755, y: 0.03563833, z: 0.0012809692, w: 0.9993229}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Spine3
+      parentName: Blake_Ctrl:Spine2
+      position: {x: 0.0000000073001143, y: 0.11094316, z: -0.04241897}
+      rotation: {x: 0.009055683, y: 0.035636835, z: 0.001280745, w: 0.99932295}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Spine4
+      parentName: Blake_Ctrl:Spine3
+      position: {x: 0.00000002061706, y: 0.15837546, z: -0.023122817}
+      rotation: {x: 0.009056681, y: 0.03563787, z: 0.0012807401, w: 0.9993229}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftShoulder
+      parentName: Blake_Ctrl:Spine4
+      position: {x: -0.031384762, y: -0.018090667, z: 0.10578746}
+      rotation: {x: 0.01249027, y: 0.07704276, z: 0.094069295, w: 0.9925016}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftArm
+      parentName: Blake_Ctrl:LeftShoulder
+      position: {x: -0.1462611, y: 0.015908234, z: -0.06374826}
+      rotation: {x: 0.30624878, y: -0.107455894, z: -0.17494923, w: 0.929547}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftForeArm
+      parentName: Blake_Ctrl:LeftArm
+      position: {x: -0.30516696, y: -0.09270433, z: -0.022763086}
+      rotation: {x: -0.09634301, y: -0.09833007, z: 0.0040887776, w: 0.9904708}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHand
+      parentName: Blake_Ctrl:LeftForeArm
+      position: {x: -0.30596733, y: -0.08945143, z: 0.024927283}
+      rotation: {x: -0.27355424, y: 0.23276593, z: 0.053183798, w: 0.93175083}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandIndex1
+      parentName: Blake_Ctrl:LeftHand
+      position: {x: -0.11850805, y: -0.024347207, z: 0.038413994}
+      rotation: {x: 0.029226203, y: -0.032415126, z: -0.0220998, w: 0.9988026}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandIndex2
+      parentName: Blake_Ctrl:LeftHandIndex1
+      position: {x: -0.06298908, y: -0.015366657, z: 0.0048333546}
+      rotation: {x: -0.0003977417, y: -0.0006811729, z: -0.011758822, w: 0.9999306}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandIndex3
+      parentName: Blake_Ctrl:LeftHandIndex2
+      position: {x: -0.04782023, y: -0.014525249, z: 0.0037860458}
+      rotation: {x: 0.03627753, y: 0.011019255, z: 0.50048697, w: 0.86491346}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandMiddle1
+      parentName: Blake_Ctrl:LeftHand
+      position: {x: -0.118957564, y: -0.009856992, z: -0.0007595519}
+      rotation: {x: 0.0091438275, y: -0.0100134285, z: -0.021485178, w: 0.9996772}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandMiddle2
+      parentName: Blake_Ctrl:LeftHandMiddle1
+      position: {x: -0.071858004, y: -0.017557962, z: 0.0013751991}
+      rotation: {x: 0.0051480415, y: -0.005236259, z: -0.011655273, w: 0.99990517}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandMiddle3
+      parentName: Blake_Ctrl:LeftHandMiddle2
+      position: {x: -0.05442457, y: -0.016520847, z: 0.0018078659}
+      rotation: {x: 0.0152580235, y: 0.004631098, z: 0.501668, w: 0.8649133}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandPinky1
+      parentName: Blake_Ctrl:LeftHand
+      position: {x: -0.110719785, y: -0.022530802, z: -0.072357826}
+      rotation: {x: -0.08449697, y: 0.09542068, z: -0.018782917, w: 0.9916665}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandPinky2
+      parentName: Blake_Ctrl:LeftHandPinky1
+      position: {x: -0.0464691, y: -0.01025847, z: -0.01179941}
+      rotation: {x: 0.010785336, y: -0.008688558, z: -0.006386264, w: 0.9998837}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandPinky3
+      parentName: Blake_Ctrl:LeftHandPinky2
+      position: {x: -0.042914398, y: -0.011745383, z: -0.009976525}
+      rotation: {x: -0.10592255, y: -0.028990384, z: 0.48976105, w: 0.8649128}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandRing1
+      parentName: Blake_Ctrl:LeftHand
+      position: {x: -0.113510594, y: -0.014470814, z: -0.03485751}
+      rotation: {x: -0.04690303, y: 0.052503735, z: -0.026949309, w: 0.9971546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandRing2
+      parentName: Blake_Ctrl:LeftHandRing1
+      position: {x: -0.06281387, y: -0.015694268, z: -0.008951892}
+      rotation: {x: 0.046820704, y: -0.043374665, z: -0.006482174, w: 0.9979401}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandRing3
+      parentName: Blake_Ctrl:LeftHandRing2
+      position: {x: -0.049034167, y: -0.0149202105, z: -0.0013219889}
+      rotation: {x: -0.012382557, y: -0.0037668445, z: 0.5017547, w: 0.8649131}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandThumb1
+      parentName: Blake_Ctrl:LeftHand
+      position: {x: -0.033803012, y: -0.022125585, z: 0.043143563}
+      rotation: {x: -0.048350576, y: 0.04904257, z: -0.09853045, w: 0.99274814}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandThumb2
+      parentName: Blake_Ctrl:LeftHandThumb1
+      position: {x: -0.035847712, y: -0.022640519, z: 0.0300628}
+      rotation: {x: 0.0037782588, y: 0.0516989, z: -0.05330389, w: 0.9972321}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandThumb3
+      parentName: Blake_Ctrl:LeftHandThumb2
+      position: {x: -0.03909982, y: -0.032764673, z: 0.027590865}
+      rotation: {x: 0.06363768, y: 0.05047849, z: 0.04418482, w: 0.9957158}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Neck
+      parentName: Blake_Ctrl:Spine4
+      position: {x: 0.00000004331613, y: 0.0008275251, z: -0.0036446}
+      rotation: {x: -0.024024932, y: -0.013683931, z: -0.009719758, w: 0.9995705}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Neck1
+      parentName: Blake_Ctrl:Neck
+      position: {x: -0.000000060477944, y: 0.08526725, z: 0.01763222}
+      rotation: {x: -0.024030894, y: -0.0136843035, z: -0.009721754, w: 0.9995703}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:Head
+      parentName: Blake_Ctrl:Neck1
+      position: {x: 0.00000003041299, y: 0.08526704, z: 0.017631922}
+      rotation: {x: -0.04071291, y: -0.054327123, z: -0.028095163, w: 0.99729717}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightShoulder
+      parentName: Blake_Ctrl:Spine4
+      position: {x: 0.031384766, y: -0.018090649, z: 0.10578755}
+      rotation: {x: 0.034381256, y: -0.14031687, z: -0.1162458, w: 0.9826577}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightArm
+      parentName: Blake_Ctrl:RightShoulder
+      position: {x: 0.14626096, y: 0.015907846, z: -0.06374861}
+      rotation: {x: 0.26605245, y: -0.01506504, z: 0.19605869, w: 0.94368964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightForeArm
+      parentName: Blake_Ctrl:RightArm
+      position: {x: 0.305357, y: -0.09180615, z: -0.023831239}
+      rotation: {x: 0.035131957, y: 0.09358462, z: 0.0117070535, w: 0.99492246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHand
+      parentName: Blake_Ctrl:RightForeArm
+      position: {x: 0.30618516, y: -0.08841219, z: 0.025943263}
+      rotation: {x: -0.6650703, y: -0.032352887, z: -0.035567317, w: 0.7452314}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandIndex1
+      parentName: Blake_Ctrl:RightHand
+      position: {x: 0.11847018, y: -0.023919046, z: 0.03879809}
+      rotation: {x: 0.032737803, y: 0.032530475, z: 0.025291683, w: 0.99861425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandIndex2
+      parentName: Blake_Ctrl:RightHandIndex1
+      position: {x: 0.06302457, y: -0.015154086, z: 0.0050398586}
+      rotation: {x: -0.0006176044, y: 0.0007532049, z: 0.014793438, w: 0.99989015}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandIndex3
+      parentName: Blake_Ctrl:RightHandIndex2
+      position: {x: 0.047856186, y: -0.014363711, z: 0.003945511}
+      rotation: {x: 0.041737076, y: -0.0125274295, z: -0.5518625, w: 0.83279586}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandMiddle1
+      parentName: Blake_Ctrl:RightHand
+      position: {x: 0.11899134, y: -0.009463769, z: -0.00038740347}
+      rotation: {x: 0.010203357, y: 0.010068634, z: 0.024554227, w: 0.99959576}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandMiddle2
+      parentName: Blake_Ctrl:RightHandMiddle1
+      position: {x: 0.07191142, y: -0.017319182, z: 0.0016107804}
+      rotation: {x: 0.005580561, y: 0.0051852823, z: 0.014723442, w: 0.9998627}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandMiddle3
+      parentName: Blake_Ctrl:RightHandMiddle2
+      position: {x: 0.054473326, y: -0.016339574, z: 0.0019892217}
+      rotation: {x: 0.018535359, y: -0.005560136, z: -0.5532419, w: 0.83279586}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandPinky1
+      parentName: Blake_Ctrl:RightHand
+      position: {x: 0.11101409, y: -0.022230864, z: -0.07199863}
+      rotation: {x: -0.09473654, y: -0.09569613, z: 0.022547193, w: 0.99063563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandPinky2
+      parentName: Blake_Ctrl:RightHandPinky1
+      position: {x: 0.046538677, y: -0.010115794, z: -0.011647958}
+      rotation: {x: 0.012360038, y: 0.008409988, z: 0.009151677, w: 0.9998464}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandPinky3
+      parentName: Blake_Ctrl:RightHandPinky2
+      position: {x: 0.042983364, y: -0.011612961, z: -0.009834426}
+      rotation: {x: -0.115264535, y: 0.031141505, z: -0.54055107, w: 0.8327958}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandRing1
+      parentName: Blake_Ctrl:RightHand
+      position: {x: 0.11366352, y: -0.014127123, z: -0.034497645}
+      rotation: {x: -0.052735332, y: -0.052572004, z: 0.030185822, w: 0.99676675}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandRing2
+      parentName: Blake_Ctrl:RightHandRing1
+      position: {x: 0.062892705, y: -0.015495057, z: -0.0087454785}
+      rotation: {x: 0.05166881, y: 0.042585474, z: 0.009187584, w: 0.9977136}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandRing3
+      parentName: Blake_Ctrl:RightHandRing2
+      position: {x: 0.049087226, y: -0.014759694, z: -0.0011586107}
+      rotation: {x: -0.011979527, y: 0.0036015974, z: -0.55344003, w: 0.8327951}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandThumb1
+      parentName: Blake_Ctrl:RightHand
+      position: {x: 0.033744432, y: -0.021973884, z: 0.04326692}
+      rotation: {x: 0.11521811, y: -0.022684073, z: -0.089673996, w: 0.98902416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandThumb2
+      parentName: Blake_Ctrl:RightHandThumb1
+      position: {x: 0.035830516, y: -0.022493847, z: 0.030193487}
+      rotation: {x: -0.029103259, y: -0.04158279, z: 0.037362177, w: 0.99801207}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandThumb3
+      parentName: Blake_Ctrl:RightHandThumb2
+      position: {x: 0.039124086, y: -0.03260929, z: 0.027740898}
+      rotation: {x: 0.14088744, y: -0.059163466, z: -0.20372847, w: 0.96702904}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:HipsEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.0040862462, y: 0.91952384, z: -0.22177425}
+      rotation: {x: 0.11722115, y: 0.016279714, z: 0.006579164, w: 0.9929506}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftAnkleEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.17872988, y: 0.21786147, z: -0.6869223}
+      rotation: {x: 0.52865267, y: -0.02391956, z: 0.07849965, w: 0.84486216}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftElbowEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.19069916, y: 1.1948067, z: 0.22465223}
+      rotation: {x: 0.0011439392, y: 0.92402834, z: 0.21528898, w: 0.31594452}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftFootEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.17089519, y: 0.051011905, z: -0.70166713}
+      rotation: {x: 0.22645038, y: -0.00954365, z: 0.03129437, w: 0.9734731}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandIndexEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.20535739, y: 1.0569874, z: 0.2504167}
+      rotation: {x: 0.8687093, y: 0.11480174, z: 0.001421684, w: -0.48183262}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandMiddleEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.20156567, y: 1.0247425, z: 0.27251235}
+      rotation: {x: 0.87115836, y: 0.09327539, z: 0.041773025, w: -0.48024762}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandPinkyEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.1901879, y: 0.9741644, z: 0.32584083}
+      rotation: {x: 0.8615929, y: -0.025567064, z: 0.25528643, w: -0.43798727}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandRingEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.19504102, y: 1.001159, z: 0.29574347}
+      rotation: {x: -0.8537025, y: -0.05536175, z: -0.11827343, w: 0.50412166}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHandThumbEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.19867767, y: 1.1153642, z: 0.2402008}
+      rotation: {x: -0.032491922, y: 0.96276194, z: 0.2593204, w: -0.06918568}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftHipEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.10206956, y: 0.9178688, z: -0.21875581}
+      rotation: {x: 0.20296037, y: -0.12334457, z: -0.039260294, w: 0.9705936}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftKneeEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.15646563, y: 0.47057846, z: -0.4245099}
+      rotation: {x: 0.31825018, y: -0.11512407, z: -0.07123002, w: 0.9382908}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftShoulderEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: -0.17737897, y: 1.3848338, z: -0.032172203}
+      rotation: {x: 0.23697244, y: 0.7511674, z: 0.014107634, w: 0.6159485}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:LeftWristEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.080733374, y: 1.0812777, z: 0.34985623}
+      rotation: {x: -0.086330675, y: 0.8755513, z: 0.47043693, w: 0.06816231}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightAnkleEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.16388385, y: 0.12060112, z: -0.06096639}
+      rotation: {x: -0.1394719, y: 0.12531666, z: -0.087306835, w: 0.9783766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightElbowEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.4450775, y: 1.2394776, z: -0.18269417}
+      rotation: {x: -0.1571328, y: -0.8369557, z: 0.02733558, w: 0.5235142}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightFootEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.2022747, y: 0.07294982, z: 0.095160924}
+      rotation: {x: -0.2412588, y: 0.1543256, z: -0.053902175, w: 0.95659417}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandIndexEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.15626341, y: 1.3260602, z: 0.10812082}
+      rotation: {x: 0.7535572, y: -0.46131012, z: -0.10366844, w: -0.4567246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandMiddleEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.1530197, y: 1.2908461, z: 0.12386297}
+      rotation: {x: 0.74676156, y: -0.4415121, z: -0.1365027, w: -0.47831085}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandPinkyEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.15702315, y: 1.2316335, z: 0.16144721}
+      rotation: {x: -0.69829047, y: 0.31047833, z: 0.31587046, w: 0.56233394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandRingEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.15455534, y: 1.2634, z: 0.13899997}
+      rotation: {x: -0.70995206, y: 0.41192272, z: 0.17733593, w: 0.54299146}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHandThumbEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.15968625, y: 1.3331736, z: 0.06489742}
+      rotation: {x: 0.003009039, y: 0.9897899, z: 0.10942074, w: -0.09129086}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightHipEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.09389707, y: 0.9211789, z: -0.22479269}
+      rotation: {x: -0.23042342, y: 0.08277742, z: 0.019462166, w: 0.969368}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightKneeEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.17326443, y: 0.4819142, z: -0.010086422}
+      rotation: {x: 0.0007615832, y: 0.12222282, z: -0.0150353545, w: 0.99238855}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightShoulderEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.18180406, y: 1.4158366, z: -0.13987319}
+      rotation: {x: 0.36381108, y: -0.14135578, z: -0.17698517, w: 0.9035133}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Blake_Ctrl:RightWristEffector
+      parentName: Blake_Ctrl:Reference
+      position: {x: 0.27815363, y: 1.2479452, z: 0.08990581}
+      rotation: {x: 0.55849046, y: 0.65349513, z: 0.4448438, w: -0.25128976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube1
+      parentName: Blake@Run(Clone)
+      position: {x: -1.3366219, y: 0.0272835, z: -1.3325086}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform8
+      parentName: pCube1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube2
+      parentName: Blake@Run(Clone)
+      position: {x: -2.7863512, y: 0.17860182, z: -1.3217566}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform5
+      parentName: pCube2
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube3
+      parentName: Blake@Run(Clone)
+      position: {x: 0.20986623, y: -0.050763946, z: -1.3340452}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform7
+      parentName: pCube3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube4
+      parentName: Blake@Run(Clone)
+      position: {x: -4.050488, y: 0.034674995, z: -1.3379337}
+      rotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 0.9946535, y: 0.9946535, z: 0.9946535}
+    - name: transform9
+      parentName: pCube4
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCylinder1
+      parentName: Blake@Run(Clone)
+      position: {x: -1.1487393, y: 0.07466964, z: 0.02802005}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform2
+      parentName: pCylinder1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Plane
+      parentName: Blake@Run(Clone)
+      position: {x: -0.020042403, y: -0.049153645, z: -0.93905836}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 5.2, y: 5.2, z: 5.2}
+    - name: polySurface1
+      parentName: Blake@Run(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform3
+      parentName: polySurface1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface2
+      parentName: Blake@Run(Clone)
+      position: {x: -2.559432, y: 0.028835075, z: -1.3297105}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.7538243, y: 0.7538243, z: 0.7538243}
+    - name: transform6
+      parentName: polySurface2
+      position: {x: 1.1487393, y: 0.028020076, z: -0.056086402}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface3
+      parentName: Blake@Run(Clone)
+      position: {x: -2.4117796, y: 0.028835077, z: -1.3297104}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1.0294015, y: 1.0294015, z: 1.0294015}
+    - name: transform11
+      parentName: polySurface3
+      position: {x: 2.445182, y: -1.3297104, z: -0.028835077}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface4
+      parentName: Blake@Run(Clone)
+      position: {x: -1.1150657, y: 0.027283486, z: -1.3325086}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform10
+      parentName: polySurface4
+      position: {x: 1.1150657, y: -1.3325086, z: -0.027283486}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface5
+      parentName: Blake@Run(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.39813083, y: 0.39813083, z: 0.39813083}
+    - name: polySurface6
+      parentName: polySurface5
+      position: {x: 1.2811309, y: -1.3325086, z: -0.034674976}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform17
+      parentName: polySurface6
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface7
+      parentName: polySurface5
+      position: {x: 1.2811309, y: -1.3325086, z: -0.034674976}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform16
+      parentName: polySurface7
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface8
+      parentName: polySurface5
+      position: {x: 1.2811309, y: -1.3325086, z: -0.034674976}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform15
+      parentName: polySurface8
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface9
+      parentName: polySurface5
+      position: {x: 1.2811309, y: -1.3325086, z: -0.034674976}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform14
+      parentName: polySurface9
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface10
+      parentName: polySurface5
+      position: {x: 1.2811309, y: -1.3325086, z: -0.034674976}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform13
+      parentName: polySurface10
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform12
+      parentName: polySurface5
+      position: {x: 1.2811309, y: -1.3325086, z: -0.034674976}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface11
+      parentName: Blake@Run(Clone)
+      position: {x: 0.21195379, y: 1.8000278, z: -0.19290678}
+      rotation: {x: 0.39119595, y: 0.64459413, z: 0.2677841, w: 0.59979653}
+      scale: {x: 1, y: 0.56263953, z: 1}
+    - name: pPipe1
+      parentName: Blake@Run(Clone)
+      position: {x: -1.1487393, y: 0.077871256, z: 0.02802005}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform4
+      parentName: pPipe1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pSphere1
+      parentName: Blake@Run(Clone)
+      position: {x: -1.1487393, y: 0.12751946, z: 0.02802005}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform1
+      parentName: pSphere1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_Hips
+      parentName: Blake@Run(Clone)
+      position: {x: -0.19175965, y: 0.92809856, z: -3.0422108}
+      rotation: {x: 0.10479383, y: 0.032408986, z: 0.01762408, w: 0.9938095}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftUpLeg
+      parentName: Stam2_Hips
+      position: {x: -0.093446866, y: 0, z: 0}
+      rotation: {x: 0.07082298, y: -0.12004352, z: -0.06973268, w: 0.98778087}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftLeg
+      parentName: Stam2_LeftUpLeg
+      position: {x: -0, y: -0.42506415, z: 0}
+      rotation: {x: 0.20881166, y: 0.0208705, z: -0.02203198, w: 0.9774849}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftFoot
+      parentName: Stam2_LeftLeg
+      position: {x: 0.00055527687, y: -0.44949076, z: -0.002236843}
+      rotation: {x: 0.16208576, y: 0.11704812, z: 0.09506264, w: 0.9751877}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftToeBase
+      parentName: Stam2_LeftFoot
+      position: {x: -0, y: -0.06074046, z: 0.1401703}
+      rotation: {x: -0.29607108, y: -0.008599938, z: -0.04288343, w: 0.954164}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightUpLeg
+      parentName: Stam2_Hips
+      position: {x: 0.093446866, y: 0, z: 0}
+      rotation: {x: -0.2685382, y: 0.040392213, z: 0.016224323, w: 0.96228504}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightLeg
+      parentName: Stam2_RightUpLeg
+      position: {x: -0, y: -0.42506415, z: 0}
+      rotation: {x: 0.14415544, y: 0.002380214, z: -0.01403099, w: 0.9894527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightFoot
+      parentName: Stam2_RightLeg
+      position: {x: 0.00061169267, y: -0.41331878, z: -0.000057697296}
+      rotation: {x: -0.11829822, y: 0.045032278, z: -0.110231005, w: 0.9858128}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightToeBase
+      parentName: Stam2_RightFoot
+      position: {x: -0, y: -0.06074046, z: 0.1401703}
+      rotation: {x: -0.11556238, y: 0.007891014, z: 0.03213486, w: 0.9927489}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_Spine
+      parentName: Stam2_Hips
+      position: {x: -0, y: 0.07662643, z: 0}
+      rotation: {x: 0.0022051022, y: 0.10197507, z: -0.03594541, w: 0.9941349}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_Spine1
+      parentName: Stam2_Spine
+      position: {x: 0.000000059604645, y: 0.19464153, z: 0}
+      rotation: {x: -0.011027858, y: 0.03402739, z: 0.048220914, w: 0.998196}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftShoulder
+      parentName: Stam2_Spine1
+      position: {x: -0.03728695, y: 0.1909284, z: -0.0014569312}
+      rotation: {x: 0.026584614, y: 0.08044624, z: -0.023704141, w: 0.9961224}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftArm
+      parentName: Stam2_LeftShoulder
+      position: {x: -0.09624044, y: 0, z: 0}
+      rotation: {x: 0.26571646, y: 0.4915752, z: 0.3417724, w: 0.7556059}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftForeArm
+      parentName: Stam2_LeftArm
+      position: {x: -0.3553969, y: 0, z: 0}
+      rotation: {x: -0.22894253, y: 0.6391824, z: -0.13011162, w: 0.72256637}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_LeftHand
+      parentName: Stam2_LeftForeArm
+      position: {x: -0.27454096, y: 0.00000023652693, z: -0.00000047305386}
+      rotation: {x: -0.24342829, y: 0.36400104, z: -0.46689397, w: 0.76828116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_Neck
+      parentName: Stam2_Spine1
+      position: {x: -0, y: 0.2033121, z: 0.01848292}
+      rotation: {x: 0.101703964, y: -0.05871859, z: -0.0519819, w: 0.9917189}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_Head
+      parentName: Stam2_Neck
+      position: {x: -0.00000029802322, y: 0.139014, z: -0.01985836}
+      rotation: {x: -0.0063005006, y: -0.049233288, z: 0.037594456, w: 0.99805963}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightShoulder
+      parentName: Stam2_Spine1
+      position: {x: 0.03744645, y: 0.1909284, z: -0.0014569312}
+      rotation: {x: 0.048806254, y: -0.1023081, z: 0.027676517, w: 0.9931692}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightArm
+      parentName: Stam2_RightShoulder
+      position: {x: 0.09624044, y: 0, z: 0}
+      rotation: {x: 0.25823626, y: -0.36059186, z: -0.45486856, w: 0.7722578}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightForeArm
+      parentName: Stam2_RightArm
+      position: {x: 0.3553969, y: 0, z: 0}
+      rotation: {x: 0.017271472, y: 0.7969685, z: -0.4213154, w: -0.43247682}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stam2_RightHand
+      parentName: Stam2_RightForeArm
+      position: {x: 0.24047923, y: -0.0000006556511, z: 0.00000023841858}
+      rotation: {x: -0.039076168, y: 0.024129838, z: 0.20026226, w: 0.97866535}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sword
+      parentName: Blake@Run(Clone)
+      position: {x: -0.077831365, y: 1.5599581, z: -2.9870257}
+      rotation: {x: 0.5885845, y: 0.66969085, z: 0.30992544, w: -0.33019513}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
