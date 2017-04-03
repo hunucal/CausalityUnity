@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/MainAxel.unity
-=======
-- path: Assets/Scenes/MainRobin.unity
->>>>>>> feffb127e07986c6c60cf86dad54f69a2d01f2ee
   isLoaded: 1
   isActive: 1
