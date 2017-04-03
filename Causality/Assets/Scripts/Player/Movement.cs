@@ -5,18 +5,16 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    public float Movement_Speed = 6.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
-    private Vector3 moveDirection = Vector3.zero;
-
-
-    private bool Roll;
-    private bool Charge;
-    private float RollTimer;
-    private float RollTime = 1f;
-    private float Rollspeed = 15f;
-    private float CurrentSpeed = 0;
+   
+    
+   
+    //Roll variables
+    private bool roll;
+    private bool charge;
+    private float rollTimer;
+    private float rollTime = 1f;
+    private float rollspeed = 15f;
+   
     private float RollCD;
 
 
@@ -26,13 +24,16 @@ public class Movement : MonoBehaviour
     private float verticalForce;
     private float horizontalForce;
 
-    //Rotation variables
+    //Rotation and Movement variables
+    public float movementSpeed = 6.0f;
     private Vector3 tmpDirection = Vector3.zero;
     private Vector3 playerAim;
     private Vector3 rotationDifVec;
     private float newAngle;
     private Vector3 velocity;
-
+    private float currentSpeed = 0;
+    private float gravity = 20.0f;
+    private Vector3 moveDirection = Vector3.zero;
     // Use this for initialization
     void Start()
     {
@@ -42,24 +43,30 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        //Set a tempory Direction to use for movement
         tmpDirection = Vector3.zero;
+        //Update the controller to current so we can move and check if grounded. aswell as collision with walls
         controller = GetComponent<CharacterController>();
-        CurrentSpeed = Movement_Speed;
+        //Set Current Speed
+        currentSpeed = movementSpeed;
+        //Check if player is grounded
         if (controller.isGrounded)
         {
+            //Move char with left stick
             MovementAnalog();
         }
         else
         {
+            //Set gravity if player isn't Grounded
             moveDirection.y -= gravity * Time.fixedDeltaTime;
             controller.Move(moveDirection * Time.fixedDeltaTime);
         }
-        //roll();
+        //Roll();
 
 
 
     }
-    void roll()
+    void Roll()
     {
         //    if (RollCD <= 0)
         //    {
@@ -89,28 +96,31 @@ public class Movement : MonoBehaviour
     }
     void MovementAnalog()
     {
+        //Get Axis From Horizontal and Vertical from left stick
         horizontalForce = Input.GetAxisRaw("Horizontal");
         verticalForce = Input.GetAxisRaw("Vertical");
 
-        //Move
+        //If Horizontal and vertical isn't 0
         if (verticalForce != 0 || horizontalForce != 0)
         {
+            //Move
             Move(horizontalForce, -verticalForce);
         }
         else
         {
+            //Make Character stop FIX::Reduce velocity
             moveDirection = Vector3.zero;
         }
     }
 
     void Move(float hor, float ver)
     {
-
+        //Get new Vector for movement by taking in hori in x and vert  in z
         moveDirection = new Vector3(hor, 0.0f, ver);
         if (moveDirection.sqrMagnitude > 1.0f)
             moveDirection = moveDirection.normalized;
 
-        velocity = moveDirection * CurrentSpeed;
+        velocity = moveDirection * currentSpeed;
 
         controller.Move(velocity * Time.fixedDeltaTime);
         //rotate play to movement

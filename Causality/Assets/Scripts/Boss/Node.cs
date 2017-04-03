@@ -18,6 +18,7 @@ public class CompositeNode : Node
     public override Status Running() { return Status.Failure; }
     public List<Node> GetChildren() { return listChildren; }
     public void AddChild(Node a) { listChildren.Add(a); }
+    public void RemoveChild(Node a) { if (listChildren.Contains(a)) { listChildren.Remove(a); } }
 }
 public class SelectorNode : CompositeNode
 {
@@ -28,7 +29,7 @@ public class SelectorNode : CompositeNode
             if (GetChildren()[i].Running() == Status.Success)
                 return Status.Success;
         }
-        return Status.Terminated;
+        return Status.Failure;
     }
 }
 public class SequencerNode : CompositeNode
@@ -40,7 +41,7 @@ public class SequencerNode : CompositeNode
             if (GetChildren()[i].Running() == Status.Failure)
                 return Status.Failure;
         }
-        return Status.Terminated;
+        return Status.Success;
     }
 }
 public class DecoratorNodeInvert : Node
@@ -71,7 +72,7 @@ public class RepeatUntilFailNode : CompositeNode
     {
         foreach(Node n in GetChildren())
         {
-            while(n.Running() != Status.Failure)
+            if(n.Running() != Status.Failure)
             {
                 n.Running();
             }
