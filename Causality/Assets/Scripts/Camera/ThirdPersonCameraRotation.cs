@@ -4,87 +4,93 @@ using UnityEngine;
 
 public class ThirdPersonCameraRotation : MonoBehaviour
 {
-    private const float Y_ANGLE_MIN = 0.0f;
-    private const float Y_ANGLE_MAX = 50.0f;
-
-    public Transform LookAt;
-    public Transform camTransform;
-
-    private Camera cam;
-
-    private float RotationYaxis = 0;
-    private float RotationXaxis = 0;
-    [SerializeField]
-    private Transform followXform;
-    private Vector3 targetPosition;
-    private float Distance = 10.0f;
-    private float currentX = 0.0f;
-    private float currentY = 0.0f;
-    private float sensitivityX = 120.0f;
-    private float sensitivityY = 70.0f;
-
-    // Smoothing and damping
-    private Vector3 velocityCamSmooth = Vector3.zero;
-    [SerializeField]
-    private float canSmoothDampTime = 0.1f;
-
+    public float minY, maxY;
+    public float DistanceAway;                     //how far the camera is from the player.
+    public float DistanceUp;                    //how high the camera is above the player
+    public float smooth = 4.0f;                    //how smooth the camera moves into place
+    public float rotateAround = 70f;            //the angle at which you will rotate the camera (on an axis)
+    [Header("Player to follow")]
+    public Transform target;                    //the target the camera follows
+    [Header("Layer(s) to include")]
+    public LayerMask CamOcclusion;                //the layers that will be affected by collision
+    [Header("Map coordinate script")]
+    RaycastHit hit;
+    public float cameraHeight = 55f;
+    public float cameraPan = 0f;
+    float camRotateSpeed = 180f;
+    Vector3 camPosition;
+    Vector3 camMask;
+    Vector3 followMask;
+    private float currentX, currentY, RotationYaxis = 0f;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        followXform = GameObject.FindWithTag("Player").transform;
-
-        camTransform = transform;
-        cam = Camera.main;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        //the statement below automatically positions the camera behind the target.
+        rotateAround = target.eulerAngles.y - 45f;
+    }
+    void Update()
     {
         currentX = Input.GetAxis("HorizontalTurn");
         currentY = Input.GetAxis("VerticalTurn");
-
-        RotationXaxis -= currentX * sensitivityX * Time.deltaTime;
-        RotationYaxis -= currentY * sensitivityY * Time.deltaTime;
-        RotationYaxis = Mathf.Clamp(RotationYaxis,  Y_ANGLE_MIN, Y_ANGLE_MAX);
     }
+    // Update is called once per frame
 
-    private void LateUpdate()
+    void LateUpdate()
     {
-        Vector3 characterOffset = followXform.position + new Vector3(0f, 5.0f, 0f);
+        rotateAround += currentX * camRotateSpeed * Time.deltaTime;
+        RotationYaxis += currentY * camRotateSpeed * Time.deltaTime;
+        RotationYaxis = Mathf.Clamp(RotationYaxis, minY, maxY);
 
+        //Offset of the targets transform (Since the pivot point is usually at the feet).
+        Vector3 targetOffset = new Vector3(target.position.x, (target.position.y + cameraHeight), target.position.z);
+        DistanceUp = RotationYaxis;
+        Quaternion rotation = Quaternion.Euler(RotationYaxis, rotateAround, cameraPan);
+        Vector3 vectorMask = Vector3.one;
+        Vector3 rotateVector = rotation * vectorMask;
 
-        Vector3 dir = new Vector3(0, 0, -Distance);
-        Quaternion rotation = Quaternion.Euler(RotationYaxis, RotationXaxis, 0);
-        camTransform.position = LookAt.position + rotation * dir;
-        camTransform.LookAt(LookAt.position);
+        //this determines where both the camera and it's mask will be.
+        //the camMask is for forcing the camera to push away from walls.
+        camPosition = targetOffset + Vector3.up * DistanceUp - rotateVector * DistanceAway;
+        camMask = targetOffset + Vector3.up * DistanceUp - rotateVector * DistanceAway;
 
-        targetPosition = followXform.position + followXform.up * 5.0f - followXform.forward * 5.0f;
+        occludeRay(ref targetOffset);
+        smoothCamMethod();
 
-        Debug.DrawLine(followXform.position, targetPosition, Color.magenta);
+        transform.LookAt(target);
 
-        CompensateForWalls(characterOffset, ref targetPosition);
-
-        // Making a smooth transistion between its current position and the position it wants to be in
-        smoothPosition(this.transform.position, targetPosition);
-    }
-
-    private void smoothPosition(Vector3 fromPos, Vector3 toPos)
-    {
-        // Makng a smooth transition between cameras current position to the position it wants to be in
-        this.transform.position = Vector3.SmoothDamp(fromPos, toPos, ref velocityCamSmooth, canSmoothDampTime);
-    }
-
-    private void CompensateForWalls(Vector3 fromObject, ref Vector3 toTarget)
-    {
-        Debug.DrawLine(fromObject, toTarget, Color.cyan);
-
-        // Compensate for walls between camera
-        RaycastHit wallHit = new RaycastHit();
-
-        if (Physics.Linecast(fromObject, toTarget, out wallHit))
+        #region wrap the cam orbit rotation
+        if (rotateAround > 360)
         {
-            Debug.DrawRay(wallHit.point, Vector3.left, Color.red);
-            toTarget = new Vector3(wallHit.point.x, toTarget.y, wallHit.point.z);
+            rotateAround = 0f;
         }
+        else if (rotateAround < 0f)
+        {
+            rotateAround = (rotateAround + 360f);
+        }
+        #endregion
+
+
+
+    }
+    void smoothCamMethod()
+    {
+        smooth = 4f;
+        transform.position = Vector3.Lerp(transform.position, camPosition, Time.deltaTime * smooth);
+    }
+    void occludeRay(ref Vector3 targetFollow)
+    {
+        #region prevent wall clipping
+        //declare a new raycast hit.
+        RaycastHit wallHit = new RaycastHit();
+        //linecast from your player (targetFollow) to your cameras mask (camMask) to find collisions.
+        if (Physics.Linecast(targetFollow, camMask, out wallHit, CamOcclusion))
+        {
+            //the smooth is increased so you detect geometry collisions faster.
+            smooth = 10f;
+            //the x and z coordinates are pushed away from the wall by hit.normal.
+            //the y coordinate stays the same.
+            camPosition = new Vector3(wallHit.point.x + wallHit.normal.x * 0.5f, camPosition.y, wallHit.point.z + wallHit.normal.z * 0.5f);
+        }
+        #endregion
     }
 }
