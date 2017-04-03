@@ -9,14 +9,13 @@ public class Movement : MonoBehaviour
     
    
     //Roll variables
+    [SerializeField]
     private bool roll;
     private bool charge;
-    private float rollTimer;
-    private float rollTime = 1f;
-    private float rollspeed = 15f;
-   
-    private float RollCD;
-
+    public float rollspeed = 15f;
+    private float rollCD;
+    public float rolldis;
+    Vector3 getrolldis;
 
     CharacterController controller;
 
@@ -43,7 +42,6 @@ public class Movement : MonoBehaviour
     private bool run;
 
     //Get Attributes
-    [SerializeField]
     private Stat attri;
 
     // Use this for initialization
@@ -75,40 +73,43 @@ public class Movement : MonoBehaviour
             moveDirection.y -= gravity * Time.fixedDeltaTime;
             controller.Move(moveDirection * Time.fixedDeltaTime);
         }
-        //Roll();
 
+        Roll();
 
 
     }
-    void Roll()
+
+    public void Roll()
     {
-        //    if (RollCD <= 0)
-        //    {
-        //        if (Input.GetButton("A Button"))
-        //        {
-        //            Roll = true;
-        //            RollCD = 5;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        RollCD -= Time.fixedDeltaTime;
-        //    }
-        //}
+        if (rollCD != 0)
+        { 
+            rollCD -= Time.fixedDeltaTime;
+        }
+    
+        if (roll)
+        {
+            currentSpeed = rollspeed;
+            controller.Move(getrolldis * rollspeed * Time.fixedDeltaTime);
 
-        //if (Roll)
-        //{
-        //    moveDirection = transform.forward / 5f * Rollspeed;
-        //    CurrentSpeed = Rollspeed;
-        //    RollTimer += Time.fixedDeltaTime;
-        //    if (RollTime < RollTimer)
-        //    {
-        //        Roll = false;
-        //        RollTimer = 0;
-        //    }
-        //}
+
+            if (rollCD  <= 1)
+            {
+                roll = false;
+            }
+        }
     }
 
+    public void ActivateRoll()
+    {
+        if(rollCD <= 0)
+        {
+            horizontalForce = Input.GetAxisRaw("Horizontal");
+            verticalForce = Input.GetAxisRaw("Vertical");
+            roll = true;
+            getrolldis = new Vector3(horizontalForce * rolldis, 0.0f, -verticalForce * rolldis);
+            rollCD = 2;
+        }
+    }
 
     void Run()
     {
@@ -116,20 +117,19 @@ public class Movement : MonoBehaviour
         movementSpeed = 10.0f;
         Anim.SetBool("Run", true);
     }
+
     void Walk()
     {
         movementSpeed = 6.0f;
         Anim.SetBool("Run", false);
         Anim.SetBool("Walk", true);
     }
-
     
     public void SetRun(bool b)
     {
         run = b;
     }
-
-
+    
     void MovementAnalog()
     {
         //Get Axis From Horizontal and Vertical from left stick
