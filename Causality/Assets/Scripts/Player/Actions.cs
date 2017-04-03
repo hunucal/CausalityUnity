@@ -11,6 +11,9 @@ public class Actions : MonoBehaviour {
     private float damage;
     private float stamina;
 
+    //Get Attributes from
+    //Attribute Script attScript;
+
     //Animations
     Animator setAnimator;
 
@@ -22,8 +25,9 @@ public class Actions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        //stamina = attScript.GetCompnenet<attScript>().stamina;
         Inputs();
-
+        //attScript.GetComponent<attScript>().stamina = stamina;
         
 	}
 
@@ -70,26 +74,32 @@ public class Actions : MonoBehaviour {
         }
         if (Input.GetAxis("LT Button") != 0)
         {
-            //No Action yet.
+            //Block
+            //if(2h)
+            Block();
+            //else if (1h and shield)
+            //ShieldBlock();
         }
-       
+        
     }
 
     void FastAttack()
     {
         //Fast attack
-        //  Animation.Instantiate<FastAttack>();
-
-
+        setAnimator.SetBool("FastAttack", true);
+        setAnimator.SetBool("IsAttacking", true);
         //Damage(10);
     }
 
     void HeavyAttack()
     {
         //Heavy attack
-        Debug.Log("Button Pressed");
+        if(!setAnimator.GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
+        {
         setAnimator.SetBool("HeavyAttack", true);
         setAnimator.SetBool("IsAttacking", true);
+        stamina -= 20; //TODO: Fix variable
+        }
         //Damage(20);
     }
     void StopAttacking()
@@ -98,12 +108,15 @@ public class Actions : MonoBehaviour {
         {
              setAnimator.SetBool("HeavyAttack", false);
              setAnimator.SetBool("IsAttacking", false);
+             setAnimator.SetBool("FastAttack", false);
+             setAnimator.SetBool("Block", false);
         }
-       
+      
     }
     void Block()
     {
         //Block with weapon
+        setAnimator.SetBool("Block", true);
 
     }
 
