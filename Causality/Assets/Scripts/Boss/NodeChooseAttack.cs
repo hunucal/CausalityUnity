@@ -11,7 +11,7 @@ public class NodeChooseAttack : Node {
     {
         //create states
         bossCCStates = new closeCombatAttackStates();
-
+        bossCCStates.InitStates();
         //internal state machine
         internalStateMachine = new StateMachine();
 
@@ -21,8 +21,10 @@ public class NodeChooseAttack : Node {
     {
         if (StartAttack(ChooseAttack()))
             return Status.Success;
-
-        return Status.Terminated;
+        else if (!StartAttack(ChooseAttack()))
+            return Status.Failure;
+        else
+            return Status.Running;
     }
     private State ChooseAttack()
     {
@@ -47,9 +49,7 @@ public class NodeChooseAttack : Node {
             commenceAttack = true;
             return false;
         }
-
         else
             return true;
-
     }
 }

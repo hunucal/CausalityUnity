@@ -34,10 +34,11 @@ public class Movement : MonoBehaviour
     private float currentSpeed = 0;
     private float gravity = 20.0f;
     private Vector3 moveDirection = Vector3.zero;
+    private Animator Anim;
     // Use this for initialization
     void Start()
     {
-
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -103,13 +104,18 @@ public class Movement : MonoBehaviour
         //If Horizontal and vertical isn't 0
         if (verticalForce != 0 || horizontalForce != 0)
         {
-            //Move
-            Move(horizontalForce, -verticalForce);
+            if(Anim.GetBool("IsAttacking") == false)
+            {
+                //Move
+                Move(horizontalForce, -verticalForce);
+                Anim.SetBool("Walk", true);
+            }
         }
         else
         {
             //Make Character stop FIX::Reduce velocity
             moveDirection = Vector3.zero;
+            Anim.SetBool("Walk", false);
         }
     }
 
