@@ -6,31 +6,45 @@ using UnityEngine;
 public class BarScript : MonoBehaviour {
 
     [SerializeField]
-    private float fillAmount;
+    private float fillAmountHealth;
     [SerializeField]
-    private float fillAmountTwo;
+    private float fillAmountTwoHealth;
     [SerializeField]
-    private Image content;
+    private Image contentHealth;
     [SerializeField]
-    private Image contentTwo;
+    private Image contentTwoHealth;
 
-    public float MaxValue { get; set; }
-    public float MaxValueTwo { get; set; }
+    [SerializeField]
+    private float fillAmountStamina;
+    [SerializeField]
+    private Image contentStamina;
+
+    public float MaxValueHealth { get; set; }
+
+    public float MaxValueStamina { get; set; }
 
 
-    public float value
+    public float valueHealth
     {
         set
         {
-            fillAmount = Map(value, 0, MaxValue, 0, 1);
+            fillAmountHealth = Map(value, 0, MaxValueHealth, 0, 1);
         }
     }
 
-    public float valueTwo
+    public float valueTwoHealth
     {
         set
         {
-            fillAmountTwo = Map(value, 0, MaxValueTwo, 0, 1);
+            fillAmountTwoHealth = Map(value, 0, MaxValueHealth, 0, 1);
+        }
+    }
+
+    public float valueStamina
+    {
+        set
+        {
+            fillAmountStamina = Map(value, 0, MaxValueStamina, 0, 1);
         }
     }
 
@@ -48,14 +62,19 @@ public class BarScript : MonoBehaviour {
 
     private void HandleBar()
     {
-        if(fillAmount != content.fillAmount)
+        if(fillAmountHealth != contentHealth.fillAmount)
         {
-            content.fillAmount = fillAmount;
+            contentHealth.fillAmount = fillAmountHealth;
         }
 
-        if (fillAmountTwo != contentTwo.fillAmount)
+        if (fillAmountTwoHealth != contentTwoHealth.fillAmount)
         {
-            contentTwo.fillAmount = fillAmountTwo;
+            contentTwoHealth.fillAmount = fillAmountTwoHealth;
+        }
+
+        if (fillAmountStamina != contentStamina.fillAmount)
+        {
+            contentStamina.fillAmount = fillAmountStamina;
         }
     }
 

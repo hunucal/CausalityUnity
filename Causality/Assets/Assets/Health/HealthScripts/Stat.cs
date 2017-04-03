@@ -9,75 +9,109 @@ public class Stat
     [SerializeField]
     private BarScript bar;
     [SerializeField]
-    private float maxVal;
+    private float maxValHealth;
     [SerializeField]
-    private float maxValTwo;
+    private float maxValTwoHealth;
     [SerializeField]
-    private float currentVal;
+    private float currentValHealth;
     [SerializeField]
-    private float currentValTwo;
+    private float currentValTwoHealth;
 
-    public float CurrentVal
+    [SerializeField]
+    private float maxValStamina;
+    [SerializeField]
+    private float currentValStamina;
+
+    public float CurrentValHealth
     {
         get
         {
-            return currentVal;
+            return currentValHealth;
         }
 
         set
         {
-            this.currentVal = value;
-            bar.value = currentVal;
+            this.currentValHealth = value;
+            bar.valueHealth = currentValHealth;
         }
     }
 
-    public float CurrentValTwo
+    public float CurrentValTwoHealth
     {
         get
         {
-            return currentValTwo;
+            return currentValTwoHealth;
         }
 
         set
         {
-            this.currentValTwo = value;
-            bar.valueTwo = currentValTwo;
+            this.currentValTwoHealth = value;
+            bar.valueTwoHealth = currentValTwoHealth;
         }
     }
 
-    public float MaxVal
+    public float CurrentValStamina
     {
         get
         {
-            return maxVal;
+            return currentValStamina;
         }
 
         set
         {
-            this.maxVal = value;
-            bar.MaxValue = maxVal;
+            this.currentValStamina = value;
+            bar.valueStamina = currentValStamina;
         }
     }
 
-    public float MaxValTwo
+    public float MaxValHealth
     {
         get
         {
-            return maxValTwo;
+            return maxValHealth;
         }
 
         set
         {
-            this.maxValTwo = value;
-            bar.MaxValueTwo = maxValTwo;
+            this.maxValHealth = value;
+            bar.MaxValueHealth = maxValHealth;
+        }
+    }
+
+    public float MaxValTwoHealth
+    {
+        get
+        {
+            return maxValTwoHealth;
+        }
+
+        set
+        {
+            this.maxValTwoHealth = value;
+        }
+    }
+
+    public float MaxValStamina
+    {
+        get
+        {
+            return maxValStamina;
+        }
+
+        set
+        {
+            this.maxValStamina = value;
+            bar.MaxValueStamina = maxValStamina;
         }
     }
 
     public void Initialize()
     {
-        this.MaxVal = maxVal;
-        this.MaxValTwo = maxValTwo;
-        this.CurrentVal = currentVal;
-        this.CurrentValTwo = currentVal;
+        this.MaxValHealth = maxValHealth;
+        this.MaxValTwoHealth = maxValTwoHealth;
+        this.MaxValStamina = maxValStamina;
+        this.CurrentValHealth = currentValHealth;
+        this.CurrentValTwoHealth = currentValHealth;
+        this.CurrentValStamina = currentValStamina;
     }
 }

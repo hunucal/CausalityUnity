@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     [SerializeField]
     private Stat health;
+
+    private IEnumerator coroutine;
 
 	// Use this for initialization
 	void Start ()
@@ -22,24 +23,31 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.H))
-        {
-            health.CurrentVal -= 10;
-        }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            health.CurrentValTwo -= 10;
+            health.CurrentValHealth -= 50;
         }
 
-        if (health.CurrentVal < health.CurrentValTwo)
+        if(health.CurrentValHealth > health.CurrentValTwoHealth)
         {
-            //health.CurrentValTwo -= 4 * Time.deltaTime;
+            health.CurrentValTwoHealth = health.CurrentValHealth;
+        }
+
+        if (health.CurrentValHealth < health.CurrentValTwoHealth)
+        {
+            coroutine = waitAndDecrease(0.8f);
+            StartCoroutine(coroutine);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            health.CurrentVal += 10;
+            health.CurrentValHealth += 10;
         }
+    }
+
+    private IEnumerator waitAndDecrease(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        health.CurrentValTwoHealth -= 40 * Time.deltaTime;
     }
 }
