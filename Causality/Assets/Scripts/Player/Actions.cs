@@ -10,11 +10,13 @@ public class Actions : MonoBehaviour {
     private float agility;
     private float damage;
     private float stamina;
-    
+
+    //Animations
+    Animator setAnimator;
 
     // Use this for initialization
     void Start () {
-        
+        setAnimator = GetComponent<Animator>();
         
     }
 	
@@ -27,7 +29,8 @@ public class Actions : MonoBehaviour {
 
     void Inputs()
     {
-        if(Input.GetButtonDown("A Button"))
+        StopAttacking();
+        if (Input.GetButtonDown("A Button"))
         { 
             //Select
         }
@@ -69,6 +72,7 @@ public class Actions : MonoBehaviour {
         {
             //No Action yet.
         }
+       
     }
 
     void FastAttack()
@@ -83,9 +87,20 @@ public class Actions : MonoBehaviour {
     void HeavyAttack()
     {
         //Heavy attack
+        Debug.Log("Button Pressed");
+        setAnimator.SetBool("HeavyAttack", true);
+        setAnimator.SetBool("IsAttacking", true);
         //Damage(20);
     }
-
+    void StopAttacking()
+    {
+        if(setAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        {
+             setAnimator.SetBool("HeavyAttack", false);
+             setAnimator.SetBool("IsAttacking", false);
+        }
+       
+    }
     void Block()
     {
         //Block with weapon
