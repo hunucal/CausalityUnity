@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-   
-    
-   
     //Roll variables
+    [SerializeField]
     private bool roll;
     private bool charge;
-    private float rollTimer;
-    private float rollTime = 1f;
-    private float rollspeed = 15f;
-   
-    private float RollCD;
-
+    public float rollspeed = 15f;
+    private float rollCD;
+    public float rolldis;
+    Vector3 getrolldis;
 
     CharacterController controller;
 
@@ -41,15 +36,15 @@ public class Movement : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private Animator Anim;
     private bool run;
-
-    //Get Attributes
     [SerializeField]
-    private Stat attri;
+    private Camera playerCamera;
+    //Get Attributes
 
     // Use this for initialization
     void Start()
     {
         Anim = GetComponent<Animator>();
+        
         run = false;
         movementSpeed = walkspeed;
     }
@@ -64,51 +59,54 @@ public class Movement : MonoBehaviour
         //Set Current Speed
         currentSpeed = movementSpeed;
         //Check if player is grounded
-        if (controller.isGrounded)
-        {
-            //Move char with left stick
             MovementAnalog();
-        }
-        else
-        {
-            //Set gravity if player isn't Grounded
-            moveDirection.y -= gravity * Time.fixedDeltaTime;
-            controller.Move(moveDirection * Time.fixedDeltaTime);
-        }
-        //Roll();
-
-
-
-    }
-    void Roll()
-    {
-        //    if (RollCD <= 0)
-        //    {
-        //        if (Input.GetButton("A Button"))
-        //        {
-        //            Roll = true;
-        //            RollCD = 5;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        RollCD -= Time.fixedDeltaTime;
-        //    }
-        //}
-
-        //if (Roll)
+        //if (controller.isGrounded)
         //{
-        //    moveDirection = transform.forward / 5f * Rollspeed;
-        //    CurrentSpeed = Rollspeed;
-        //    RollTimer += Time.fixedDeltaTime;
-        //    if (RollTime < RollTimer)
-        //    {
-        //        Roll = false;
-        //        RollTimer = 0;
-        //    }
+        //    //Move char with left stick
         //}
+        //else
+        //{
+        //    //Set gravity if player isn't Grounded
+        // //   moveDirection.y -= gravity * Time.fixedDeltaTime;
+        //   // controller.Move(moveDirection * Time.fixedDeltaTime);
+        //}
+
+        Roll();
+
+
     }
 
+    public void Roll()
+    {
+        if (rollCD != 0)
+        { 
+            rollCD -= Time.fixedDeltaTime;
+        }
+    
+        if (roll)
+        {
+            currentSpeed = rollspeed;
+          //      controller.Move(getrolldis * rollspeed * Time.fixedDeltaTime);
+
+
+            if (rollCD  <= 1)
+            {
+                roll = false;
+            }
+        }
+    }
+
+    public void ActivateRoll()
+    {
+        if(rollCD <= 0)
+        {
+            horizontalForce = Input.GetAxisRaw("Horizontal");
+            verticalForce = Input.GetAxisRaw("Vertical");
+            roll = true;
+            getrolldis = new Vector3(horizontalForce * rolldis, 0.0f, -verticalForce * rolldis);
+            rollCD = 2; //TODO:: Use stamina
+        }
+    }
 
     void Run()
     {
@@ -116,20 +114,19 @@ public class Movement : MonoBehaviour
         movementSpeed = 10.0f;
         Anim.SetBool("Run", true);
     }
+
     void Walk()
     {
         movementSpeed = 6.0f;
         Anim.SetBool("Run", false);
         Anim.SetBool("Walk", true);
     }
-
     
     public void SetRun(bool b)
     {
         run = b;
     }
-
-
+    
     void MovementAnalog()
     {
         //Get Axis From Horizontal and Vertical from left stick
@@ -168,15 +165,30 @@ public class Movement : MonoBehaviour
 
         velocity = moveDirection * currentSpeed;
 
-        controller.Move(velocity * Time.fixedDeltaTime);
-        //rotate play to movement
-        Vector3 facingrotation = Vector3.Normalize(new Vector3(hor, 0f, ver));
+        //project forward and right vectors on the horizontal plane (y = 0)
+        Vector3 forward = playerCamera.transform.forward;
+        Vector3 right = playerCamera.transform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+        Vector3 desiredMoveDirection = forward * ver + right * hor;
+        desiredMoveDirection.Normalize();
+        transform.Translate(desiredMoveDirection * movementSpeed * Time.fixedDeltaTime);
+        //transform.GetChild().Rotate 
+        ////Currentpos = camerapos + z(camera + distance to player)
+        //Vector3 currentpos = new Vector3(CameraPosition.x, 0.0f, CameraPosition.z + Vector3.Distance(CameraPosition, transform.position));
+        //Vector3 newpos = currentpos + velocity; //currentpos + velocity
+        ////controller.Move(velocity * Time.fixedDeltaTime);
+        //transform.position = newpos;
+        ////rotate play to movement
+        //Vector3 facingrotation = Vector3.Normalize(new Vector3(hor, 0f, ver));
 
-        // facingrotation = Vector3.Lerp(transform.eulerAngles, facingrotation, 0.5f);
-        if (facingrotation != Vector3.zero)
-        {
-            transform.forward = facingrotation;
-        }
+        //// facingrotation = Vector3.Lerp(transform.eulerAngles, facingrotation, 0.5f);
+        //if (facingrotation != Vector3.zero)
+        //{
+        //    transform.forward = facingrotation;
+        //}
 
     }
 }

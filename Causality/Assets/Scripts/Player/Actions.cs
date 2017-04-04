@@ -4,31 +4,22 @@ using UnityEngine;
 
 public class Actions : MonoBehaviour {
     
-    //Player Attributes
-    private float defence;
-    private float strenght;
-    private float agility;
-    private float damage;
-    private float stamina;
 
     //Get scripts from
     //Attribute Script attScript; 
-    private Movement moveScript;
+    private move moveScript;
     //Animations
-    Animator setAnimator;
+    Animator setAnimation;
 
     // Use this for initialization
     void Start () {
-        setAnimator = GetComponent<Animator>();
-        moveScript = GetComponent<Movement>();
+        setAnimation = GetComponent<Animator>();
+        moveScript = GetComponent<move>();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        //stamina = attScript.GetCompnenet<attScript>().stamina;
         Inputs();
-        //attScript.GetComponent<attScript>().stamina = stamina;
-        
 	}
 
     void Inputs()
@@ -37,15 +28,16 @@ public class Actions : MonoBehaviour {
         if (Input.GetButton("A Button"))
         {
             //Select
-            moveScript.GetComponent<Movement>().SetRun(true);
+            moveScript.GetComponent<move>().SetRun(true);
         }
         else
         {
-            moveScript.GetComponent<Movement>().SetRun(false);
+            moveScript.GetComponent<move>().SetRun(false);
         }
         if (Input.GetButtonDown("X Button"))
         {
             //Sprint/Dash
+            moveScript.GetComponent<move>().ActivateRoll();
         }
         if (Input.GetButtonDown("B Button"))
         {
@@ -74,8 +66,8 @@ public class Actions : MonoBehaviour {
         }
         if (Input.GetAxis("RT Button") != 0)
         {
-            //Fast Attack
-            FastAttack();
+            //Light Attack
+            LightAttack();
         }
         if (Input.GetAxis("LT Button") != 0)
         {
@@ -88,40 +80,39 @@ public class Actions : MonoBehaviour {
         
     }
 
-    void FastAttack()
+    void LightAttack()
     {
         //Fast attack
-        setAnimator.SetBool("FastAttack", true);
-        setAnimator.SetBool("IsAttacking", true);
+        setAnimation.SetBool("LightAttack", true);
+        setAnimation.SetBool("IsAttacking", true);
         //Damage(10);
     }
 
     void HeavyAttack()
     {
         //Heavy attack
-        if(!setAnimator.GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
+        if(!setAnimation.GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
         {
-        setAnimator.SetBool("HeavyAttack", true);
-        setAnimator.SetBool("IsAttacking", true);
-        stamina -= 20; //TODO: Fix variable
+        setAnimation.SetBool("HeavyAttack", true);
+        setAnimation.SetBool("IsAttacking", true);
         }
-        //Damage(20);
     }
     void StopAttacking()
     {
-        if(setAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if(setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
-             setAnimator.SetBool("HeavyAttack", false);
-             setAnimator.SetBool("IsAttacking", false);
-             setAnimator.SetBool("FastAttack", false);
-             setAnimator.SetBool("Block", false);
+             setAnimation.SetBool("HeavyAttack", false);
+             setAnimation.SetBool("IsAttacking", false);
+             setAnimation.SetBool("LightAttack", false);
+             
         }
-      
+        setAnimation.SetBool("Block", false);
     }
     void Block()
     {
         //Block with weapon
-        setAnimator.SetBool("Block", true);
+        moveScript.GetComponent<move>().SetRun(false);
+        setAnimation.SetBool("Block", true);
 
     }
 
@@ -138,7 +129,7 @@ public class Actions : MonoBehaviour {
     void Roll()
     {
         //Code Roll in movement use here?
-
+        moveScript.GetComponent<Movement>().Roll();
     }
 
     void Dash()
@@ -146,13 +137,5 @@ public class Actions : MonoBehaviour {
         //Code Dash in movement use here?
 
     }
-    void DamageGiven(float x, float edef)
-    {
-        //Calculate Damage
-        damage = x + strenght * agility / edef;
-    }
-    void DamageTaken(float x, float estr, float eagi)
-    {
-        damage = x + estr * eagi / defence;
-    }
+   
 }
