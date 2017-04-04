@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Analytics;
 
 public class BossMainScript : MonoBehaviour {
-
+        [Header("Boss movement settings")]
     [SerializeField]private float bossMoveSpeed;
     [SerializeField]private float bossRotationSpeed;
     [SerializeField]private float bossAggroRange;
     //root node
-    SequencerNode rootNode;
+    RepeatUntilFailNode rootNode;
 
     //nodes
     SequencerNode sequencer1, sequencer2, sequencer3, sequencer4;
@@ -27,9 +26,8 @@ public class BossMainScript : MonoBehaviour {
     NodeChooseAttack nodeChooseAttack;
     // Use this for initialization
     void Start () {
-     
         //nodes
-        rootNode = new SequencerNode();
+        rootNode = new RepeatUntilFailNode();
         //sequensers
         sequencer1 = new SequencerNode();
         sequencer2 = new SequencerNode();
@@ -44,12 +42,14 @@ public class BossMainScript : MonoBehaviour {
         leafNodeMoveAway = new leafNodeMoveAway();
         //behaviours nodes
         nodeChooseAttack = new NodeChooseAttack();
-
+        //repeater nodes
+        repeatSetTimes1 = new RepeatSetTimesNode();
         //nodes init and add children
         //leaf
         leafNodeIdle.Init(bossAggroRange);
         leafNodeMove.Init(bossMoveSpeed, bossRotationSpeed);
         leafNodeMoveAway.Init(bossMoveSpeed, bossRotationSpeed);
+        repeatSetTimes1.Init(1);
         //nodes
         nodeChooseAttack.Init();
 
@@ -58,19 +58,16 @@ public class BossMainScript : MonoBehaviour {
 
         //sequence one children
         selector1.AddChild(leafNodeIdle);
+        selector1.AddChild(leafNodeMove);
         selector1.AddChild(sequencer1);
-
-        sequencer1.AddChild(leafNodeMove);
-        sequencer1.AddChild(sequencer2);
-
-        sequencer2.AddChild(nodeChooseAttack);
+        sequencer1.AddChild(nodeChooseAttack);
     }
-	
 	// Update is called once per frame
 	void Update () {
-        if(rootNode.Running() != Status.Terminated)
+        if(rootNode.Tick() != Status.Failure)
         {
-
+            if (selector1.Tick() == Status.Failure)
+                selector1.RemoveChild(leafNodeIdle);
         }      
 	}
 }
