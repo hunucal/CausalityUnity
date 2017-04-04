@@ -34,6 +34,16 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    IEnumerator ChangeLevel(int sceneToChangeTo)
+    {
+        yield return new WaitForSeconds(0f);
+        paused = !paused;
+        float fadeTime = GameObject.Find("Manager").GetComponent<Fading>().BeginFade(1);
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene(0);
+
+    }
+
     //void FixedUpdate()
     //{
     //   if( PauseMenu.paused == false)
@@ -53,12 +63,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(ChangeLevel(0));
     }
 
 
