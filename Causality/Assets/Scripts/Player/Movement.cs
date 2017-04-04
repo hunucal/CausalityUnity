@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-   
-    
-   
     //Roll variables
     [SerializeField]
     private bool roll;
@@ -40,9 +36,9 @@ public class Movement : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private Animator Anim;
     private bool run;
-
+    [SerializeField]
+    private Camera PlayerCamera;
     //Get Attributes
-    private Stat attri;
 
     // Use this for initialization
     void Start()
@@ -107,7 +103,7 @@ public class Movement : MonoBehaviour
             verticalForce = Input.GetAxisRaw("Vertical");
             roll = true;
             getrolldis = new Vector3(horizontalForce * rolldis, 0.0f, -verticalForce * rolldis);
-            rollCD = 2;
+            rollCD = 2; //TODO:: Use stamina
         }
     }
 
@@ -161,11 +157,12 @@ public class Movement : MonoBehaviour
 
     void Move(float hor, float ver)
     {
+        Vector3 CameraPosition = PlayerCamera.transform.position;
         //Get new Vector for movement by taking in hori in x and vert  in z
-        moveDirection = new Vector3(hor, 0.0f, ver);
+        moveDirection = new Vector3(CameraPosition.x + hor, 0.0f, CameraPosition.y + ver);
         if (moveDirection.sqrMagnitude > 1.0f)
             moveDirection = moveDirection.normalized;
-
+        
         velocity = moveDirection * currentSpeed;
 
         controller.Move(velocity * Time.fixedDeltaTime);

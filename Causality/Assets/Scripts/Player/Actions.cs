@@ -107,7 +107,6 @@ public class Actions : MonoBehaviour {
              
         }
         setAnimator.SetBool("Block", false);
-
     }
     void Block()
     {
