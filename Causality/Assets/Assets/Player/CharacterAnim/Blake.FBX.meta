@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c35072fe8461ccb4b84751ce792eaf9e
-timeCreated: 1491214195
+timeCreated: 1491316346
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -635,23 +635,23 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Blake (3)(Clone)
+    - name: Blake(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Base Human
-      parentName: Blake (3)(Clone)
+      parentName: Blake(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0.5000001, y: -0.50000006, z: -0.4999999, w: 0.49999997}
       scale: {x: 1, y: 1, z: 1}
     - name: Base HumanLPlatform
-      parentName: Blake (3)(Clone)
+      parentName: Blake(Clone)
       position: {x: -0.13463819, y: -0.0000000021855324, z: 0.022708502}
       rotation: {x: 0.5000001, y: -0.50000006, z: -0.4999999, w: 0.49999997}
       scale: {x: 1, y: 1, z: 1}
     - name: Base HumanPelvis
-      parentName: Blake (3)(Clone)
+      parentName: Blake(Clone)
       position: {x: 0.000000049894727, y: 0.92258954, z: 0.00280138}
       rotation: {x: 0.49912703, y: -0.50087154, z: -0.49912694, w: 0.5008715}
       scale: {x: 1, y: 1, z: 1}
@@ -883,7 +883,7 @@ ModelImporter:
     - name: Base HumanRDigit31
       parentName: Base HumanRPalm
       position: {x: -0.11800209, y: 0.015273437, z: -0.009531889}
-      rotation: {x: 0.0031272315, y: -0.05067797, z: 0.014807133, w: 0.99860036}
+      rotation: {x: 0.0031272317, y: -0.05067797, z: 0.014807134, w: 0.99860036}
       scale: {x: 0.9999995, y: 1.0000004, z: 1.0000006}
     - name: Base HumanRDigit32
       parentName: Base HumanRDigit31
@@ -1030,12 +1030,12 @@ ModelImporter:
         w: 1}
       scale: {x: 0.9999998, y: 1.0000001, z: 0.99999994}
     - name: Base HumanRPlatform
-      parentName: Blake (3)(Clone)
+      parentName: Blake(Clone)
       position: {x: 0.13463819, y: -0.0000000021855395, z: 0.022708545}
       rotation: {x: 0.5000001, y: -0.50000006, z: -0.4999999, w: 0.49999997}
       scale: {x: 1, y: 1, z: 1}
     - name: Body
-      parentName: Blake (3)(Clone)
+      parentName: Blake(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 8.837194, y: 8.837194, z: 8.837194}
