@@ -18,7 +18,7 @@ public class LeafNodeIdle : Node {
         //set Player object
         playerObject = GameObject.FindGameObjectWithTag("Player");
     }
-    public override Status Running()
+    public override Status Tick()
     {
         if (GetAggroRange())
             return Status.Success;
