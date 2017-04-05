@@ -1,5 +1,8 @@
 sceneSetups:
 <<<<<<< HEAD
+- path: Assets/Scenes/MainRobin.unity
+=======
+<<<<<<< HEAD
 - path: Assets/Scenes/MainJoni.unity
 =======
 <<<<<<< HEAD
@@ -44,5 +47,6 @@ sceneSetups:
 >>>>>>> 000e49a935d89b3ebd56425a3d0444b2844dfa53
 >>>>>>> 19fc1d84a808bba518af08fbe7be0f21f08b3d6f
 >>>>>>> 5dc805193e53c50d3dfeabb36b8ccf6f50e60006
+>>>>>>> 370c14286a09b915672e2db22fac835151d60ffb
   isLoaded: 1
   isActive: 1
