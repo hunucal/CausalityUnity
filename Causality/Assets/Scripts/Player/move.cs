@@ -8,7 +8,7 @@ public class move : MonoBehaviour {
     public float moveSpeed;
     public float drag = 0.5f;
     public float terminalRotationSpeed = 25.0f;
-    public Vector3 MoveVector { set; get; }
+    public Vector3 moveVector { set; get; }
     private Rigidbody thisRigidbody;
     private Transform camTransform;
     [SerializeField]
@@ -29,8 +29,7 @@ public class move : MonoBehaviour {
     private bool isroll;
     [Header("Roll Speed")]
     public float rollspeed = 15f;
-    [Header("Roll Distance")]
-    public float rolldis;
+    Vector3 rollVector { set; get; }
 
 
     // Use this for initialization
@@ -51,7 +50,7 @@ public class move : MonoBehaviour {
 	void FixedUpdate () {
         //Get Axis from Horizontal and Vertical from left stick
         horizontalForce = Input.GetAxisRaw("Horizontal");
-        verticalForce = -Input.GetAxisRaw("Vertical");
+        verticalForce = Input.GetAxisRaw("Vertical");
         //Check if Horizontal and vertical isn't zero.
         if (isroll)
         {
@@ -70,11 +69,11 @@ public class move : MonoBehaviour {
                     else
                         Walk();
                     //Get the original input
-                    MoveVector = PoolInput(horizontalForce, verticalForce);
+                    moveVector = PoolInput(horizontalForce, verticalForce);
                     //Rotate our moveVector
-                    MoveVector = RotateWithView();
+                    moveVector = RotateWithView();
 
-                    RotatePlayer(horizontalForce, verticalForce, MoveVector);
+                    RotatePlayer(horizontalForce, verticalForce, moveVector);
                     //Move
                     Move();
                 
@@ -89,7 +88,7 @@ public class move : MonoBehaviour {
 
     private void Move()
     {
-        thisRigidbody.AddForce(MoveVector * moveSpeed);
+        thisRigidbody.AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
     }
 
 
@@ -110,14 +109,14 @@ public class move : MonoBehaviour {
     {
         if(camTransform != null)
         {
-            Vector3 dir = camTransform.TransformDirection(MoveVector);
+            Vector3 dir = camTransform.TransformDirection(moveVector);
             dir.Set(dir.x, 0.0f, dir.z);
-            return dir.normalized * MoveVector.magnitude;
+            return dir.normalized * moveVector.magnitude;
         }
         else
         {
             camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
-            return MoveVector;
+            return moveVector;
         }
     }
 
@@ -134,17 +133,16 @@ public class move : MonoBehaviour {
 
     private void Roll()
     {
-        moveSpeed = rollspeed;
         if (verticalForce != 0 || horizontalForce != 0)
         {
-            thisRigidbody.AddForce(MoveVector * rolldis * moveSpeed);
+            thisRigidbody.AddForce(rollVector * rollspeed, ForceMode.Impulse);
         }
         else
         {
-            thisRigidbody.AddForce(transform.forward * rolldis * moveSpeed);
+        thisRigidbody.AddForce(transform.forward * 1 * rollspeed, ForceMode.Impulse);
         }
 
-        if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8)
         {
             setAnimation.SetBool("Roll", false);
             isroll = false;
@@ -176,8 +174,8 @@ public class move : MonoBehaviour {
         {
             setAnimation.SetBool("Roll", true);
             isroll = true;
-            MoveVector = PoolInput(horizontalForce, verticalForce);
-            MoveVector = RotateWithView();
+            rollVector = PoolInput(horizontalForce, verticalForce);
+            rollVector = RotateWithView();
             //TODO:: Use stamina
         }
     }
