@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour {
+public class StateMachine {
     private State currentState;
     private State lastState;
     // Use this for initialization
@@ -23,17 +23,29 @@ public class StateMachine : MonoBehaviour {
         lastState = currentState;
         currentState = stateToChange;
     }
-    public bool RunState()
+    public Status RunState()
     {
         if (UnityEngine.UnassignedReferenceException.Equals(currentState, null))
         {
-            return false;
-        }else
+            return Status.Failure;
+        }
+        else
         {
-            if (currentState.RunState())
-                return true;
-            else
-                return false;
+            Status status = currentState.RunState();
+            switch (status)
+            {
+                case Status.Success:
+                    return Status.Success;
+                case Status.Failure:
+                    return Status.Failure;
+                case Status.Running:
+                    return Status.Running;
+                case Status.Terminated:
+                    return Status.Terminated;
+                default:
+                    break;
+            }
+            return Status.Failure;
         }
     }
     public State GetCurrentState()

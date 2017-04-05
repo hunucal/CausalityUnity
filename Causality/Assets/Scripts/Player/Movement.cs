@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-   
-    
-   
     //Roll variables
     [SerializeField]
     private bool roll;
@@ -40,14 +36,15 @@ public class Movement : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private Animator Anim;
     private bool run;
-
+    [SerializeField]
+    private Camera playerCamera;
     //Get Attributes
-    private Stat attri;
 
     // Use this for initialization
     void Start()
     {
         Anim = GetComponent<Animator>();
+        
         run = false;
         movementSpeed = walkspeed;
     }
@@ -62,17 +59,17 @@ public class Movement : MonoBehaviour
         //Set Current Speed
         currentSpeed = movementSpeed;
         //Check if player is grounded
-        if (controller.isGrounded)
-        {
-            //Move char with left stick
             MovementAnalog();
-        }
-        else
-        {
-            //Set gravity if player isn't Grounded
-            moveDirection.y -= gravity * Time.fixedDeltaTime;
-            controller.Move(moveDirection * Time.fixedDeltaTime);
-        }
+        //if (controller.isGrounded)
+        //{
+        //    //Move char with left stick
+        //}
+        //else
+        //{
+        //    //Set gravity if player isn't Grounded
+        // //   moveDirection.y -= gravity * Time.fixedDeltaTime;
+        //   // controller.Move(moveDirection * Time.fixedDeltaTime);
+        //}
 
         Roll();
 
@@ -89,7 +86,7 @@ public class Movement : MonoBehaviour
         if (roll)
         {
             currentSpeed = rollspeed;
-            controller.Move(getrolldis * rollspeed * Time.fixedDeltaTime);
+          //      controller.Move(getrolldis * rollspeed * Time.fixedDeltaTime);
 
 
             if (rollCD  <= 1)
@@ -107,7 +104,7 @@ public class Movement : MonoBehaviour
             verticalForce = Input.GetAxisRaw("Vertical");
             roll = true;
             getrolldis = new Vector3(horizontalForce * rolldis, 0.0f, -verticalForce * rolldis);
-            rollCD = 2;
+            rollCD = 2; //TODO:: Use stamina
         }
     }
 
@@ -168,15 +165,30 @@ public class Movement : MonoBehaviour
 
         velocity = moveDirection * currentSpeed;
 
-        controller.Move(velocity * Time.fixedDeltaTime);
-        //rotate play to movement
-        Vector3 facingrotation = Vector3.Normalize(new Vector3(hor, 0f, ver));
+        //project forward and right vectors on the horizontal plane (y = 0)
+        Vector3 forward = playerCamera.transform.forward;
+        Vector3 right = playerCamera.transform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+        Vector3 desiredMoveDirection = forward * ver + right * hor;
+        desiredMoveDirection.Normalize();
+        transform.Translate(desiredMoveDirection * movementSpeed * Time.fixedDeltaTime);
+        //transform.GetChild().Rotate 
+        ////Currentpos = camerapos + z(camera + distance to player)
+        //Vector3 currentpos = new Vector3(CameraPosition.x, 0.0f, CameraPosition.z + Vector3.Distance(CameraPosition, transform.position));
+        //Vector3 newpos = currentpos + velocity; //currentpos + velocity
+        ////controller.Move(velocity * Time.fixedDeltaTime);
+        //transform.position = newpos;
+        ////rotate play to movement
+        //Vector3 facingrotation = Vector3.Normalize(new Vector3(hor, 0f, ver));
 
-        // facingrotation = Vector3.Lerp(transform.eulerAngles, facingrotation, 0.5f);
-        if (facingrotation != Vector3.zero)
-        {
-            transform.forward = facingrotation;
-        }
+        //// facingrotation = Vector3.Lerp(transform.eulerAngles, facingrotation, 0.5f);
+        //if (facingrotation != Vector3.zero)
+        //{
+        //    transform.forward = facingrotation;
+        //}
 
     }
 }

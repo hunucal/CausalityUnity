@@ -35,7 +35,7 @@ public class leafNodeMoveAway : Node {
         directionVector = currentPosition - playerObject.transform.position;
         agent = bossObjet.GetComponent<NavMeshAgent>();
     }
-    public override Status Running()
+    public override Status Tick()
     {
         // set nav mesh goal to be that of the player transform
         Vector3 targetPos = playerObject.transform.position;
@@ -55,8 +55,6 @@ public class leafNodeMoveAway : Node {
         directionVector = currentPosition - lastPosition;
         if (directionVector != Vector3.zero)
         {
-            //rotate boss object towards player rotation so that it faces the player at all times
-            float angle = Vector3.Angle(currentPosition, target);
             Vector3 targetDir = bossObjet.transform.position - target;
             targetDir.y = 0f;
             Vector3 newDir = Vector3.RotateTowards(bossObjet.transform.forward, targetDir, bossRotationVelocity * Time.deltaTime, 0.0f);

@@ -41,7 +41,7 @@ public class LeafNodeMove : Node {
         //bools
         chargePlayer = false;
     }
-    public override Status Running()
+    public override Status Tick()
     {
         // set nav mesh goal to be that of the player transform
         Vector3 targetPos = playerObject.transform.position;
@@ -64,9 +64,6 @@ public class LeafNodeMove : Node {
 
         if (directionVector != Vector3.zero)
         {
-            //rotate boss object towards player rotation so that it faces the player at all times
-            float angle = Vector3.Angle(currentPosition, target);
-
             Vector3 targetDir = agent.transform.position - target;
             targetDir.y = 0f;
             
