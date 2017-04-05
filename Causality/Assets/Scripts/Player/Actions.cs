@@ -113,6 +113,7 @@ public class Actions : MonoBehaviour {
         //Block with weapon
         moveScript.GetComponent<move>().SetRun(false);
         setAnimation.SetBool("Block", true);
+        setAnimation.SetBool("IsAttacking", true);
 
     }
 
