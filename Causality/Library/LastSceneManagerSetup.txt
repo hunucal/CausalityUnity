@@ -1,5 +1,8 @@
 sceneSetups:
 <<<<<<< HEAD
+- path: Assets/Scenes/MainRobin.unity
+=======
+<<<<<<< HEAD
 - path: Assets/Scenes/MainAxel.unity
 =======
 <<<<<<< HEAD
@@ -52,5 +55,6 @@ sceneSetups:
 >>>>>>> 5dc805193e53c50d3dfeabb36b8ccf6f50e60006
 >>>>>>> 370c14286a09b915672e2db22fac835151d60ffb
 >>>>>>> defc135896e16c6c83aac5aeed9ae1e73aea5e42
+>>>>>>> 3987388d8bea990bd820cd9165715cfd8b04556e
   isLoaded: 1
   isActive: 1
