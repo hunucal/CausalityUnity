@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State : MonoBehaviour {
+public class State {
 
 	// Use this for initialization
 	void Start () {
@@ -18,12 +18,12 @@ public class State : MonoBehaviour {
     {
 
     }
-    public virtual bool RunState()
+    public virtual Status RunState()
     {
-        return false;
+        return Status.Failure;
     }
-    public virtual void ExitState()
+    public virtual Status ExitState()
     {
-
+        return Status.Terminated;
     }
 }

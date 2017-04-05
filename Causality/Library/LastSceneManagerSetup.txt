@@ -1,5 +1,17 @@
 sceneSetups:
 <<<<<<< HEAD
+- path: Assets/Scenes/MainRobin.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/MainAxel.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/MainRobin.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/MainJoni.unity
+=======
+<<<<<<< HEAD
 - path: Assets/Scenes/MainChristoffer.unity
 =======
 <<<<<<< HEAD
@@ -40,5 +52,9 @@ sceneSetups:
 >>>>>>> 1cf3b4d124b0f11f136773673cc3abdcecbe3a86
 >>>>>>> 000e49a935d89b3ebd56425a3d0444b2844dfa53
 >>>>>>> 19fc1d84a808bba518af08fbe7be0f21f08b3d6f
+>>>>>>> 5dc805193e53c50d3dfeabb36b8ccf6f50e60006
+>>>>>>> 370c14286a09b915672e2db22fac835151d60ffb
+>>>>>>> defc135896e16c6c83aac5aeed9ae1e73aea5e42
+>>>>>>> 3987388d8bea990bd820cd9165715cfd8b04556e
   isLoaded: 1
   isActive: 1

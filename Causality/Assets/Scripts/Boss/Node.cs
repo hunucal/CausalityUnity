@@ -9,37 +9,37 @@ public enum Status
     Terminated
 }
 public class Node {
-    public virtual Status Running() { return Status.Terminated; }
+    public virtual Status Tick() { return Status.Terminated; }
 }
 public class CompositeNode : Node
 {
     private List<Node> listChildren = new List<Node>();
 
-    public override Status Running() { return Status.Failure; }
+    public override Status Tick() { return Status.Failure; }
     public List<Node> GetChildren() { return listChildren; }
     public void AddChild(Node a) { listChildren.Add(a); }
     public void RemoveChild(Node a) { if (listChildren.Contains(a)) { listChildren.Remove(a); } }
 }
 public class SelectorNode : CompositeNode
 {
-    public override Status Running()
+    public override Status Tick()
     {
         for(int i = 0; i < GetChildren().Count; i++)
         {
-            if (GetChildren()[i].Running() == Status.Success)
-                return Status.Success;
+            if (GetChildren()[i].Tick() != Status.Failure)
+                return GetChildren()[i].Tick();
         }
         return Status.Failure;
     }
 }
 public class SequencerNode : CompositeNode
 {
-    public override Status Running()
+    public override Status Tick()
     {
         for (int i = 0; i < GetChildren().Count; i++)
         {
-            if (GetChildren()[i].Running() == Status.Failure)
-                return Status.Failure;
+            if (GetChildren()[i].Tick() != Status.Success)
+                return GetChildren()[i].Tick();
         }
         return Status.Success;
     }
@@ -47,38 +47,39 @@ public class SequencerNode : CompositeNode
 public class DecoratorNodeInvert : Node
 {
     private Node Child;
-    public override Status Running()
+    public override Status Tick()
     {
-        if(Child.Running() == Status.Success)
+        if(Child.Tick() == Status.Success)
             return Status.Failure;
-        else if (Child.Running() == Status.Failure)
+        else if (Child.Tick() == Status.Failure)
             return Status.Success;
 
-        return Status.Terminated;
+        return Status.Failure;
     }
 
     public void AddChild(Node A) { Child = A; } 
 }
 public class SucceederNode : Node
 {
-    public override Status Running()
+    public override Status Tick()
     {
         return Status.Success;
     }
 }
 public class RepeatUntilFailNode : CompositeNode
 {
-    public override Status Running()
+    public override Status Tick()
     {
         foreach(Node n in GetChildren())
         {
-            if(n.Running() != Status.Failure)
+            if(n.Tick() != Status.Failure)
             {
-                n.Running();
-            }
-            return Status.Success;
+                return n.Tick();
+            } 
+            else
+                return Status.Failure;
         }
-        return Status.Terminated;
+        return Status.Failure;
     }
 }
 public class RepeatSetTimesNode : CompositeNode
@@ -88,16 +89,15 @@ public class RepeatSetTimesNode : CompositeNode
     {
         times = timesToRepeat;
     }
-    public override Status Running()
+    public override Status Tick()
     {
         foreach(Node n in GetChildren())
         {
             for(int i = 0; i < times; i++)
             {
-                n.Running();
-                return Status.Running;
+                if(n.Tick() != Status.Terminated)
+                return n.Tick();
             }
-            return Status.Success;
         }
         return Status.Terminated;
     }

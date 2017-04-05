@@ -16,13 +16,13 @@ public class PhaseOne : State {
 
         commenceAttack = false;
     }
-    public override bool RunState()
+    public override Status RunState()
     {
-        return base.RunState();
+        return StartAttack(ChooseAttack());
     }
-    public override void ExitState()
+    public override Status ExitState()
     {
-        base.ExitState();
+        return Status.Terminated;
     }
     private State ChooseAttack()
     {
@@ -40,16 +40,17 @@ public class PhaseOne : State {
         else
             return null;
     }
-    private bool StartAttack(State state)
+    private Status StartAttack(State state)
     {
-        if (!internalStateMachine.RunState())
+        if (internalStateMachine.RunState() == Status.Failure)
         {
             commenceAttack = true;
-            return false;
+            return Status.Failure;
         }
-
+        else if (internalStateMachine.RunState() == Status.Running)
+            return Status.Running;
         else
-            return true;
+            return Status.Success;
 
     }
 }
