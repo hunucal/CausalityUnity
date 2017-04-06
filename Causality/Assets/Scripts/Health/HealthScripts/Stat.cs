@@ -109,9 +109,12 @@ public class Stat
     {
         this.MaxValHealth = maxValHealth;
         this.MaxValTwoHealth = maxValTwoHealth;
+
         this.MaxValStamina = maxValStamina;
+
         this.CurrentValHealth = currentValHealth;
         this.CurrentValTwoHealth = currentValHealth;
+
         this.CurrentValStamina = currentValStamina;
     }
 }
