@@ -90,13 +90,13 @@ public class move : MonoBehaviour {
 
     private void Move()
     {
-        if (thisRigidbody.velocity.Equals(velocityVector))
+        if (thisRigidbody.velocity.magnitude > moveSpeed)
         {
-            thisRigidbody.velocity = velocityVector;
+            thisRigidbody.velocity = thisRigidbody.velocity.normalized * moveSpeed;
         }
         else
         {
-        thisRigidbody.AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
+            thisRigidbody.AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
         }
         
     }
