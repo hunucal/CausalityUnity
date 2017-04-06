@@ -37,11 +37,11 @@ public class Actions : MonoBehaviour {
         if (Input.GetButtonDown("X Button"))
         {
             //Sprint/Dash
-            moveScript.GetComponent<move>().ActivateRoll();
         }
         if (Input.GetButtonDown("B Button"))
         {
             //Roll
+            moveScript.GetComponent<move>().ActivateRoll();
         }
         if (Input.GetButtonDown("Y Button"))
         {
@@ -101,12 +101,12 @@ public class Actions : MonoBehaviour {
     {
         if(setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
-             setAnimation.SetBool("HeavyAttack", false);
-             setAnimation.SetBool("IsAttacking", false);
-             setAnimation.SetBool("LightAttack", false);
+            setAnimation.SetBool("HeavyAttack", false);
+            setAnimation.SetBool("IsAttacking", false);
+            setAnimation.SetBool("LightAttack", false);
+            setAnimation.SetBool("Block", false);
              
         }
-        setAnimation.SetBool("Block", false);
     }
     void Block()
     {
