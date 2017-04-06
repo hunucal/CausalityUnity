@@ -24,7 +24,7 @@ public class TaskDecorators : Task {
     {
         this.task.End();
     }
-    public override TaskController GetControler()
+    public override ParentTaskController GetControler()
     {
         return this.task.GetControler();
     }

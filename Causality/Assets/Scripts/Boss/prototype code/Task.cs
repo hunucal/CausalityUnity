@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Task {
-    private Blackboard bb;
+    public Blackboard bb;
     private Status status;
     public void InitTask(Blackboard blackboard)
     {
@@ -29,7 +29,7 @@ public class Task {
     {
 
     }
-    public virtual TaskController GetControler()
+    public virtual ParentTaskController GetControler()
     {
         // Override to specify the controller the
         // task has

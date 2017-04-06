@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LeafTask : Task{
 
-    protected TaskController control;
+    protected ParentTaskController control;
 
     public void InitLeafTask(Blackboard blackboard)
     {
@@ -13,10 +13,10 @@ public class LeafTask : Task{
     }
     private void CreateController()
     {
-        this.control = new TaskController();
+        this.control = new ParentTaskController();
         this.control.InitTask(this);
     }
-    public override TaskController GetControler()
+    public override ParentTaskController GetControler()
     {
         return this.control;
     }

@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Blackboard {
-
+    /**
+    *navmesh agent for boss
+    */
+    public NavMeshAgent agent;
     /**
 	 * Reference to the game map
 	 */
@@ -38,13 +41,15 @@ public class Blackboard {
     /**
 	 * Creates a new instance of the Blackboard class
 	 */
+    /**
+    *movespeed for boss
+   */
+    public Vector3 velocity;
     public Blackboard()
     {
         this.moveDirection = new Vector3();
         this.destination = new Vector3();
         this.path = new NavMeshPath();
-        this.closestEnemyCursor = GameObject.FindGameObjectWithTag("Player");
-        this.Boss = GameObject.FindGameObjectWithTag("Boss");
     }
 
 }

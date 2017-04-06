@@ -13,9 +13,10 @@ public class ParentTask : Task {
     private void CreateController()
     {
         this.control = new ParentTaskController();
-        this.control.InitTask(this);
+        this.control.InitParentTask(this);
+       // this.control.InitTask(this);
     }
-    public override TaskController GetControler()
+    public override ParentTaskController GetControler()
     {
         return this.control;
     }
@@ -63,7 +64,7 @@ public class ParentTask : Task {
             {
                 this.ChildSucceeded();
             }
-            if (this.control.currTask.GetControler().Failed())
+            else if (this.control.currTask.GetControler().Failed())
             {
                 this.ChildFailed();
             }
