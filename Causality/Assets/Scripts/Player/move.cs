@@ -15,6 +15,8 @@ public class move : MonoBehaviour {
     private float runspeed = 10.0f;
     [SerializeField]
     private float walkspeed = 6.0f;
+    [SerializeField]
+    private Vector3 velocityVector;
 
     //Stick directions
     private float verticalForce;
@@ -88,7 +90,15 @@ public class move : MonoBehaviour {
 
     private void Move()
     {
+        if (thisRigidbody.velocity.Equals(velocityVector))
+        {
+            thisRigidbody.velocity = velocityVector;
+        }
+        else
+        {
         thisRigidbody.AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
+        }
+        
     }
 
 
@@ -139,7 +149,7 @@ public class move : MonoBehaviour {
         }
         else
         {
-        thisRigidbody.AddForce(transform.forward * 1 * rollspeed, ForceMode.Impulse);
+            thisRigidbody.AddForce(transform.forward * 1 * rollspeed, ForceMode.Impulse);
         }
 
         if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8)
