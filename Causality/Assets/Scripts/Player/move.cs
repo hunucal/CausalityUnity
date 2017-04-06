@@ -15,6 +15,8 @@ public class move : MonoBehaviour {
     private float runspeed = 10.0f;
     [SerializeField]
     private float walkspeed = 6.0f;
+    [SerializeField]
+    private Vector3 velocityVector;
 
     //Stick directions
     private float verticalForce;
@@ -88,7 +90,15 @@ public class move : MonoBehaviour {
 
     private void Move()
     {
-        thisRigidbody.AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
+        if (thisRigidbody.velocity.magnitude > moveSpeed)
+        {
+            thisRigidbody.velocity = thisRigidbody.velocity.normalized * moveSpeed;
+        }
+        else
+        {
+            thisRigidbody.AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
+        }
+        
     }
 
 
@@ -133,14 +143,14 @@ public class move : MonoBehaviour {
 
     private void Roll()
     {
-        if (verticalForce != 0 || horizontalForce != 0)
-        {
-            thisRigidbody.AddForce(rollVector * rollspeed, ForceMode.Impulse);
-        }
-        else
-        {
-        thisRigidbody.AddForce(transform.forward * 1 * rollspeed, ForceMode.Impulse);
-        }
+        //if (verticalForce != 0 || horizontalForce != 0)
+        //{
+        //    thisRigidbody.AddForce(rollVector * rollspeed, ForceMode.Impulse);
+        //}
+        //else
+        //{
+        //}
+            thisRigidbody.AddForce(transform.forward.normalized * rollspeed, ForceMode.Impulse);
 
         if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8)
         {
@@ -174,8 +184,9 @@ public class move : MonoBehaviour {
         {
             setAnimation.SetBool("Roll", true);
             isroll = true;
-            rollVector = PoolInput(horizontalForce, verticalForce);
+            rollVector = PoolInput(horizontalForce, -verticalForce);
             rollVector = RotateWithView();
+            thisRigidbody.velocity = new Vector3(0, 0, 0);
             //TODO:: Use stamina
         }
     }

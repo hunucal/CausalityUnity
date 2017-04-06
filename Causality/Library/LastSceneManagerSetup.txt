@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/MainAxel.unity
+=======
+- path: Assets/Scenes/MainChristoffer.unity
+>>>>>>> 45487b1d21768f75ff8c0c116ee72c0e7d1094e7
   isLoaded: 1
   isActive: 1
