@@ -10,8 +10,8 @@ public class Actions : MonoBehaviour {
     private move moveScript;
     //Animations
     Animator setAnimation;
-    bool hAttack;
-    bool lAttack;
+    public bool hAttack;
+    public bool lAttack;
     // Use this for initialization
     void Start () {
         setAnimation = GetComponent<Animator>();
