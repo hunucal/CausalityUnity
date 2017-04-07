@@ -20,9 +20,7 @@ public class BarScript : MonoBehaviour {
     private Image contentStamina;
 
     public float MaxValueHealth { get; set; }
-
     public float MaxValueStamina { get; set; }
-
 
     public float valueHealth
     {
@@ -62,7 +60,7 @@ public class BarScript : MonoBehaviour {
 
     private void HandleBar()
     {
-        if(fillAmountHealth != contentHealth.fillAmount)
+        if (fillAmountHealth != contentHealth.fillAmount)
         {
             contentHealth.fillAmount = fillAmountHealth;
         }

@@ -150,7 +150,7 @@ public class move : MonoBehaviour {
         //else
         //{
         //}
-            thisRigidbody.AddForce(transform.forward * 1 * rollspeed, ForceMode.Impulse);
+            thisRigidbody.AddForce(transform.forward.normalized * rollspeed, ForceMode.Impulse);
 
         if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8)
         {
@@ -186,6 +186,7 @@ public class move : MonoBehaviour {
             isroll = true;
             rollVector = PoolInput(horizontalForce, -verticalForce);
             rollVector = RotateWithView();
+            thisRigidbody.velocity = new Vector3(0, 0, 0);
             //TODO:: Use stamina
         }
     }
