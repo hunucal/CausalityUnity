@@ -8,11 +8,27 @@ public class Bravo : MonoBehaviour
     [SerializeField]
     private BossStat bossHealth;
 
+    public GameObject BossObject;
+
+    public Text BossDead;
+    public Text GoToMenu;
+
     private IEnumerator coroutine;
 
     private void Awake()
     {
         bossHealth.Initialize();
+    }
+
+    void Start()
+    {
+        BossDead.text = ("You have slain the boss");
+        GoToMenu.text = ("Go back to Menu");
+
+        BossDead.enabled = false;
+        GoToMenu.enabled = false;
+
+        BossObject = GameObject.Find("Boss");
     }
 
     public void Update()
@@ -46,12 +62,24 @@ public class Bravo : MonoBehaviour
         {
             bossHealth.CurrentBossValHealth += 10;
         }
+
+        if(bossHealth.CurrentBossValHealth <= 0)
+        {
+            bossDead();
+            Destroy(BossObject);
+        }
     }
 
     private IEnumerator waitAndDecrease(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         bossHealth.CurrentBossValTwoHealth -= 30 * Time.deltaTime;
+    }
+
+    public void bossDead()
+    {
+        BossDead.enabled = true;
+        GoToMenu.enabled = true;
     }
 
 }
