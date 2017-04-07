@@ -17,7 +17,7 @@ public class LeafTaskMove : LeafTask {
     {
         if(!shouldMove)
         {
-            GetControler().Started();
+            GetController().Started();
             //set player data for blackboard
             this.player = GameObject.FindGameObjectWithTag("Player");
             bb.closestEnemyCursor = this.player;
@@ -41,10 +41,10 @@ public class LeafTaskMove : LeafTask {
         }
         else if(shouldMove)
         {
-            if(this.agent.transform.position.Equals(this.target))
+            if (Vector3.Distance(this.agent.transform.position, target) < 2f)
             {
                 bb.agent = this.agent;
-                GetControler().FinishedWithSucess();
+                GetController().FinishedWithFailiure();
             }
         }
     }
@@ -54,10 +54,10 @@ public class LeafTaskMove : LeafTask {
     }
     public override void End()
     {
-        GetControler().Done();
+        GetController().Done();
     }
     public override void Start()
     {
-        GetControler().Started();
+        GetController().Started();
     }
 }

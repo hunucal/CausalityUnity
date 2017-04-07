@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeafNodeIdle : Node {
+public class LeafNodeIdle : CompositeNode {
     private GameObject bossObjet;
     private GameObject playerObject;
 
@@ -18,14 +18,12 @@ public class LeafNodeIdle : Node {
         //set Player object
         playerObject = GameObject.FindGameObjectWithTag("Player");
     }
-    public override Status Tick()
+    public override void DoAction()
     {
         if (GetAggroRange())
-            return Status.Success;
-        else if (!GetAggroRange())
-            return Status.Failure;
+            this.CompletedWithStatus(Status.Done);
         else
-            return Status.Running;
+            this.CompletedWithStatus(Status.Success);
     }
     private bool GetAggroRange()
     {

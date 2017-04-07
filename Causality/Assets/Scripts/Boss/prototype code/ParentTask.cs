@@ -16,7 +16,7 @@ public class ParentTask : Task {
         this.control.InitParentTask(this);
        // this.control.InitTask(this);
     }
-    public override ParentTaskController GetControler()
+    public override ParentTaskController GetController()
     {
         return this.control;
     }
@@ -52,19 +52,19 @@ public class ParentTask : Task {
         {
             return;
         }
-        if(!this.control.currTask.GetControler().Started())
+        if(!this.control.currTask.GetController().Started())
         {
-            this.control.currTask.GetControler().SafeStart();
+            this.control.currTask.GetController().SafeStart();
         }
-        else if(this.control.currTask.GetControler().Done())
+        else if(this.control.currTask.GetController().Done())
         {
-            this.control.currTask.GetControler().SafeEnd();
+            this.control.currTask.GetController().SafeEnd();
 
-            if (this.control.currTask.GetControler().Succeeded())
+            if (this.control.currTask.GetController().Succeeded())
             {
                 this.ChildSucceeded();
             }
-            else if (this.control.currTask.GetControler().Failed())
+            else if (this.control.currTask.GetController().Failed())
             {
                 this.ChildFailed();
             }

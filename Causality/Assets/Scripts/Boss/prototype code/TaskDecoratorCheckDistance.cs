@@ -21,10 +21,10 @@ public class TaskDecoratorCheckDistance : LeafTask {
     public override void DoAction()
     {
         if (Vector3.Distance(agent.transform.position, target.transform.position) < this.targetDist)
-            GetControler().FinishedWithSucess();
+            GetController().FinishedWithSucess();
     }
     public override void End()
     {
-        GetControler().Done();
+        GetController().Done();
     }
 }

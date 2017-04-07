@@ -36,42 +36,37 @@ public class Tree : MonoBehaviour {
         blackboard.closestEnemyCursor = GameObject.FindGameObjectWithTag("Player");
         blackboard.Boss = GameObject.FindGameObjectWithTag("Boss");
 
-        RootTask.InitParentTask(blackboard);
         RootTask.InitSelector(blackboard);
-        RootTask.InitTask(blackboard);
 
         //move towards player destination and check dist sequence
         Sequence firstSequence = new Sequence();
-        firstSequence.InitTask(blackboard);
         firstSequence.InitSequence(blackboard);
-        firstSequence.InitParentTask(blackboard);
 
         moveTask = new LeafTaskMove();
-        moveTask.InitLeafTask(blackboard);
         moveTask.InitMove(blackboard);
-        moveTask.InitTask(blackboard);
-
 
         TaskDecoratorCheckDistance distCheck = new TaskDecoratorCheckDistance();
         distCheck.InitDist(blackboard, 2f);
         distCheck.InitLeafTask(blackboard);
         distCheck.InitTask(blackboard);
 
-        firstSequence.GetControler().AddTask(moveTask);
+        firstSequence.GetController().AddTask(moveTask);
        // firstSequence.GetControler().AddTask(distCheck);
 
         // create attack sequence
         ResetDecorator resetTask = new ResetDecorator();
         resetTask.InitResetDecorator(blackboard, firstSequence);
 
-        RootTask.GetControler().AddTask(resetTask);
+        RootTask.GetController().AddTask(resetTask);
         //RootTask.SetCurrTask(firstSequence);
-        resetTask.GetControler().AddTask(firstSequence);
+        resetTask.GetController().AddTask(firstSequence);
 
         RootTask.Start();
     }
 	// Update is called once per frame
 	void Update () {
         RootTask.DoAction();
+        if (RootTask.GetCurrTask().GetController().Done())
+            RootTask.DoAction();
     }
 }

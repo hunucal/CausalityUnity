@@ -16,7 +16,7 @@ public class LeafTask : Task{
         this.control = new ParentTaskController();
         this.control.InitTask(this);
     }
-    public override ParentTaskController GetControler()
+    public override ParentTaskController GetController()
     {
         return this.control;
     }

@@ -29,7 +29,7 @@ public class Task {
     {
 
     }
-    public virtual ParentTaskController GetControler()
+    public virtual ParentTaskController GetController()
     {
         // Override to specify the controller the
         // task has

@@ -14,7 +14,7 @@ public class TaskDecorators : Task {
     private void InitDecoratorTask(Task task)
     {
         this.task = task;
-        this.task.GetControler().SetTask(this);
+        this.task.GetController().SetTask(this);
     }
     public override bool CheckConditions()
     {
@@ -24,9 +24,9 @@ public class TaskDecorators : Task {
     {
         this.task.End();
     }
-    public override ParentTaskController GetControler()
+    public override ParentTaskController GetController()
     {
-        return this.task.GetControler();
+        return this.task.GetController();
     }
     public override void Start()
     {

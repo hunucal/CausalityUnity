@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class LeafNodeMove : Node {
+public class LeafNodeMove : CompositeNode {
 
     //set before run
     private GameObject bossObjet;
@@ -41,18 +41,16 @@ public class LeafNodeMove : Node {
         //bools
         chargePlayer = false;
     }
-    public override Status Tick()
+    public override void DoAction()
     {
         // set nav mesh goal to be that of the player transform
         Vector3 targetPos = playerObject.transform.position;
         goal = playerObject.transform;
 
         if (Walktowards(targetPos))
-            return Status.Success;
-        else if(!Walktowards(targetPos))
-            return Status.Failure;
+            this.CompletedWithStatus(Status.Done);
         else
-            return Status.Running;
+            this.CompletedWithStatus(Status.Success);
     }
 
     private bool Walktowards(Vector3 target)

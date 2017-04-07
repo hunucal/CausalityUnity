@@ -29,7 +29,7 @@ public class Selector : ParentTask
                 found = true;
             }
         }
-        return task;
+         return task;
     }
 
     public override void ChildFailed()
@@ -37,11 +37,11 @@ public class Selector : ParentTask
         SetCurrTask(ChooseNewTask());
         if (GetCurrTask() == null)
         {
-            GetControler().FinishedWithFailiure();
+            GetController().FinishedWithFailiure();
         }
     }
     public override void ChildSucceeded()
     {
-        GetControler().FinishedWithSucess();
+        GetController().FinishedWithSucess();
     }
 }
