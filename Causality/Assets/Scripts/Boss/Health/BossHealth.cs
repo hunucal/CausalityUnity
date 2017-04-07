@@ -12,15 +12,14 @@ public class BossHealth : MonoBehaviour
 
     private void Awake()
     {
-        bossHealth.Initialize();
     }
 
     public void update()
     {
-        if (GameObject.Find("Player").GetComponent<OnCollision2hand>().bossHit == true)
+        if (GameObject.Find("Player").GetComponent<OnCollision2Handed>().bossHit == true)
         {
             bossHealth.CurrentBossValHealth -= 50;
-            GameObject.Find("Player").GetComponent<OnCollision2hand>().bossHit = false;
+            GameObject.Find("Player").GetComponent<OnCollision2Handed>().bossHit = false;
         }
 
         if (bossHealth.CurrentBossValHealth > bossHealth.CurrentBossValTwoHealth)
