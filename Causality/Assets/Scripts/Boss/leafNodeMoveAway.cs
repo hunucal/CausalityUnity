@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class leafNodeMoveAway : Node {
+public class leafNodeMoveAway : CompositeNode {
     //set before run
     private GameObject bossObjet;
     private GameObject playerObject;
@@ -35,7 +35,7 @@ public class leafNodeMoveAway : Node {
         directionVector = currentPosition - playerObject.transform.position;
         agent = bossObjet.GetComponent<NavMeshAgent>();
     }
-    public override Status Tick()
+    public override void DoAction()
     {
         // set nav mesh goal to be that of the player transform
         Vector3 targetPos = playerObject.transform.position;
@@ -43,11 +43,11 @@ public class leafNodeMoveAway : Node {
         goal = randomGoal;
 
         if (Walktowards(targetPos))
-            return Status.Success;
+            this.CompletedWithStatus(Status.Success);
         else if (!Walktowards(targetPos))
-            return Status.Failure;
+            this.CompletedWithStatus(Status.Failure);
         else
-            return Status.Running;
+            this.CompletedWithStatus(Status.Running);
     }
 
     private bool Walktowards(Vector3 target)

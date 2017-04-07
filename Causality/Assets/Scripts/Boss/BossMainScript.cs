@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class BossMainScript : MonoBehaviour {
         [Header("Boss movement settings")]
     [SerializeField]private float bossMoveSpeed;
     [SerializeField]private float bossRotationSpeed;
     [SerializeField]private float bossAggroRange;
     //root node
-    RepeatUntilFailNode rootNode;
+    SelectorNode rootNode;
 
     //nodes
     SequencerNode sequencer1, sequencer2, sequencer3, sequencer4;
@@ -27,7 +27,7 @@ public class BossMainScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //nodes
-        rootNode = new RepeatUntilFailNode();
+        rootNode = new SelectorNode();
         //sequensers
         sequencer1 = new SequencerNode();
         sequencer2 = new SequencerNode();
@@ -44,30 +44,35 @@ public class BossMainScript : MonoBehaviour {
         nodeChooseAttack = new NodeChooseAttack();
         //repeater nodes
         repeatSetTimes1 = new RepeatSetTimesNode();
-        //nodes init and add children
-        //leaf
+
+        Blackboard bb = new Blackboard();
+
+        //node inits
+        rootNode.InitSelector(bb, "Root");
+        nodeChooseAttack.Init();
         leafNodeIdle.Init(bossAggroRange);
         leafNodeMove.Init(bossMoveSpeed, bossRotationSpeed);
         leafNodeMoveAway.Init(bossMoveSpeed, bossRotationSpeed);
-        repeatSetTimes1.Init(1);
-        //nodes
-        nodeChooseAttack.Init();
-
-        //root child
-        rootNode.AddChild(selector1);
+        selector1.InitSelector(bb, "Selector");
+        rootNode.GetController().AddChild(selector1);
+        sequencer1.InitSequenser(bb, "Sequence");
+        
 
         //sequence one children
-        selector1.AddChild(leafNodeIdle);
-        selector1.AddChild(leafNodeMove);
-        selector1.AddChild(sequencer1);
-        sequencer1.AddChild(nodeChooseAttack);
+        selector1.GetController().AddChild(leafNodeIdle);
+        selector1.GetController().AddChild(leafNodeMove);
+        selector1.GetController().AddChild(sequencer1);
+
+        //test for debug
+        rootNode.SetCurrentTask(rootNode.GetController().GetChildList().First());
+        selector1.SetCurrentTask(selector1.GetController().GetChildList().First());
+        sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
     }
 	// Update is called once per frame
 	void Update () {
-        if(rootNode.Tick() != Status.Failure)
+        if(rootNode.CheckCondition() != Status.Terminated)
         {
-            if (selector1.Tick() == Status.Failure)
-                selector1.RemoveChild(leafNodeIdle);
+            rootNode.DoAction();
         }      
 	}
 }

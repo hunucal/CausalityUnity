@@ -19,9 +19,9 @@ public class LightAttackOne : State
     public override Status RunState()
     {
         if (Attack())
-            return Status.Success;
+            return Status.Done;
         else
-            return Status.Failure;
+            return Status.Success;
     }
     public override Status ExitState()
     {
