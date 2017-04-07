@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class BarScript : MonoBehaviour {
+public class BarScript : MonoBehaviour
+{
 
     [SerializeField]
     private float fillAmountHealth;
@@ -45,12 +46,6 @@ public class BarScript : MonoBehaviour {
             fillAmountStamina = Map(value, 0, MaxValueStamina, 0, 1);
         }
     }
-
-    // Use this for initialization
-    void Start ()
-    {
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()

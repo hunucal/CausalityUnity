@@ -15,8 +15,6 @@ public class move : MonoBehaviour {
     private float runspeed = 10.0f;
     [SerializeField]
     private float walkspeed = 6.0f;
-    [SerializeField]
-    private Vector3 velocityVector;
 
     //Stick directions
     private float verticalForce;
@@ -30,9 +28,9 @@ public class move : MonoBehaviour {
     [SerializeField]
     private bool isroll;
     [Header("Roll Speed")]
-    public float rollspeed = 15f;
+    public float rollSpeed = 15f;
     Vector3 rollVector { set; get; }
-
+    private bool setspeedzero;
 
     // Use this for initialization
     void Start () {
@@ -53,14 +51,15 @@ public class move : MonoBehaviour {
         //Get Axis from Horizontal and Vertical from left stick
         horizontalForce = Input.GetAxisRaw("Horizontal");
         verticalForce = Input.GetAxisRaw("Vertical");
-        //Check if Horizontal and vertical isn't zero.
         if (isroll)
         {
-         Roll();
+            setAnimation.SetBool("Walk", false);
+            setAnimation.SetBool("Run", false);
+            Roll();
         }
-        else
+        else if (!isroll)
         {
-
+            //Check if Horizontal and vertical isn't zero.
             if (verticalForce != 0 || horizontalForce != 0)
             {
                 if (setAnimation.GetBool("IsAttacking") == false)
@@ -74,16 +73,16 @@ public class move : MonoBehaviour {
                     moveVector = PoolInput(horizontalForce, verticalForce);
                     //Rotate our moveVector
                     moveVector = RotateWithView();
-
+                    //Send in rotated moveVector to rotate player
                     RotatePlayer(horizontalForce, verticalForce, moveVector);
                     //Move
                     Move();
-                
                 }
             }
             else
             {
                 setAnimation.SetBool("Walk", false);
+                setAnimation.SetBool("Run", false);
             }
         }
     }
@@ -143,19 +142,45 @@ public class move : MonoBehaviour {
 
     private void Roll()
     {
-        //if (verticalForce != 0 || horizontalForce != 0)
-        //{
-        //    thisRigidbody.AddForce(rollVector * rollspeed, ForceMode.Impulse);
-        //}
-        //else
-        //{
-        //}
-            thisRigidbody.AddForce(transform.forward.normalized * rollspeed, ForceMode.Impulse);
-
-        if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8)
+        
+            
+        if (thisRigidbody.velocity.magnitude > rollSpeed)
         {
-            setAnimation.SetBool("Roll", false);
-            isroll = false;
+            thisRigidbody.velocity = thisRigidbody.velocity.normalized * rollSpeed;
+        }
+        else
+        {
+            thisRigidbody.AddForce(transform.forward.normalized * rollSpeed, ForceMode.Impulse);
+        }
+
+        if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+        {
+            if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.6 && setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+            {
+                rollSpeed = 0;
+            }
+            else if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                setAnimation.SetBool("Roll", false);
+                isroll = false;
+            }
+        }
+        if (setspeedzero)
+        {
+            thisRigidbody.velocity = thisRigidbody.velocity / 10;
+            setspeedzero = false;
+        }
+        else if (setAnimation.GetCurrentAnimatorStateInfo(1).IsName("Roll"))
+        {
+            if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.6 && setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime < 1)
+            {
+                rollSpeed = 0;
+            }
+            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            {
+                setAnimation.SetBool("Roll", false);
+                isroll = false;
+            }
         }
     }
 
@@ -174,20 +199,23 @@ public class move : MonoBehaviour {
     void Run()
     {
         //attri.CurrentValStamina -= 2.0f * Time.fixedDeltaTime;
-        moveSpeed = runspeed;
-        setAnimation.SetBool("Run", true);
+            moveSpeed = runspeed;
+            setAnimation.SetBool("Run", true);
+        
     }
 
     public void ActivateRoll()
     {
-        if (true) //Set Stamina
+        if (!isroll)
         {
-            setAnimation.SetBool("Roll", true);
-            isroll = true;
-            rollVector = PoolInput(horizontalForce, -verticalForce);
-            rollVector = RotateWithView();
-            thisRigidbody.velocity = new Vector3(0, 0, 0);
-            //TODO:: Use stamina
+            if (true) //Set Stamina
+            {
+                setAnimation.SetBool("Roll", true);
+                isroll = true;
+                rollSpeed = 182.5f;
+                setspeedzero = true;
+                //TODO:: Use stamina
+            }
         }
     }
 }
