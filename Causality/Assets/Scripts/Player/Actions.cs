@@ -10,11 +10,14 @@ public class Actions : MonoBehaviour {
     private move moveScript;
     //Animations
     Animator setAnimation;
-
+    public bool hAttack;
+    public bool lAttack;
     // Use this for initialization
     void Start () {
         setAnimation = GetComponent<Animator>();
         moveScript = GetComponent<move>();
+        hAttack = false;
+        lAttack = false;
     }
 	
 	// Update is called once per frame
@@ -83,7 +86,8 @@ public class Actions : MonoBehaviour {
 
     void LightAttack()
     {
-        //Fast attack
+        //Light attack
+        lAttack = true;
         setAnimation.SetBool("LightAttack", true);
         setAnimation.SetBool("IsAttacking", true);
         //Damage(10);
@@ -94,19 +98,23 @@ public class Actions : MonoBehaviour {
         //Heavy attack
         if(!setAnimation.GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
         {
-        setAnimation.SetBool("HeavyAttack", true);
-        setAnimation.SetBool("IsAttacking", true);
+            hAttack = true;
+            setAnimation.SetBool("HeavyAttack", true);
+            setAnimation.SetBool("IsAttacking", true);
         }
     }
     void StopAttacking()
     {
-        if(setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+       
+        if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
             setAnimation.SetBool("HeavyAttack", false);
             setAnimation.SetBool("IsAttacking", false);
             setAnimation.SetBool("LightAttack", false);
             setAnimation.SetBool("Block", false);
-             
+            lAttack = false;
+            hAttack = false;
+
         }
     }
     void Block()
