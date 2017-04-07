@@ -20,15 +20,25 @@ public class OnCollision2Handed : MonoBehaviour
 
     void Update()
     {
-        //if()
-        //{
-        //    HeavyAttack = true;
-        //}
+        if (GameObject.Find("Player").GetComponent<Actions>().hAttack == true)
+        {
+            HeavyAttack = true;
+        }
 
-        //if ()
-        //{
-        //    LightAttack = true;
-        //}
+        if (GameObject.Find("Player").GetComponent<Actions>().hAttack == false)
+        {
+            HeavyAttack = false;
+        }
+
+        if (GameObject.Find("Player").GetComponent<Actions>().lAttack == true)
+        {
+            LightAttack = true;
+        }
+
+        if (GameObject.Find("Player").GetComponent<Actions>().lAttack == false)
+        {
+            LightAttack = false;
+        }
     }
 
 }
