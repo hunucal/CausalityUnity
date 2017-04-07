@@ -12,6 +12,7 @@ public class Actions : MonoBehaviour {
     Animator setAnimation;
     public bool hAttack;
     public bool lAttack;
+    public bool block;
     // Use this for initialization
     void Start () {
         setAnimation = GetComponent<Animator>();
@@ -105,16 +106,59 @@ public class Actions : MonoBehaviour {
     }
     void StopAttacking()
     {
-       
-        if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (hAttack)
         {
-            setAnimation.SetBool("HeavyAttack", false);
-            setAnimation.SetBool("IsAttacking", false);
-            setAnimation.SetBool("LightAttack", false);
-            setAnimation.SetBool("Block", false);
-            lAttack = false;
-            hAttack = false;
-
+            if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
+            {
+                if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                {
+                    setAnimation.SetBool("HeavyAttack", false);
+                    setAnimation.SetBool("IsAttacking", false);
+                    hAttack = false;
+                }
+            }
+            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            {
+                setAnimation.SetBool("HeavyAttack", false);
+                setAnimation.SetBool("IsAttacking", false);
+                hAttack = false;
+            }
+        }
+        else if (lAttack)
+        {
+            if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
+            {
+                if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                {
+                    setAnimation.SetBool("LightAttack", false);
+                    setAnimation.SetBool("IsAttacking", false);
+                    lAttack = false;
+                }
+            }
+            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            {
+                setAnimation.SetBool("LightAttack", false);
+                setAnimation.SetBool("IsAttacking", false);
+                lAttack = false;
+            }
+        }
+        else if (block)
+        {
+            if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("Block"))
+            {
+                if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                {
+                    setAnimation.SetBool("Block", false);
+                    setAnimation.SetBool("IsAttacking", false);
+                    block = false;
+                }
+            }
+            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            {
+                setAnimation.SetBool("Block", false);
+                setAnimation.SetBool("IsAttacking", false);
+                block = false;
+            }
         }
     }
     void Block()
@@ -123,12 +167,12 @@ public class Actions : MonoBehaviour {
         moveScript.GetComponent<move>().SetRun(false);
         setAnimation.SetBool("Block", true);
         setAnimation.SetBool("IsAttacking", true);
-
+        block = true;
     }
 
     void ShieldBlock()
     {
-        //Block with shield with bash
+        //Block with shield
     }
 
     void Select()
