@@ -45,7 +45,6 @@ public class Actions : MonoBehaviour {
         if (Input.GetButtonDown("B Button"))
         {
             //Roll
-            print("B Button pressed");
             moveScript.GetComponent<move>().ActivateRoll(); 
         }
         if (Input.GetButtonDown("Y Button"))
