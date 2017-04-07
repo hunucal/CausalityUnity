@@ -7,11 +7,12 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private Stat health;
+
     public Text DeadText;
     public Text RespawnText;
 
-    private IEnumerator coroutine;
-
+    private IEnumerator playerCoroutine;
+    
     public float Timer = 0;
     public bool checkIfDead = false;
 
@@ -42,10 +43,9 @@ public class Player : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update ()
+	public void Update ()
     {
-
-        if(health.CurrentValHealth <= 0)
+        if (health.CurrentValHealth <= 0)
         {
             Dead();
         }
@@ -110,8 +110,8 @@ public class Player : MonoBehaviour
 
         if (health.CurrentValHealth < health.CurrentValTwoHealth)
         {
-            coroutine = waitAndDecrease(0.8f);
-            StartCoroutine(coroutine);
+            playerCoroutine = waitAndDecrease(0.8f);
+            StartCoroutine(playerCoroutine);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
