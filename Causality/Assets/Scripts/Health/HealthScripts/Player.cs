@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     float Running;
     float Wait;
 
+    private Actions ActionsScript;
+
     // Use this for initialization
     void Start ()
     {
@@ -35,6 +37,8 @@ public class Player : MonoBehaviour
 
         Cam1.enabled = true;
         Cam2.enabled = false;
+
+        ActionsScript = GetComponent<Actions>();
     }
 
     private void Awake()
