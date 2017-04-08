@@ -15,7 +15,6 @@ public class OnCollision2Handed : MonoBehaviour
         if (col.gameObject.tag == "Boss")
         {
             bossHit = true;
-            
         }
     }
 
