@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[SerializeField]
+[Serializable]
 public class BossStat
 {
     [SerializeField]
@@ -15,7 +16,7 @@ public class BossStat
     private float currentBossValHealth;
     [SerializeField]
     private float currentBossValTwoHealth;
-
+  
     public float CurrentBossValHealth
     {
         get

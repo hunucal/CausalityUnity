@@ -13,9 +13,9 @@ public class ResetDecorator : TaskDecorators {
 public override void DoAction()
     {
         this.task.DoAction();
-        if (this.task.GetControler().Done())
+        if (this.task.GetController().Done())
         {
-            this.task.GetControler().Reset();
+            this.task.GetController().Reset();
         }
     }
 }

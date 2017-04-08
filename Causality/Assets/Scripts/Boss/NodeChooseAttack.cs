@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-public class NodeChooseAttack : Node {
+public class NodeChooseAttack : CompositeNode {
     private closeCombatAttackStates bossCCStates;
     private bool commenceAttack;
 
@@ -17,30 +17,20 @@ public class NodeChooseAttack : Node {
 
         commenceAttack = true;
     }
-    public override Status Tick()
+    public override void DoAction()
     {
         Status status = StartAttack(ChooseAttack());
-
-        switch (status)
+        if (status == Status.Success)
         {
-            case Status.Success:
-                {
-                    commenceAttack = true;
-                    return Status.Success;
-                }
-            case Status.Failure:
-                {
-                    commenceAttack = true;
-                    return Status.Failure;
-                }
-            case Status.Running:
-                break;
-            case Status.Terminated:
-                break;
-            default:               
-                break;
+            commenceAttack = true;
+            this.CompletedWithStatus(Status.Done);
         }
-        return Status.Running;
+        else if (status == Status.Running)
+        {
+            commenceAttack = true;
+            this.CompletedWithStatus(Status.Running);
+        }
+        this.CompletedWithStatus(Status.Failure);
     }
     private State ChooseAttack()
     {

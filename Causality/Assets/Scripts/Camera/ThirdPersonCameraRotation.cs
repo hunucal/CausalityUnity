@@ -17,7 +17,8 @@ public class ThirdPersonCameraRotation : MonoBehaviour
     RaycastHit hit;
     public float cameraHeight = 55f;
     public float cameraPan = 0f;
-    float camRotateSpeed = 180f;
+    float camRotateSpeedX = 180;
+    float camRotateSpeedY = 10;
     Vector3 camPosition;
     Vector3 camMask;
     Vector3 followMask;
@@ -37,8 +38,8 @@ public class ThirdPersonCameraRotation : MonoBehaviour
 
     void LateUpdate()
     {
-        rotateAround += currentX * camRotateSpeed * Time.deltaTime;
-        RotationYaxis += currentY * camRotateSpeed * Time.deltaTime;
+        rotateAround += currentX * camRotateSpeedX * Time.deltaTime;
+        RotationYaxis += currentY * camRotateSpeedY * Time.deltaTime;
         RotationYaxis = Mathf.Clamp(RotationYaxis, minY, maxY);
 
         //Offset of the targets transform (Since the pivot point is usually at the feet).
@@ -56,7 +57,7 @@ public class ThirdPersonCameraRotation : MonoBehaviour
         occludeRay(ref targetOffset);
         smoothCamMethod();
 
-        transform.LookAt(target);
+        transform.LookAt(targetOffset);
 
         #region wrap the cam orbit rotation
         if (rotateAround > 360)
