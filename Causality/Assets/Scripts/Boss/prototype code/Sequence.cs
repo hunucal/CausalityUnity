@@ -10,14 +10,14 @@ public class Sequence : ParentTask {
     }
     public override void ChildFailed()
     {
-        GetControler().FinishedWithFailiure();
+        GetController().FinishedWithFailiure();
     }
     public override void ChildSucceeded()
     {
         int curPos = GetSubTask().IndexOf(GetCurrTask());
         if (curPos == GetSubTask().Count - 1)
         {
-            GetControler().FinishedWithSucess();
+            GetController().FinishedWithSucess();
         }
         else
         {
@@ -25,7 +25,7 @@ public class Sequence : ParentTask {
         }
         if (!GetCurrTask().CheckConditions())
         {
-            GetControler().FinishedWithFailiure();
+            GetController().FinishedWithFailiure();
         }
     }
 }
