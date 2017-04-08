@@ -10,14 +10,12 @@ public class Actions : MonoBehaviour {
     private move moveScript;
     //Animations
     Animator setAnimation;
-<<<<<<< HEAD
     public bool Blocking = false;
 
-=======
     public bool hAttack;
     public bool lAttack;
     public bool block;
->>>>>>> 667650c188841f66796822740d23713eba2510a9
+
     // Use this for initialization
     void Start () {
         setAnimation = GetComponent<Animator>();
