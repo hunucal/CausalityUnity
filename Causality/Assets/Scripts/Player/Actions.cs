@@ -10,6 +10,7 @@ public class Actions : MonoBehaviour {
     private move moveScript;
     //Animations
     Animator setAnimation;
+    public bool Blocking = false;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +21,7 @@ public class Actions : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         Inputs();
+        print(Blocking);
 	}
 
     void Inputs()
@@ -74,11 +76,11 @@ public class Actions : MonoBehaviour {
         {
             //Block
             //if(2h)
+            Blocking = true;
             Block();
             //else if (1h and shield)
             //ShieldBlock();
         }
-        
     }
 
     void LightAttack()
@@ -109,7 +111,7 @@ public class Actions : MonoBehaviour {
              
         }
     }
-    void Block()
+    public void Block()
     {
         //Block with weapon
         moveScript.GetComponent<move>().SetRun(false);
