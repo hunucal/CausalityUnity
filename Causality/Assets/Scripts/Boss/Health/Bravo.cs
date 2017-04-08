@@ -12,9 +12,6 @@ public class Bravo : MonoBehaviour
     public GameObject PlayerObject;
     public GameObject BossBar;
 
-    public Text BossDead;
-    public Text GoToMenu;
-
     private IEnumerator coroutine;
 
     private void Awake()
@@ -25,12 +22,6 @@ public class Bravo : MonoBehaviour
 
     void Start()
     {
-        BossDead.text = ("You have slain the boss");
-        GoToMenu.text = ("Go back to Menu");
-
-        BossDead.enabled = false;
-        GoToMenu.enabled = false;
-
         BossObject = GameObject.FindWithTag("Boss");
         PlayerObject = GameObject.FindWithTag("Player");
 
@@ -53,7 +44,7 @@ public class Bravo : MonoBehaviour
 
         if (PlayerObject.GetComponentInChildren<OnCollision2Handed>().bossHit == true && PlayerObject.GetComponentInChildren<OnCollision2Handed>().HeavyAttack == true)
         {
-            bossHealth.CurrentBossValHealth -= 100;
+            bossHealth.CurrentBossValHealth -= 10;
             PlayerObject.GetComponentInChildren<OnCollision2Handed>().bossHit = false;
             PlayerObject.GetComponentInChildren<OnCollision2Handed>().HeavyAttack = false;
             PlayerObject.GetComponentInChildren<AudioSource>().Play();
@@ -81,24 +72,12 @@ public class Bravo : MonoBehaviour
         {
             bossHealth.CurrentBossValHealth += 10;
         }
-
-        if(bossHealth.CurrentBossValHealth <= 0)
-        {
-            bossDead();
-            Destroy(BossObject);
-        }
     }
 
     private IEnumerator waitAndDecrease(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         bossHealth.CurrentBossValTwoHealth -= 30 * Time.deltaTime;
-    }
-
-    public void bossDead()
-    {
-        BossDead.enabled = true;
-        GoToMenu.enabled = true;
     }
 
 }

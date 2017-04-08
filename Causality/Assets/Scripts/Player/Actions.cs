@@ -10,7 +10,10 @@ public class Actions : MonoBehaviour {
     private move moveScript;
     //Animations
     Animator setAnimation;
+<<<<<<< HEAD
     public bool Blocking = false;
+=======
+>>>>>>> 25dd41137d8ebbb064de7f5f5593204edf2fe4cf
 
     public bool hAttack;
     public bool lAttack;
@@ -27,7 +30,6 @@ public class Actions : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         Inputs();
-        print(Blocking);
 	}
 
     void Inputs()
@@ -81,7 +83,6 @@ public class Actions : MonoBehaviour {
         {
             //Block
             //if(2h)
-            Blocking = true;
             Block();
             //else if (1h and shield)
             //ShieldBlock();
@@ -164,7 +165,8 @@ public class Actions : MonoBehaviour {
             }
         }
     }
-    public void Block()
+
+    void Block()
     {
         //Block with weapon
         moveScript.GetComponent<move>().SetRun(false);
