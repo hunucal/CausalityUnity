@@ -9,6 +9,8 @@ public class Bravo : MonoBehaviour
     private BossStat bossHealth;
 
     public GameObject BossObject;
+    public GameObject PlayerObject;
+    public GameObject BossBar;
 
     public Text BossDead;
     public Text GoToMenu;
@@ -18,6 +20,7 @@ public class Bravo : MonoBehaviour
     private void Awake()
     {
         bossHealth.Initialize();
+
     }
 
     void Start()
@@ -28,23 +31,39 @@ public class Bravo : MonoBehaviour
         BossDead.enabled = false;
         GoToMenu.enabled = false;
 
-        BossObject = GameObject.Find("Boss");
+        BossObject = GameObject.FindWithTag("Boss");
+        PlayerObject = GameObject.FindWithTag("Player");
+
+        if (BossBar == null)
+            Debug.Log("BossBar is missing a gameobject.");
+
     }
 
     public void Update()
     {
-        if (GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().bossHit == true && GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().HeavyAttack == true)
+        if (Vector3.Distance(PlayerObject.transform.position, BossObject.transform.position) < 5)
         {
-            bossHealth.CurrentBossValHealth -= 10;
-            GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().bossHit = false;
-            GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().HeavyAttack = false;
+            BossBar.SetActive(true);
         }
 
-        if (GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().bossHit == true && GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().LightAttack == true)
+        if (Vector3.Distance(PlayerObject.transform.position, BossObject.transform.position) > 5)
+        {
+            BossBar.SetActive(false);
+        }
+
+        if (PlayerObject.GetComponentInChildren<OnCollision2Handed>().bossHit == true && PlayerObject.GetComponentInChildren<OnCollision2Handed>().HeavyAttack == true)
+        {
+            bossHealth.CurrentBossValHealth -= 100;
+            PlayerObject.GetComponentInChildren<OnCollision2Handed>().bossHit = false;
+            PlayerObject.GetComponentInChildren<OnCollision2Handed>().HeavyAttack = false;
+            PlayerObject.GetComponentInChildren<AudioSource>().Play();
+        }
+
+        if (PlayerObject.GetComponentInChildren<OnCollision2Handed>().bossHit == true && PlayerObject.GetComponentInChildren<OnCollision2Handed>().LightAttack == true)
         {
             bossHealth.CurrentBossValHealth -= 5;
-            GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().bossHit = false;
-            GameObject.Find("Player").GetComponentInChildren<OnCollision2Handed>().LightAttack = false;
+            PlayerObject.GetComponentInChildren<OnCollision2Handed>().bossHit = false;
+            PlayerObject.GetComponentInChildren<OnCollision2Handed>().LightAttack = false;
         }
 
         if (bossHealth.CurrentBossValHealth > bossHealth.CurrentBossValTwoHealth)
