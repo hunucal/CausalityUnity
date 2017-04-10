@@ -7,10 +7,11 @@ public class LeafNodeIdle : CompositeNode {
     private GameObject playerObject;
 
     private float bossAggroRange;
-    public void Init(float aggroRange)
+    public void InitIdle(Blackboard bb, string name)
     {
+        InitCompositeNode(bb, name);
         //boss aggro range
-        bossAggroRange = aggroRange;
+        bossAggroRange = bb.aggroRange;
 
         //set Boss object
         bossObjet = GameObject.FindGameObjectWithTag("Boss");
@@ -20,18 +21,24 @@ public class LeafNodeIdle : CompositeNode {
     }
     public override void DoAction()
     {
-        if (GetAggroRange())
-            this.CompletedWithStatus(Status.Done);
-        else
-            this.CompletedWithStatus(Status.Success);
+        GetAggroRange();
     }
-    private bool GetAggroRange()
+    private void GetAggroRange()
     {
-        float distanceToPlayer = Vector3.Distance(bossObjet.transform.position, playerObject.transform.position);
-        if (distanceToPlayer < bossAggroRange)
+
+        if (Vector3.Distance(this.blackboard.agent.transform.position, this.blackboard.closestEnemyCursor.transform.position) > this.blackboard.aggroRange)
         {
-            return false;
+            CompletedWithStatus(Status.Running);
         }
-        return true;
+        else if (Vector3.Distance(this.blackboard.agent.transform.position, this.blackboard.closestEnemyCursor.transform.position) < this.blackboard.aggroRange)
+        {
+            CompletedWithStatus(Status.Done);
+        }
+        else if (UnityEngine.UnassignedReferenceException.Equals(this.blackboard.agent, null))
+        {
+            CompletedWithStatus(Status.Failure);
+        }
+        else
+            CompletedWithStatus(Status.Success);
     }
 }

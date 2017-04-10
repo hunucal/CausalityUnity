@@ -44,6 +44,9 @@ public class Blackboard {
     /**
     *movespeed for boss
    */
+    public float movespeed;
+    public float aggroRange;
+    public float rotationSpeed;
     public Vector3 velocity;
     public Blackboard()
     {
