@@ -22,7 +22,10 @@ public class Actions : MonoBehaviour {
         moveScript = GetComponent<move>();
         hAttack = false;
         lAttack = false;
-    }   
+        ishAttack = false;
+        islAttack = false;
+        isBlock = false;
+}   
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -182,7 +185,7 @@ public class Actions : MonoBehaviour {
     void Roll()
     {
         //Code Roll in movement use here?
-        moveScript.GetComponent<Movement>().Roll();
+        moveScript.GetComponent<move>().ActivateRoll(); 
     }
 
     void Dash()
