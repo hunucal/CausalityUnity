@@ -23,11 +23,12 @@ public class Actions : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-        Inputs();
+	void FixedUpdate ()
+    {
+        //Inputs();
 	}
 
-    void Inputs()
+    public void Inputs()
     {
         StopAttacking();
         if (Input.GetButton("A Button"))
