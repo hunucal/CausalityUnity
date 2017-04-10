@@ -10,17 +10,16 @@ public class Actions : MonoBehaviour {
     private move moveScript;
     //Animations
     Animator setAnimation;
-
     public bool hAttack;
     public bool lAttack;
     public bool block;
-
     // Use this for initialization
     void Start () {
         setAnimation = GetComponent<Animator>();
         moveScript = GetComponent<move>();
         hAttack = false;
         lAttack = false;
+        
     }
 	
 	// Update is called once per frame
@@ -83,6 +82,7 @@ public class Actions : MonoBehaviour {
             //else if (1h and shield)
             //ShieldBlock();
         }
+        
     }
 
     void LightAttack()
@@ -161,7 +161,6 @@ public class Actions : MonoBehaviour {
             }
         }
     }
-
     void Block()
     {
         //Block with weapon
