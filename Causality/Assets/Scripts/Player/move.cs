@@ -29,8 +29,15 @@ public class move : MonoBehaviour {
     private bool isroll;
     [Header("Roll Speed")]
     public float rollSpeed = 15f;
+    public float setRollSpeed = 1.0f;
     Vector3 rollVector { set; get; }
     private bool setspeedzero;
+
+    private Vector3 targetpos;
+    private Vector3 currentpos;
+    private Vector3 updatepos;
+    public float rolldistance = 2;
+
 
     // Use this for initialization
     void Start () {
@@ -43,21 +50,20 @@ public class move : MonoBehaviour {
         setAnimation = GetComponent<Animator>();
         run = false;
         moveSpeed = walkspeed;
-
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	public void MoveUpdate () {
         //Get Axis from Horizontal and Vertical from left stick
         horizontalForce = Input.GetAxisRaw("Horizontal");
         verticalForce = Input.GetAxisRaw("Vertical");
+
         if (isroll)
         {
-            setAnimation.SetBool("Walk", false);
-            setAnimation.SetBool("Run", false);
             Roll();
+            CheckRollStop();
         }
-        else if (!isroll)
+        if (!isroll)
         {
             //Check if Horizontal and vertical isn't zero.
             if (verticalForce != 0 || horizontalForce != 0)
@@ -142,41 +148,24 @@ public class move : MonoBehaviour {
 
     private void Roll()
     {
-        
-            
-        if (thisRigidbody.velocity.magnitude > rollSpeed)
-        {
-            thisRigidbody.velocity = thisRigidbody.velocity.normalized * rollSpeed;
-        }
-        else
-        {
-            thisRigidbody.AddForce(transform.forward.normalized * rollSpeed, ForceMode.Impulse);
-        }
+        currentpos = transform.position;
+        updatepos = Vector3.MoveTowards(currentpos, targetpos, setRollSpeed * Time.fixedDeltaTime);
+        transform.position = updatepos;
+    }
 
+    private void CheckRollStop()
+    {
         if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
         {
-            if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.6 && setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
-            {
-                rollSpeed = 0;
-            }
-            else if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
             {
                 setAnimation.SetBool("Roll", false);
                 isroll = false;
             }
         }
-        if (setspeedzero)
-        {
-            thisRigidbody.velocity = thisRigidbody.velocity / 10;
-            setspeedzero = false;
-        }
         else if (setAnimation.GetCurrentAnimatorStateInfo(1).IsName("Roll"))
         {
-            if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.6 && setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime < 1)
-            {
-                rollSpeed = 0;
-            }
-            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9)
             {
                 setAnimation.SetBool("Roll", false);
                 isroll = false;
@@ -212,8 +201,9 @@ public class move : MonoBehaviour {
             {
                 setAnimation.SetBool("Roll", true);
                 isroll = true;
-                rollSpeed = 182.5f;
-                setspeedzero = true;
+                //rollSpeed = 182.5f;
+                //setspeedzero = true;
+                targetpos = transform.position + transform.forward.normalized * rolldistance;
                 //TODO:: Use stamina
             }
         }

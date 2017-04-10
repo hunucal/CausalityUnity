@@ -13,14 +13,19 @@ public class Actions : MonoBehaviour {
     public bool hAttack;
     public bool lAttack;
     public bool block;
+    private bool ishAttack;
+    private bool islAttack;
+    private bool isBlock;
     // Use this for initialization
     void Start () {
         setAnimation = GetComponent<Animator>();
         moveScript = GetComponent<move>();
         hAttack = false;
         lAttack = false;
-        
-    }
+        ishAttack = false;
+        islAttack = false;
+        isBlock = false;
+}   
 	
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -78,10 +83,7 @@ public class Actions : MonoBehaviour {
         if (Input.GetAxis("LT Button") != 0)
         {
             //Block
-            //if(2h)
             Block();
-            //else if (1h and shield)
-            //ShieldBlock();
         }
         
     }
@@ -89,7 +91,7 @@ public class Actions : MonoBehaviour {
     void LightAttack()
     {
         //Light attack
-        lAttack = true;
+        islAttack = true;
         setAnimation.SetBool("LightAttack", true);
         setAnimation.SetBool("IsAttacking", true);
         //Damage(10);
@@ -100,14 +102,14 @@ public class Actions : MonoBehaviour {
         //Heavy attack
         if(!setAnimation.GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
         {
-            hAttack = true;
+            ishAttack = true;
             setAnimation.SetBool("HeavyAttack", true);
             setAnimation.SetBool("IsAttacking", true);
         }
     }
     void StopAttacking()
     {
-        if (hAttack)
+        if (ishAttack)
         {
             if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
             {
@@ -115,17 +117,17 @@ public class Actions : MonoBehaviour {
                 {
                     setAnimation.SetBool("HeavyAttack", false);
                     setAnimation.SetBool("IsAttacking", false);
-                    hAttack = false;
+                    ishAttack = false;
                 }
             }
             else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
             {
                 setAnimation.SetBool("HeavyAttack", false);
                 setAnimation.SetBool("IsAttacking", false);
-                hAttack = false;
+                ishAttack = false;
             }
         }
-        else if (lAttack)
+        else if (islAttack)
         {
             if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
             {
@@ -133,17 +135,17 @@ public class Actions : MonoBehaviour {
                 {
                     setAnimation.SetBool("LightAttack", false);
                     setAnimation.SetBool("IsAttacking", false);
-                    lAttack = false;
+                    islAttack = false;
                 }
             }
             else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
             {
                 setAnimation.SetBool("LightAttack", false);
                 setAnimation.SetBool("IsAttacking", false);
-                lAttack = false;
+                islAttack = false;
             }
         }
-        else if (block)
+        else if (isBlock)
         {
             if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("Block"))
             {
@@ -151,14 +153,14 @@ public class Actions : MonoBehaviour {
                 {
                     setAnimation.SetBool("Block", false);
                     setAnimation.SetBool("IsAttacking", false);
-                    block = false;
+                    isBlock = false;
                 }
             }
             else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
             {
                 setAnimation.SetBool("Block", false);
                 setAnimation.SetBool("IsAttacking", false);
-                block = false;
+                isBlock = false;
             }
         }
     }
@@ -168,7 +170,7 @@ public class Actions : MonoBehaviour {
         moveScript.GetComponent<move>().SetRun(false);
         setAnimation.SetBool("Block", true);
         setAnimation.SetBool("IsAttacking", true);
-        block = true;
+        isBlock = true;
     }
 
     void ShieldBlock()
@@ -184,7 +186,7 @@ public class Actions : MonoBehaviour {
     void Roll()
     {
         //Code Roll in movement use here?
-        moveScript.GetComponent<Movement>().Roll();
+        moveScript.GetComponent<move>().ActivateRoll(); 
     }
 
     void Dash()
