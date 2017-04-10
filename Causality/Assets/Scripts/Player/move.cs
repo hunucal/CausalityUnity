@@ -43,8 +43,8 @@ public class move : MonoBehaviour {
         setAnimation = GetComponent<Animator>();
         run = false;
         moveSpeed = walkspeed;
-        
-	}
+
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {

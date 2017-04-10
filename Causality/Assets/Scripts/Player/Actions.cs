@@ -10,9 +10,15 @@ public class Actions : MonoBehaviour {
     private move moveScript;
     //Animations
     Animator setAnimation;
+<<<<<<< HEAD
+    public bool Blocking = false;
+=======
+>>>>>>> 25dd41137d8ebbb064de7f5f5593204edf2fe4cf
+
     public bool hAttack;
     public bool lAttack;
     public bool block;
+
     // Use this for initialization
     void Start () {
         setAnimation = GetComponent<Animator>();
@@ -81,7 +87,6 @@ public class Actions : MonoBehaviour {
             //else if (1h and shield)
             //ShieldBlock();
         }
-        
     }
 
     void LightAttack()
@@ -160,6 +165,7 @@ public class Actions : MonoBehaviour {
             }
         }
     }
+
     void Block()
     {
         //Block with weapon
