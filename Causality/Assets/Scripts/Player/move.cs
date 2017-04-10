@@ -51,11 +51,11 @@ public class move : MonoBehaviour {
         //Get Axis from Horizontal and Vertical from left stick
         horizontalForce = Input.GetAxisRaw("Horizontal");
         verticalForce = Input.GetAxisRaw("Vertical");
+
         if (isroll)
         {
-            setAnimation.SetBool("Walk", false);
-            setAnimation.SetBool("Run", false);
             Roll();
+            CheckRollStop();
         }
         else if (!isroll)
         {
@@ -153,6 +153,18 @@ public class move : MonoBehaviour {
             thisRigidbody.AddForce(transform.forward.normalized * rollSpeed, ForceMode.Impulse);
         }
 
+        Vector3 targetpos;
+        Vector3 currentpos;
+        Vector3 updatepos;
+        float rolldistance = 1;
+        Vector3 rolldir;
+        rolldir = new Vector3(horizontalForce * rolldistance, 0, verticalForce * rolldistance);
+        currentpos = transform.position;
+        targetpos = new Vector3(transform.position.x, transform.position.y, transform.position.y + rolldistance);
+    }
+
+    private void CheckRollStop()
+    {
         if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
         {
             if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.6 && setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
