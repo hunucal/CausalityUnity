@@ -219,7 +219,7 @@ public class Actions {
 
     public void ActivateRoll(PlayerBlackboard PBB)
     {
-        if (!PBB.isroll)
+        if (!PBB.isroll && PBB.Player.GetComponent<Animator>().GetBool("IsAttacking") == false)
         {
             if (true) //Set Stamina
             {
