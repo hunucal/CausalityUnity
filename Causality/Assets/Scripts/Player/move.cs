@@ -10,15 +10,7 @@ public class move {
     private float moveSpeed;
 
     private bool isRunning;
-
-    //Roll variables
-    private bool isroll;
-
-    private Vector3 targetpos;
-    private Vector3 currentpos;
-    private Vector3 updatepos;
-
-
+    
     // Use this for initialization
     public void InitStart (PlayerBlackboard PBB) {
         //Activate Rigidbody
@@ -35,12 +27,8 @@ public class move {
         PBB.horizontalForce = Input.GetAxisRaw("Horizontal");
         PBB.verticalForce = Input.GetAxisRaw("Vertical");
 
-        if (isroll)
-        {
-            Roll(PBB);
-            CheckRollStop(PBB);
-        }
-        if (!isroll)
+    
+        if (!PBB.isroll)
         {
             //Check if Horizontal and vertical isn't zero.
             if (PBB.verticalForce != 0 || PBB.horizontalForce != 0)
@@ -123,32 +111,7 @@ public class move {
         }
     }
 
-    private void Roll(PlayerBlackboard PBB)
-    {
-        currentpos = PBB.Player.transform.position;
-        updatepos = Vector3.MoveTowards(currentpos, targetpos, PBB.setRollSpeed * Time.fixedDeltaTime);
-        PBB.Player.transform.position = updatepos;
-    }
-
-    private void CheckRollStop(PlayerBlackboard PBB)
-    {
-        if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Roll"))
-        {
-            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
-            {
-                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
-                isroll = false;
-            }
-        }
-        else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("Roll"))
-        {
-            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9)
-            {
-                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
-                isroll = false;
-            }
-        }
-    }
+  
 
     public void SetRun(bool b)
     {
@@ -170,17 +133,5 @@ public class move {
 
     }
 
-    public void ActivateRoll(PlayerBlackboard PBB)
-    {
-        if (!isroll)
-        {
-            if (true) //Set Stamina
-            {
-                PBB.Player.GetComponent<Animator>().SetBool("Roll", true);
-                isroll = true;
-                targetpos = PBB.Player.transform.position + PBB.Player.transform.forward.normalized * PBB.rollDistance;
-                //TODO:: Use stamina
-            }
-        }
-    }
+   
 }
