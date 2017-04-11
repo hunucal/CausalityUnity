@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: e063aecc7943873448bb0c7f8788680a
+<<<<<<< HEAD
 timeCreated: 1491899267
 licenseType: Free
+=======
+>>>>>>> c4ffcef920951f6f84279e89cd035290eb1c0192
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -62,6 +65,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
+<<<<<<< HEAD
     animationImportWarnings: "\nClip 'Role_Fixed' has import animation warnings that
       might lower retargeting quality:\n\t'Stam2_Spine1' has translation animation
       that will be discarded.\n\t'Stam2_Head' has translation animation that will
@@ -80,6 +84,12 @@ ModelImporter:
       Frame 69\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 3
+=======
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+>>>>>>> c4ffcef920951f6f84279e89cd035290eb1c0192
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -89,8 +99,13 @@ ModelImporter:
     - serializedVersion: 16
       name: Role_Fixed
       takeName: Role_Fixed
+<<<<<<< HEAD
       firstFrame: 33
       lastFrame: 92
+=======
+      firstFrame: 28
+      lastFrame: 101
+>>>>>>> c4ffcef920951f6f84279e89cd035290eb1c0192
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -184,6 +199,7 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
+<<<<<<< HEAD
     human:
     - boneName: Stam2_Hips
       humanName: Hips
@@ -464,6 +480,10 @@ ModelImporter:
       position: {x: 0.24245113, y: -0.00000166893, z: 0.0000028423965}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
+=======
+    human: []
+    skeleton: []
+>>>>>>> c4ffcef920951f6f84279e89cd035290eb1c0192
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
