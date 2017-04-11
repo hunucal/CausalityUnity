@@ -14,6 +14,11 @@ public class Actions {
     private bool ishAttack;
     private bool islAttack;
     private bool isBlock;
+
+    //roll
+    private Vector3 targetpos;
+    private Vector3 currentpos;
+    private Vector3 updatepos;
     // Use this for initialization
     void Start () {
         hAttack = false;
@@ -22,15 +27,15 @@ public class Actions {
         islAttack = false;
         isBlock = false;
 }   
-	
-	// Update is called once per frame
-	void FixedUpdate ()
-    {
-        //Inputs();
-	}
 
     public void Inputs(PlayerBlackboard PBB, move moveScript)
     {
+        if (PBB.isroll)
+        {
+            Roll(PBB);
+            CheckRollStop(PBB);
+        }
+
         StopAttacking(PBB);
         if (Input.GetButton("A Button"))
         {
@@ -48,7 +53,7 @@ public class Actions {
         if (Input.GetButtonDown("B Button"))
         {
             //Roll
-            Roll(PBB, moveScript);
+            Roll(PBB);
         }
         if (Input.GetButtonDown("Y Button"))
         {
@@ -99,7 +104,7 @@ public class Actions {
         if(!PBB.Player.GetComponent<Animator>().GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
         {
             ishAttack = true;
-             PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", true);
+            PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", true);
             PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", true);
         }
     }
@@ -111,14 +116,14 @@ public class Actions {
             {
                 if ( PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
                 {   
-                     PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
                     PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
                     ishAttack = false;
                 }
             }
             else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
             {
-                 PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
+                PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
                 PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
                 ishAttack = false;
             }
@@ -129,14 +134,14 @@ public class Actions {
             {
                 if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
                 {
-                     PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
                     PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
                     islAttack = false;
                 }
             }
             else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
             {
-                 PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
+                PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
                 PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
                 islAttack = false;
             }
@@ -179,10 +184,44 @@ public class Actions {
         //For Talent Tree
     }
 
-    void Roll(PlayerBlackboard PBB,move moveScript)
+    private void Roll(PlayerBlackboard PBB)
     {
-        //Code Roll in movement use here?
-        moveScript.ActivateRoll(PBB); 
+        currentpos = PBB.Player.transform.position;
+        updatepos = Vector3.MoveTowards(currentpos, targetpos, PBB.setRollSpeed * Time.fixedDeltaTime);
+        PBB.Player.transform.position = updatepos;
+    }
+
+    private void CheckRollStop(PlayerBlackboard PBB)
+    {
+        if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+        {
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
+            {
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
+                PBB.isroll = false;
+            }
+        }
+        else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("Roll"))
+        {
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9)
+            {
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
+                PBB.isroll = false;
+            }
+        }
+    }
+    public void ActivateRoll(PlayerBlackboard PBB)
+    {
+        if (!PBB.isroll)
+        {
+            if (true) //Set Stamina
+            {
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", true);
+                PBB.isroll = true;
+                targetpos = PBB.Player.transform.position + PBB.Player.transform.forward.normalized * PBB.rollDistance;
+                //TODO:: Use stamina
+            }
+        }
     }
 
     void Dash()
