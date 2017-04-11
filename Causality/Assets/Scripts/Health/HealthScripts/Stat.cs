@@ -7,10 +7,10 @@ using System;
 public class Stat
 {
     private BarScript bar;
-    private float maxValHealth;
-    private float maxValTwoHealth;
-    private float currentValHealth;
-    private float currentValTwoHealth;
+    public float maxValHealth;
+    public float maxValTwoHealth;
+    public float currentValHealth;
+    public float currentValTwoHealth;
     
     private float maxValStamina;
     private float currentValStamina;
@@ -18,6 +18,7 @@ public class Stat
     {
         bar = new BarScript();
     }
+
     public void StatUpdate(PlayerBlackboard PBB)
     {
 
@@ -25,7 +26,7 @@ public class Stat
         maxValTwoHealth = PBB.maxValTwoHealth;
         currentValHealth = PBB.currentValHealth;
         currentValTwoHealth = PBB.currentValTwoHealth;
-        currentValStamina = PBB.maxValStamina;
+        maxValStamina = PBB.maxValStamina;
         currentValStamina = PBB.currentValStamina;
 
     }
