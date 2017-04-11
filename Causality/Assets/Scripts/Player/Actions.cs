@@ -115,6 +115,10 @@ public class Actions {
     {
         if (ishAttack)
         {
+            //for (int i = 0; i < PBB.Player.GetComponent<Animator>(); i++)
+            //{
+                
+            //}
             if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
             {
                 if ( PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
