@@ -1,10 +1,7 @@
 fileFormatVersion: 2
 guid: e063aecc7943873448bb0c7f8788680a
-<<<<<<< HEAD
-=======
-timeCreated: 1491897842
+timeCreated: 1491899267
 licenseType: Free
->>>>>>> 118fd696501b5e6c7233ddbb2c0bc65859375bcd
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -65,12 +62,6 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-<<<<<<< HEAD
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
-    animationCompression: 1
-=======
     animationImportWarnings: "\nClip 'Role_Fixed' has import animation warnings that
       might lower retargeting quality:\n\t'Stam2_Spine1' has translation animation
       that will be discarded.\n\t'Stam2_Head' has translation animation that will
@@ -80,16 +71,15 @@ ModelImporter:
     animationRetargetingWarnings: "\nRetargeting quality report for clip 'Role_Fixed':\n\tLeftFoot
       average position error 6.3 mm and maximum position error 22.1 mm at time 1:19
       (41.9%) Frame 49\n\tRightLowerLeg average position error 0.2 mm and maximum
-      position error 1.8 mm at time 1:16 (39.3%) Frame 46\n\tRightFoot average position
+      position error 1.9 mm at time 1:16 (39.3%) Frame 46\n\tRightFoot average position
       error 14.1 mm and maximum position error 49.7 mm at time 1:16 (39.3%) Frame
       46\n\tLeftHand average position error 3.7 mm and maximum position error 25.2
       mm at time 2: 6 (56.4%) Frame 66\n\tRightHand average position error 2.6 mm
       and maximum position error 10.2 mm at time 1:23 (45.3%) Frame 53\n\tHead average
-      position error 14.2 mm and maximum position error 45.4 mm at time 2: 8 (58.1%)
-      Frame 68\n"
+      position error 14.2 mm and maximum position error 45.4 mm at time 2: 9 (59.0%)
+      Frame 69\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 3
->>>>>>> 118fd696501b5e6c7233ddbb2c0bc65859375bcd
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -99,13 +89,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Role_Fixed
       takeName: Role_Fixed
-<<<<<<< HEAD
-      firstFrame: 28
-      lastFrame: 101
-=======
-      firstFrame: 34
-      lastFrame: 90
->>>>>>> 118fd696501b5e6c7233ddbb2c0bc65859375bcd
+      firstFrame: 33
+      lastFrame: 92
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -119,7 +104,7 @@ ModelImporter:
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 1
+      keepOriginalPositionXZ: 0
       heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
@@ -176,7 +161,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -199,10 +184,6 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
-<<<<<<< HEAD
-    human: []
-    skeleton: []
-=======
     human:
     - boneName: Stam2_Hips
       humanName: Hips
@@ -381,7 +362,7 @@ ModelImporter:
     - name: Stam2_Hips
       parentName: Role_Fixed(Clone)
       position: {x: -0.0000000018626451, y: 0.8674377, z: -0.16229068}
-      rotation: {x: 0, y: 0, z: 0.0006806664, w: 0.9999998}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftUpLeg
       parentName: Stam2_Hips
@@ -436,7 +417,7 @@ ModelImporter:
     - name: Stam2_LeftShoulder
       parentName: Stam2_Spine1
       position: {x: -0.03728695, y: 0.1909284, z: -0.0014569312}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      rotation: {x: 0, y: 0, z: -0.007924672, w: 0.99996865}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftArm
       parentName: Stam2_LeftShoulder
@@ -483,7 +464,6 @@ ModelImporter:
       position: {x: 0.24245113, y: -0.00000166893, z: 0.0000028423965}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
->>>>>>> 118fd696501b5e6c7233ddbb2c0bc65859375bcd
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -493,11 +473,11 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
-    hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
