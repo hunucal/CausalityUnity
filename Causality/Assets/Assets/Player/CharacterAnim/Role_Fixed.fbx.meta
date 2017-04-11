@@ -89,8 +89,13 @@ ModelImporter:
     - serializedVersion: 16
       name: Role_Fixed
       takeName: Role_Fixed
+<<<<<<< HEAD
+      firstFrame: 0
+      lastFrame: 85
+=======
       firstFrame: 28
       lastFrame: 90
+>>>>>>> e9b5144d13e29cc7e8c728777aeb129efc36c954
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

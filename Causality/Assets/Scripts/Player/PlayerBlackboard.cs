@@ -23,9 +23,13 @@ public class PlayerBlackboard
     public float fillAmountTwoHealth;
     public float fillAmountStamina;
 
+    public float maxValueHealth { get; set; }
+    public float maxValueStamina { get; set; }
+
     //roll
     public float setRollSpeed; // 7
     public float rollDistance; // 7
+    public bool isroll;
 
     //move
     public float terminalRotationSpeed; //25f
