@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Player
 {
-    [SerializeField]
     private Stat health;
 
     private IEnumerator playerCoroutine;
@@ -24,9 +23,9 @@ public class Player
     // Use this for initialization
     public void Init ()
     {
+        health = new Stat();
         Cam1 = Camera.main;
         Cam2 = GameObject.FindGameObjectWithTag("SecondCamera").GetComponentInChildren<Camera>();
-        health = new Stat();
         Cam1.enabled = true;
         Cam2.enabled = false;
     }
