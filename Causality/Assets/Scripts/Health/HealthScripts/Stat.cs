@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
 public class Stat
 {
     private BarScript bar;
@@ -25,7 +24,7 @@ public class Stat
         maxValHealth = PBB.maxValHealth;
         maxValTwoHealth = PBB.maxValTwoHealth;
         currentValHealth = PBB.currentValHealth;
-        currentValTwoHealth = PBB.currentValTwoHealth;
+        currentValTwoHealth = PBB.currentValHealth;
         maxValStamina = PBB.maxValStamina;
         currentValStamina = PBB.currentValStamina;
 

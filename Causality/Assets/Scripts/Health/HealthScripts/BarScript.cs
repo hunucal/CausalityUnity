@@ -7,6 +7,7 @@ public class BarScript : MonoBehaviour
 {
     private float fillAmountHealth;
     private float fillAmountTwoHealth;
+    
     [SerializeField]
     private Image contentHealth;
     [SerializeField]
