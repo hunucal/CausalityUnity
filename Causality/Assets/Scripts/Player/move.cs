@@ -2,106 +2,83 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move : MonoBehaviour {
+public class move {
 
     //Movement Values
-    public float moveSpeed;
-    public float drag = 0.5f;
-    public float terminalRotationSpeed = 25.0f;
-    public Vector3 moveVector { set; get; }
-    private Rigidbody thisRigidbody;
+    private Vector3 moveVector { set; get; }
     private Transform camTransform;
-    [SerializeField]
-    private float runspeed = 10.0f;
-    [SerializeField]
-    private float walkspeed = 6.0f;
+    private float moveSpeed;
 
-    //Stick directions
-    private float verticalForce;
-    private float horizontalForce;
-
-    //Animation
-    Animator setAnimation;
-    private bool run;
+    private bool isRunning;
 
     //Roll variables
-    [SerializeField]
     private bool isroll;
-    [Header("Roll Speed")]
-    public float rollSpeed = 15f;
-    public float setRollSpeed = 1.0f;
-    Vector3 rollVector { set; get; }
-    private bool setspeedzero;
 
     private Vector3 targetpos;
     private Vector3 currentpos;
     private Vector3 updatepos;
-    public float rolldistance = 2;
 
 
     // Use this for initialization
-    void Start () {
+    public void InitStart (PlayerBlackboard PBB) {
         //Activate Rigidbody
-        thisRigidbody = gameObject.GetComponent<Rigidbody>();
-        thisRigidbody.maxAngularVelocity = terminalRotationSpeed;
-        thisRigidbody.drag = drag;
-
+        PBB.Player.GetComponent<Rigidbody>().maxAngularVelocity = PBB.terminalRotationSpeed;
+        
         //Activate animator
-        setAnimation = GetComponent<Animator>();
-        run = false;
-        moveSpeed = walkspeed;
+        isRunning = false;
+        moveSpeed = PBB.walkSpeed;
     }
 	
 	// Update is called once per frame
-	public void MoveUpdate () {
+	public void MoveUpdate (PlayerBlackboard PBB) {
         //Get Axis from Horizontal and Vertical from left stick
-        horizontalForce = Input.GetAxisRaw("Horizontal");
-        verticalForce = Input.GetAxisRaw("Vertical");
+        PBB.horizontalForce = Input.GetAxisRaw("Horizontal");
+        PBB.verticalForce = Input.GetAxisRaw("Vertical");
 
         if (isroll)
         {
-            Roll();
-            CheckRollStop();
+            Roll(PBB);
+            CheckRollStop(PBB);
         }
         if (!isroll)
         {
             //Check if Horizontal and vertical isn't zero.
-            if (verticalForce != 0 || horizontalForce != 0)
+            if (PBB.verticalForce != 0 || PBB.horizontalForce != 0)
             {
-                if (setAnimation.GetBool("IsAttacking") == false)
+                if (PBB.Player.GetComponent<Animator>().GetBool("IsAttacking") == false)
                 {
                     //Move
-                    if (run)
-                        Run();
+                    if (isRunning)
+                        Run(PBB);
                     else
-                        Walk();
+                        Walk(PBB);
                     //Get the original input
-                    moveVector = PoolInput(horizontalForce, verticalForce);
+                    moveVector = PoolInput(PBB.horizontalForce, PBB.verticalForce);
                     //Rotate our moveVector
                     moveVector = RotateWithView();
                     //Send in rotated moveVector to rotate player
-                    RotatePlayer(horizontalForce, verticalForce, moveVector);
+                    RotatePlayer(PBB, PBB.horizontalForce, PBB.verticalForce, moveVector);
                     //Move
-                    Move();
+                    Move(PBB);
                 }
             }
             else
             {
-                setAnimation.SetBool("Walk", false);
-                setAnimation.SetBool("Run", false);
+                PBB.Player.GetComponent<Animator>().SetBool("Walk", false);
+                PBB.Player.GetComponent<Animator>().SetBool("Run", false);
             }
         }
     }
 
-    private void Move()
+    private void Move(PlayerBlackboard PBB)
     {
-        if (thisRigidbody.velocity.magnitude > moveSpeed)
+        if (PBB.Player.GetComponent<Rigidbody>().velocity.magnitude > moveSpeed)
         {
-            thisRigidbody.velocity = thisRigidbody.velocity.normalized * moveSpeed;
+            PBB.Player.GetComponent<Rigidbody>().velocity = PBB.Player.GetComponent<Rigidbody>().velocity.normalized * moveSpeed;
         }
         else
         {
-            thisRigidbody.AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
+            PBB.Player.GetComponent<Rigidbody>().AddForce(moveVector * moveSpeed, ForceMode.VelocityChange);
         }
         
     }
@@ -135,39 +112,39 @@ public class move : MonoBehaviour {
         }
     }
 
-    private void RotatePlayer(float hor, float ver, Vector3 dir)
+    private void RotatePlayer(PlayerBlackboard PBB ,float hor, float ver, Vector3 dir)
     {
         Vector3 facingrotation = Vector3.Normalize(dir);
 
         // facingrotation = Vector3.Lerp(transform.eulerAngles, facingrotation, 0.5f);
         if (facingrotation != Vector3.zero)
         {
-            transform.forward = facingrotation;
+            PBB.Player.transform.forward = facingrotation;
         }
     }
 
-    private void Roll()
+    private void Roll(PlayerBlackboard PBB)
     {
-        currentpos = transform.position;
-        updatepos = Vector3.MoveTowards(currentpos, targetpos, setRollSpeed * Time.fixedDeltaTime);
-        transform.position = updatepos;
+        currentpos = PBB.Player.transform.position;
+        updatepos = Vector3.MoveTowards(currentpos, targetpos, PBB.setRollSpeed * Time.fixedDeltaTime);
+        PBB.Player.transform.position = updatepos;
     }
 
-    private void CheckRollStop()
+    private void CheckRollStop(PlayerBlackboard PBB)
     {
-        if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+        if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Roll"))
         {
-            if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
             {
-                setAnimation.SetBool("Roll", false);
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
                 isroll = false;
             }
         }
-        else if (setAnimation.GetCurrentAnimatorStateInfo(1).IsName("Roll"))
+        else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("Roll"))
         {
-            if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9)
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9)
             {
-                setAnimation.SetBool("Roll", false);
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
                 isroll = false;
             }
         }
@@ -175,35 +152,33 @@ public class move : MonoBehaviour {
 
     public void SetRun(bool b)
     {
-        run = b;
+        isRunning = b;
     }
 
-    void Walk()
+    void Walk(PlayerBlackboard PBB)
     {
-        moveSpeed = walkspeed;
-        setAnimation.SetBool("Run", false);
-        setAnimation.SetBool("Walk", true);
+        moveSpeed = PBB.walkSpeed;
+        PBB.Player.GetComponent<Animator>().SetBool("Run", false);
+        PBB.Player.GetComponent<Animator>().SetBool("Walk", true);
     }
 
-    void Run()
+    void Run(PlayerBlackboard PBB)
     {
         //attri.CurrentValStamina -= 2.0f * Time.fixedDeltaTime;
-            moveSpeed = runspeed;
-            setAnimation.SetBool("Run", true);
-        
+        moveSpeed = PBB.runSpeed;
+        PBB.Player.GetComponent<Animator>().SetBool("Run", true);
+
     }
 
-    public void ActivateRoll()
+    public void ActivateRoll(PlayerBlackboard PBB)
     {
         if (!isroll)
         {
             if (true) //Set Stamina
             {
-                setAnimation.SetBool("Roll", true);
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", true);
                 isroll = true;
-                //rollSpeed = 182.5f;
-                //setspeedzero = true;
-                targetpos = transform.position + transform.forward.normalized * rolldistance;
+                targetpos = PBB.Player.transform.position + PBB.Player.transform.forward.normalized * PBB.rollDistance;
                 //TODO:: Use stamina
             }
         }

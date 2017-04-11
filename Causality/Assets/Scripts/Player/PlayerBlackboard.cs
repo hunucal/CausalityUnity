@@ -10,12 +10,37 @@ public class PlayerBlackboard
 
     public GameObject TwoHandWeap;
 
-    public float Health;
+    public float maxValHealth;
+    public float maxValTwoHealth;
+    public float currentValHealth;
+    public float currentValTwoHealth;
 
-    public float Stamina;
-
+    public float maxValStamina;
+    public float currentValStamina;
     public float Dimension;
 
+    public float fillAmountHealth;
+    public float fillAmountTwoHealth;
+    public float fillAmountStamina;
 
+    //roll
+    public float setRollSpeed; // 7
+    public float rollDistance; // 7
 
+    //move
+    public float terminalRotationSpeed; //25f
+    public float runSpeed; //8f
+    public float walkSpeed; //6f
+
+    //Stick directions
+    public float verticalForce;
+    public float horizontalForce;
+
+    //Animation
+    public PlayerBlackboard()
+    {
+        this.Player = new GameObject();
+        this.Boss = new GameObject();
+        this.TwoHandWeap = new GameObject();
+    }
 }

@@ -5,23 +5,26 @@ using UnityEngine;
 
 public class BarScript : MonoBehaviour
 {
-
-    [SerializeField]
     private float fillAmountHealth;
-    [SerializeField]
     private float fillAmountTwoHealth;
     [SerializeField]
     private Image contentHealth;
     [SerializeField]
     private Image contentTwoHealth;
-
-    [SerializeField]
+    
     private float fillAmountStamina;
     [SerializeField]
     private Image contentStamina;
 
     public float MaxValueHealth { get; set; }
     public float MaxValueStamina { get; set; }
+
+    public void BarUpdate(ScriptManager PBB)
+    {
+        fillAmountHealth = PBB.GetHealthVal();
+        fillAmountTwoHealth = PBB.GetTwoHealthVal();
+        fillAmountStamina = PBB.GetStaminaVal();
+    }
 
     public float valueHealth
     {
@@ -50,6 +53,7 @@ public class BarScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        BarUpdate(GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptManager>());
         HandleBar();
 	}
 
