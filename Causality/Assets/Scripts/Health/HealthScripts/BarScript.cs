@@ -19,11 +19,13 @@ public class BarScript : MonoBehaviour
     public float MaxValueHealth { get; set; }
     public float MaxValueStamina { get; set; }
 
-    public void BarUpdate(ScriptManager PBB)
+    public void BarUpdate(ScriptManager SM)
     {
-        fillAmountHealth = PBB.GetHealthVal();
-        fillAmountTwoHealth = PBB.GetTwoHealthVal();
-        fillAmountStamina = PBB.GetStaminaVal();
+        fillAmountHealth = SM.GetHealthVal();
+        fillAmountTwoHealth = SM.GetTwoHealthVal();
+        fillAmountStamina = SM.GetStaminaVal();
+        MaxValueHealth = SM.GetMaxValueHealth();
+        MaxValueStamina = SM.GetMaxValueStamina();
     }
 
     public float valueHealth

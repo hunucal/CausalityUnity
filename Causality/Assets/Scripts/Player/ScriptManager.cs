@@ -36,9 +36,9 @@ public class ScriptManager : MonoBehaviour
         PBB.terminalRotationSpeed = 25f;
         PBB.runSpeed = 8f;
         PBB.walkSpeed = 6f;
-        PBB.fillAmountHealth = 100f;
-        PBB.fillAmountTwoHealth = 100f;
-        PBB.fillAmountStamina = 100f;
+        PBB.fillAmountHealth = 1f;
+        PBB.fillAmountTwoHealth = 1f;
+        PBB.fillAmountStamina = 1f;
 
 
         Move.InitStart(PBB);
@@ -70,5 +70,15 @@ public class ScriptManager : MonoBehaviour
     public float GetStaminaVal()
     {
         return PBB.currentValStamina;
+    }
+
+    public float GetMaxValueHealth()
+    {
+        return PBB.maxValueHealth;
+    }
+
+    public float GetMaxValueStamina()
+    {
+        return PBB.maxValueStamina;
     }
 }
