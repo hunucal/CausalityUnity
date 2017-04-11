@@ -20,14 +20,26 @@ public class Stat
 
     public void StatUpdate(PlayerBlackboard PBB)
     {
-
         maxValHealth = PBB.maxValHealth;
         maxValTwoHealth = PBB.maxValTwoHealth;
         currentValHealth = PBB.currentValHealth;
         currentValTwoHealth = PBB.currentValHealth;
         maxValStamina = PBB.maxValStamina;
         currentValStamina = PBB.currentValStamina;
+        checkIfRecovering(PBB);
+    }
 
+    public void checkIfRecovering(PlayerBlackboard PBB)
+    {
+        if(PBB.ifRecovering == true)
+        {
+            PBB.currentValStamina += 10f * Time.deltaTime;
+        }
+
+        if(PBB.currentValStamina >= 100)
+        {
+            PBB.currentValStamina = PBB.maxValStamina;
+        }
     }
 
     public float CurrentValHealth

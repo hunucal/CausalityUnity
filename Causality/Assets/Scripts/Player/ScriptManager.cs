@@ -39,7 +39,7 @@ public class ScriptManager : MonoBehaviour
         PBB.fillAmountHealth = 1f;
         PBB.fillAmountTwoHealth = 1f;
         PBB.fillAmountStamina = 1f;
-
+        PBB.ifRecovering = false;
 
         Move.InitStart(PBB);
         Player.Init();
@@ -69,7 +69,7 @@ public class ScriptManager : MonoBehaviour
 
     public float GetStaminaVal()
     {
-        return PBB.currentValStamina;
+        return PBB.currentValStamina / 100f;
     }
 
     public float GetMaxValueHealth()
