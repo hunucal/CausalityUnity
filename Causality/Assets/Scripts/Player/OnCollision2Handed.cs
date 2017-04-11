@@ -31,24 +31,24 @@ public class OnCollision2Handed : MonoBehaviour
         Player = GameObject.Find("Player");
     }
 
-    void Update()
+    public void OnCollisionUpdate(PlayerBlackboard PBB, Actions actions)
     {
-        if (Player.GetComponent<Actions>().hAttack == true)
+        if (actions.hAttack == true)
         {
             HeavyAttack = true;
         }
 
-        if (Player.GetComponent<Actions>().hAttack == false)
+        if (actions.hAttack == false)
         {
             HeavyAttack = false;
         }
 
-        if (Player.GetComponent<Actions>().lAttack == true)
+        if (actions.lAttack == true)
         {
             LightAttack = true;
         }
 
-        if (Player.GetComponent<Actions>().lAttack == false)
+        if (actions.lAttack == false)
         {
             LightAttack = false;
         }
