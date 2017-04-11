@@ -6,21 +6,29 @@ using System;
 [Serializable]
 public class Stat
 {
-    [SerializeField]
     private BarScript bar;
-    [SerializeField]
     private float maxValHealth;
-    [SerializeField]
     private float maxValTwoHealth;
-    [SerializeField]
     private float currentValHealth;
-    [SerializeField]
     private float currentValTwoHealth;
-
-    [SerializeField]
+    
     private float maxValStamina;
-    [SerializeField]
     private float currentValStamina;
+    public Stat()
+    {
+        bar = new BarScript();
+    }
+    public void StatUpdate(PlayerBlackboard PBB)
+    {
+
+        maxValHealth = PBB.maxValHealth;
+        maxValTwoHealth = PBB.maxValTwoHealth;
+        currentValHealth = PBB.currentValHealth;
+        currentValTwoHealth = PBB.currentValTwoHealth;
+        currentValStamina = PBB.maxValStamina;
+        currentValStamina = PBB.currentValStamina;
+
+    }
 
     public float CurrentValHealth
     {
