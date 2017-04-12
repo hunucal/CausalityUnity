@@ -35,6 +35,7 @@ public class PlayerBlackboard
     public float terminalRotationSpeed; //25f
     public float runSpeed; //8f
     public float walkSpeed; //6f
+    public bool ifRecovering;
 
     //Stick directions
     public float verticalForce;

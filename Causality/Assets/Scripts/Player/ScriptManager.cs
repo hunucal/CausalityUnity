@@ -34,12 +34,12 @@ public class ScriptManager : MonoBehaviour
         PBB.setRollSpeed = 7f;
         PBB.rollDistance = 7f;
         PBB.terminalRotationSpeed = 25f;
-        PBB.runSpeed = 8f;
-        PBB.walkSpeed = 6f;
+        PBB.runSpeed = 6f;
+        PBB.walkSpeed = 3f;
         PBB.fillAmountHealth = 1f;
         PBB.fillAmountTwoHealth = 1f;
         PBB.fillAmountStamina = 1f;
-
+        PBB.ifRecovering = false;
 
         Move.InitStart(PBB);
         Player.Init();
@@ -59,17 +59,17 @@ public class ScriptManager : MonoBehaviour
 
     public float GetHealthVal()
     {
-        return PBB.currentValHealth;
+        return PBB.currentValHealth / 100f;
     }
 
     public float GetTwoHealthVal()
     {
-        return PBB.currentValTwoHealth;
+        return PBB.currentValTwoHealth / 100f;
     }
 
     public float GetStaminaVal()
     {
-        return PBB.currentValStamina;
+        return PBB.currentValStamina / 100f;
     }
 
     public float GetMaxValueHealth()

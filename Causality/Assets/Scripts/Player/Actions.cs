@@ -41,11 +41,11 @@ public class Actions {
             if (Input.GetButton("A Button"))
             {
                 //Select
-                moveScript.SetRun(true);
+                moveScript.SetRun(true, PBB);
             }
             else
             {
-                moveScript.SetRun(false);
+                moveScript.SetRun(false, PBB);
             }
             if (Input.GetButtonDown("X Button"))
             {
@@ -184,7 +184,7 @@ public class Actions {
     void Block(PlayerBlackboard PBB, move moveScript)
     {
         //Block with weapon
-        moveScript.SetRun(false);
+        moveScript.SetRun(false, PBB);
         PBB.Player.GetComponent<Animator>().SetBool("Block", true);
         PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", true);
         isBlock = true;
@@ -221,12 +221,13 @@ public class Actions {
     {
         if (!PBB.isroll && PBB.Player.GetComponent<Animator>().GetBool("IsAttacking") == false)
         {
-            if (true) //Set Stamina
+            if (PBB.currentValStamina >= 20f)
             {
                 PBB.Player.GetComponent<Animator>().SetBool("Roll", true);
                 PBB.isroll = true;
                 targetpos = PBB.Player.transform.position + PBB.Player.transform.forward.normalized * PBB.rollDistance;
-                //TODO:: Use stamina
+                PBB.currentValStamina -= 20;
+                PBB.ifRecovering = false;
             }
         }
     }

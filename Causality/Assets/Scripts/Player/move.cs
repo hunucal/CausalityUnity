@@ -37,6 +37,7 @@ public class move {
                 {
                     //Move
                     if (isRunning)
+
                         Run(PBB);
                     else
                         Walk(PBB);
@@ -52,6 +53,8 @@ public class move {
             }
             else
             {
+                // Fixa IDLESTATE
+                PBB.ifRecovering = true;
                 PBB.Player.GetComponent<Animator>().SetBool("Walk", false);
                 PBB.Player.GetComponent<Animator>().SetBool("Run", false);
             }
@@ -113,9 +116,14 @@ public class move {
 
   
 
-    public void SetRun(bool b)
+    public void SetRun(bool b, PlayerBlackboard PBB)
     {
-        isRunning = b;
+        if (PBB.currentValStamina > 0)
+        {
+            isRunning = b;
+        }
+        else
+            isRunning = false;
     }
 
     void Walk(PlayerBlackboard PBB)
@@ -123,14 +131,16 @@ public class move {
         moveSpeed = PBB.walkSpeed;
         PBB.Player.GetComponent<Animator>().SetBool("Run", false);
         PBB.Player.GetComponent<Animator>().SetBool("Walk", true);
+        PBB.ifRecovering = true;
     }
 
     void Run(PlayerBlackboard PBB)
     {
         //attri.CurrentValStamina -= 2.0f * Time.fixedDeltaTime;
+        PBB.currentValStamina -= 10f * Time.deltaTime;
         moveSpeed = PBB.runSpeed;
         PBB.Player.GetComponent<Animator>().SetBool("Run", true);
-
+        PBB.ifRecovering = false;
     }
 
    
