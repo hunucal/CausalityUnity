@@ -51,7 +51,6 @@ public class ScriptManager : MonoBehaviour
 	void Update ()
     {
         Player.PlayerUpdate(PBB);
-        
 	}
     void FixedUpdate()
     {
