@@ -44,6 +44,7 @@ public class ScriptManager : MonoBehaviour
 
         Move.InitStart(PBB);
         Player.Init();
+        Actions.InitActions();
 	}
 	
 	// Update is called once per frame

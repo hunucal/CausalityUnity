@@ -11,21 +11,16 @@ public class Actions {
    
     public bool hAttack;
     public bool lAttack;
-    private bool block;
-    private bool ishAttack;
-    private bool islAttack;
-    private bool isBlock;
+    public bool isBlock;
 
     //roll
     private Vector3 targetpos;
     private Vector3 currentpos;
     private Vector3 updatepos;
     // Use this for initialization
-    void Start () {
+    public void InitActions () {
         hAttack = false;
         lAttack = false;
-        ishAttack = false;
-        islAttack = false;
         isBlock = false;
 }   
 
@@ -96,7 +91,7 @@ public class Actions {
         //Light attack
         if (!PBB.Player.GetComponent<Animator>().GetAnimatorTransitionInfo(0).IsName("LightAttack"))
         {
-            islAttack = true;
+            lAttack = true;
             PBB.Player.GetComponent<Animator>().SetBool("LightAttack", true);
             PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", true);
         }
@@ -107,14 +102,15 @@ public class Actions {
         //Heavy attack
         if(!PBB.Player.GetComponent<Animator>().GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
         {
-            ishAttack = true;
+            hAttack = true;
             PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", true);
             PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", true);
         }
     }
+
     void StopAttacking(PlayerBlackboard PBB)
     {
-        if (ishAttack)
+        if (hAttack)
         {
             //for (int i = 0; i < PBB.Player.GetComponent<Animator>(); i++)
             //{
@@ -126,7 +122,7 @@ public class Actions {
                 {   
                     PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
                     PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
-                    ishAttack = false;
+                    hAttack = false;
                 }
             }
             else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("HeavyAttack"))
@@ -135,11 +131,11 @@ public class Actions {
                 {
                     PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
                     PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
-                    ishAttack = false;
+                    hAttack = false;
                 }
             }
         }
-        else if (islAttack)
+        else if (lAttack)
         {
             if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
             {
@@ -147,7 +143,7 @@ public class Actions {
                 {
                     PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
                     PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
-                    islAttack = false;
+                    lAttack = false;
                 }
             }
             else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("LightAttack"))
@@ -156,7 +152,7 @@ public class Actions {
                 {
                     PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
                     PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
-                    islAttack = false;
+                    lAttack = false;
                 }
             }
         }
@@ -182,6 +178,7 @@ public class Actions {
             }
         }
     }
+
     void Block(PlayerBlackboard PBB, move moveScript)
     {
         //Block with weapon
@@ -244,5 +241,4 @@ public class Actions {
         //Code Dash 
 
     }
-   
 }
