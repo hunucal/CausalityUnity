@@ -42,7 +42,7 @@ public class CompositeNode : Node
     }
     public void Start() { this.started = true; this.ended = false; }
     public void Ended() { this.started = false; this.ended = true; }
-    public void SetCurrentTask(CompositeNode node) { this.controller.SetTask(node); }
+    public void SetCurrentTask(Node node) { this.CurrTask = node; }
     public CompositeNode GetCurrentTask() { return this.controller.currentTask; }
     public override Status CheckCondition(){return taskStatus;}
     public override void CompletedWithStatus(Status status) { taskStatus = status; }
@@ -77,42 +77,49 @@ public class SelectorNode : CompositeNode
     }
     public override void DoAction()
     {
-        //for (int i = 0; i < GetController().GetChildList().Count; i++)
-        //{
-        //    if (GetController().GetChildList()[i].CheckCondition() != Status.Failure)
-        //        GetController().GetChildList()[i].DoAction();
-        //    GetController().FinishedWithSucess();
-        //}
-        int curPos = GetController().GetChildList().IndexOf(GetCurrentTask());
-        bool running = false;
-        if (!running)
+        for (int i = 0; i < GetController().GetChildList().Count; i++)
         {
-            if (curPos > GetController().GetChildList().Count)
+            if (GetController().GetChildList()[i].CheckCondition() != Status.Failure)
             {
-                SetCurrentTask(GetController().GetChildList().First());
-            }
-            if (GetController().GetChildList()[curPos].CheckCondition() == Status.Failure)
-            {
-                curPos++;
-                SetCurrentTask(GetController().GetChildList()[curPos]);
-                running = true;
-            }
-            else if (GetCurrentTask().CheckCondition() == Status.Done)
-            {
-                curPos++;
-                SetCurrentTask(GetController().GetChildList()[curPos]);
-                running = true;
-            }
-            else if (GetCurrentTask().Equals(GetController().GetChildList().Last()) && GetController().GetChildList().Last().CheckCondition() == Status.Done)
-            {
-                SetCurrentTask(GetController().GetChildList().First());
-                running = true;
+               // GetController().GetChildList()[i].DoAction();
+                CompletedWithStatus(GetController().GetChildList()[i].CheckCondition());
+                SetCurrentTask(GetController().GetChildList()[i]);
             }
             else
-                running = true;
+                CompletedWithStatus(Status.Failure);
         }
-        if(running)
-            GetController().GetChildList()[curPos].DoAction();
+        //    int curPos = GetController().GetChildList().IndexOf(GetCurrentTask());
+        //    bool running = false;
+        //    if (!running)
+        //    {
+        //        if (curPos > GetController().GetChildList().Count)
+        //        {
+        //            SetCurrentTask(GetController().GetChildList().First());
+        //        }
+        //        if (GetController().GetChildList()[curPos].CheckCondition() == Status.Failure)
+        //        {
+        //            CompletedWithStatus(Status.Failure);
+        //            curPos++;
+        //            SetCurrentTask(GetController().GetChildList()[curPos]);
+        //            running = true;
+        //        }
+        //        else if (GetCurrentTask().CheckCondition() == Status.Done)
+        //        {
+        //            CompletedWithStatus(Status.Done);
+        //            curPos++;
+        //            SetCurrentTask(GetController().GetChildList()[curPos]);
+        //            running = true;
+        //        }
+        //        else if (GetCurrentTask().Equals(GetController().GetChildList().Last()) && CheckCondition() == Status.Done)
+        //        {
+        //            SetCurrentTask(GetController().GetChildList().First());
+        //            running = true;
+        //        }
+        //        else
+        //            running = true;
+        //    }
+        //    if(running)
+        //        GetController().GetChildList()[curPos].DoAction();
     }
 }
 public class SequencerNode : CompositeNode
@@ -123,39 +130,44 @@ public class SequencerNode : CompositeNode
     }
     public override void DoAction()
     {
-        //for (int i = 0; i < GetController().GetChildList().Count; i++)
-        //{
-        //    if (GetController().GetChildList()[i].CheckCondition() != Status.Success)
-        //        GetController().GetChildList()[i].DoAction();
-        //    GetController().FinishedWithFailiure();
-        //}
-        int curPos = GetController().GetChildList().IndexOf(GetCurrentTask());
-        bool running = false;
-        if (!running)
+        for (int i = 0; i < GetController().GetChildList().Count; i++)
         {
-            if (curPos > GetController().GetChildList().Count)
+            if (GetController().GetChildList()[i].CheckCondition() != Status.Done)
             {
-                SetCurrentTask(GetController().GetChildList().First());
-            }
-            if (GetController().GetChildList()[curPos].CheckCondition() == Status.Failure)
-            {
-                return;
-            }
-            else if (GetCurrentTask().CheckCondition() == Status.Done)
-            {
-                curPos++;
-                SetCurrentTask(GetController().GetChildList()[curPos]);
-                running = true;
-            }
-            else if (GetCurrentTask().CheckCondition() == Status.Done && GetCurrentTask().Equals(GetController().GetChildList().Last()))
-            {
-                SetCurrentTask(GetController().GetChildList().First());
-                running = true;
-            }
-            else
-                running = true;
+                CompletedWithStatus(GetController().GetChildList()[i].CheckCondition());
+               // GetController().GetChildList()[i].DoAction();
+            }else
+                GetController().FinishedWithFailiure();
         }
-        GetController().GetChildList()[curPos].DoAction();
+        //int curPos = GetController().GetChildList().IndexOf(GetCurrentTask());
+        //bool running = false;
+        //if (!running)
+        //{
+        //    if (curPos > GetController().GetChildList().Count)
+        //    {
+        //        SetCurrentTask(GetController().GetChildList().First());
+        //    }
+        //    if (GetController().GetChildList()[curPos].CheckCondition() == Status.Failure)
+        //    {
+        //        CompletedWithStatus(Status.Failure);
+        //        return;
+        //    }
+        //    else if (GetCurrentTask().CheckCondition() == Status.Done)
+        //    {
+        //        curPos++;
+        //        SetCurrentTask(GetController().GetChildList()[curPos]);
+        //        CompletedWithStatus(Status.Done);
+        //        running = true;
+        //    }
+        //    else if (CheckCondition() == Status.Done && GetCurrentTask().Equals(GetController().GetChildList().Last()))
+        //    {
+        //        SetCurrentTask(GetController().GetChildList().First());
+        //        running = true;
+        //    }
+        //    else
+        //        running = true;
+        //}
+        //GetController().GetChildList()[curPos].DoAction();
     }
 }
 public class DecoratorNodeInvert : CompositeNode

@@ -44,6 +44,15 @@ public class Blackboard {
     /**
     *movespeed for boss
    */
+<<<<<<< HEAD
+=======
+    public float maxValHealth;
+    public float maxValTwoHealth;
+    public float currentValHealth;
+    public float currentValTwoHealth;
+    public float fillAmountHealth;
+    public float fillAmountTwoHealth;
+>>>>>>> 093dd924ce2d3b59aba4114e254795ab92521409
     public float movespeed;
     public float aggroRange;
     public float rotationSpeed;

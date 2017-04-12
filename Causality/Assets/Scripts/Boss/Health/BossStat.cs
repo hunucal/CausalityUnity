@@ -18,10 +18,17 @@ public class BossStat
 
     public void StatUpdate(Blackboard bb)
     {
+<<<<<<< HEAD
         //maxBossValHealth = bb.maxBossValHealth;
         //maxBossValTwoHealth = bb.maxBossValTwoHealth;
         //currentBossValHealth = bb.currentBossValHealth;
         //currentBossValTwoHealth = bb.currentBossValHealth;
+=======
+        maxBossValHealth = bb.maxValHealth;
+        maxBossValTwoHealth = bb.maxValTwoHealth;
+        currentBossValHealth = bb.currentValHealth;
+        currentBossValTwoHealth = bb.currentValTwoHealth;
+>>>>>>> 093dd924ce2d3b59aba4114e254795ab92521409
     }
   
     public float CurrentBossValHealth

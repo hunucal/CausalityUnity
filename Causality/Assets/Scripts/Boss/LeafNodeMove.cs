@@ -47,7 +47,7 @@ public class LeafNodeMove : CompositeNode {
             CompletedWithStatus(Status.Running);
         }
         //if agents pathstatus is complete and player is within distance. return true for attack state 
-        if (Vector3.Distance(this.blackboard.agent.transform.position, this.blackboard.closestEnemyCursor.transform.position) < 3.5f)
+        if (Vector3.Distance(this.blackboard.agent.transform.position, this.blackboard.closestEnemyCursor.transform.position) < 2.5f)
         {
             CompletedWithStatus(Status.Done);
         }

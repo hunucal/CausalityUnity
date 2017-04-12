@@ -12,7 +12,8 @@ public class BossMainScript : MonoBehaviour
     [SerializeField]private float bossAggroRange;
     //root node
     SelectorNode rootNode;
-
+    //blackboard
+    Blackboard bb;
     //nodes
     SequencerNode sequencer1, sequencer2, sequencer3, sequencer4;
     SelectorNode selector1, selector2, selector3, selector4;
@@ -27,6 +28,8 @@ public class BossMainScript : MonoBehaviour
     leafNodeMoveAway leafNodeMoveAway;
     //behaviour nodes
     NodeChooseAttack nodeChooseAttack;
+    //decorators
+    DecoratorNodeCheckDist checkdst;
     // Use this for initialization
     void Start () {
         //nodes
@@ -47,16 +50,22 @@ public class BossMainScript : MonoBehaviour
         nodeChooseAttack = new NodeChooseAttack();
         //repeater nodes
         repeatSetTimes1 = new RepeatSetTimesNode();
+        //check distance decorator
+        checkdst = new DecoratorNodeCheckDist(); 
 
-        DecoratorNodeCheckDist checkdst = new DecoratorNodeCheckDist(); 
-
-        Blackboard bb = new Blackboard();
+        bb = new Blackboard();
         bb.Boss = GameObject.FindGameObjectWithTag("Boss");
         bb.agent = bb.Boss.GetComponent<NavMeshAgent>();
         bb.closestEnemyCursor = GameObject.FindGameObjectWithTag("Player");
         bb.movespeed = bossMoveSpeed;
         bb.aggroRange = bossAggroRange;
         bb.rotationSpeed = bossRotationSpeed;
+        bb.maxValHealth = 100f;
+        bb.maxValTwoHealth = 100f;
+        bb.currentValHealth = 100f;
+        bb.currentValTwoHealth = 100f;
+        bb.fillAmountHealth = 1f;
+        bb.fillAmountTwoHealth = 1f;
 
         //node inits
         rootNode.InitSelector(bb, "Root");
@@ -72,21 +81,37 @@ public class BossMainScript : MonoBehaviour
         //sequence one children
         rootNode.GetController().AddChild(selector1);
         selector1.GetController().AddChild(leafNodeIdle);
-        selector1.GetController().AddChild(sequencer1);
-        sequencer1.GetController().AddChild(leafNodeMove);
-        sequencer1.GetController().AddChild(checkdst);
-        sequencer1.GetController().AddChild(nodeChooseAttack);
+        selector1.GetController().AddChild(leafNodeMove);
+        //sequencer1.GetController().AddChild(leafNodeMove);
+       //sequencer1.GetController().AddChild(checkdst);
+       // sequencer1.GetController().AddChild(nodeChooseAttack);
 
         //test for debug
         rootNode.SetCurrentTask(rootNode.GetController().GetChildList().First());
         selector1.SetCurrentTask(selector1.GetController().GetChildList().First());
-        sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
+        //sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
     }
 	// Update is called once per frame
-	void Update () {
-        if(rootNode.CheckCondition() != Status.Terminated)
+	void Update ()
+    {
+        if(rootNode.CheckCondition() != Status.Failure)
         {
-            rootNode.DoAction();
+            rootNode.CurrTask.DoAction();
         }      
 	}
+
+    public float GetHealthVal()
+    {
+        return bb.currentValHealth / 100f;
+    }
+
+    public float GetTwoHealthVal()
+    {
+        return bb.currentValTwoHealth / 100f;
+    }
+
+    public float GetMaxValueHealth()
+    {
+        return bb.maxValHealth;
+    }
 }
