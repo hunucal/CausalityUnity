@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class BossBar : MonoBehaviour
 {
-    [SerializeField]
     private float fillAmountBossHealth;
-    [SerializeField]
     private float fillAmountBossTwoHealth;
+
     [SerializeField]
     private Image contentBossHealth;
     [SerializeField]
     private Image contentBossTwoHealth;
 
     public float MaxBossValueHealth { get; set; }
+
+    public void BarUpdate(BossMainScript BMS)
+    {
+        fillAmountBossHealth = BMS.GetHealthVal();
+        fillAmountBossTwoHealth = BMS.GetTwoHealthVal();
+        MaxBossValueHealth = BMS.GetMaxValueHealth();
+    }
 
     public float valueBossHealth
     {
@@ -35,6 +41,7 @@ public class BossBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BarUpdate(GameObject.FindGameObjectWithTag("Boss").GetComponent<BossMainScript>());
         HandleBar();
     }
 
