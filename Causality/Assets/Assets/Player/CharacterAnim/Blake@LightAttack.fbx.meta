@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4792157ba8340144a8f9fee7a23d79ed
-timeCreated: 1491576552
+timeCreated: 1491824374
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -91,16 +91,16 @@ ModelImporter:
     - serializedVersion: 16
       name: LightAttack
       takeName: LightAttack StefanFixed
-      firstFrame: 0
-      lastFrame: 135
+      firstFrame: 24
+      lastFrame: 113
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0

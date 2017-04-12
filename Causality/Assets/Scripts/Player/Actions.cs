@@ -2,179 +2,240 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actions : MonoBehaviour {
+public class Actions {
     
 
     //Get scripts from
-    //Attribute Script attScript; 
-    private move moveScript;
+    //Attribute Script attScript;
     //Animations
+<<<<<<< HEAD
     Animator setAnimation;
     public bool Blocking = false;
 
+=======
+>>>>>>> 4f26a3fca301783ecb3abbebeb954f4a24a30dde
     public bool hAttack;
     public bool lAttack;
-    public bool block;
+    private bool block;
+    private bool ishAttack;
+    private bool islAttack;
+    private bool isBlock;
 
+    //roll
+    private Vector3 targetpos;
+    private Vector3 currentpos;
+    private Vector3 updatepos;
     // Use this for initialization
     void Start () {
-        setAnimation = GetComponent<Animator>();
-        moveScript = GetComponent<move>();
         hAttack = false;
         lAttack = false;
-    }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        Inputs();
-	}
+        ishAttack = false;
+        islAttack = false;
+        isBlock = false;
+}   
 
-    void Inputs()
+    public void Inputs(PlayerBlackboard PBB, move moveScript)
     {
-        StopAttacking();
-        if (Input.GetButton("A Button"))
+        if (PBB.isroll)
         {
-            //Select
-            moveScript.GetComponent<move>().SetRun(true);
+            Roll(PBB);
+            CheckRollStop(PBB);
         }
-        else
+
+        StopAttacking(PBB);
         {
-            moveScript.GetComponent<move>().SetRun(false);
-        }
-        if (Input.GetButtonDown("X Button"))
-        {
-            //Sprint/Dash
-        }
-        if (Input.GetButtonDown("B Button"))
-        {
-            //Roll
-            moveScript.GetComponent<move>().ActivateRoll(); 
-        }
-        if (Input.GetButtonDown("Y Button"))
-        {
-            //No Action yet.
-        }
-        if (Input.GetButtonDown("RB Button"))
-        {
-            //Heavy Attack
-            HeavyAttack();
-        }
-        if (Input.GetButtonDown("LB Button"))
-        {
-            //No Action yet.
-        }
-        if (Input.GetButtonDown("View Button"))
-        {
-            //No Action yet.
-        }
-        if (Input.GetButtonDown("Menu Button"))
-        {
-            //No Action yet.
-        }
-        if (Input.GetAxis("RT Button") != 0)
-        {
-            //Light Attack
-            LightAttack();
-        }
-        if (Input.GetAxis("LT Button") != 0)
-        {
-            //Block
-            //if(2h)
-            Block();
-            //else if (1h and shield)
-            //ShieldBlock();
-        }
+            if (Input.GetButton("A Button"))
+            {
+                //Select
+                moveScript.SetRun(true, PBB);
+            }
+            else
+            {
+                moveScript.SetRun(false, PBB);
+            }
+            if (Input.GetButtonDown("X Button"))
+            {
+                //Sprint/Dash
+            }
+            if (Input.GetButtonDown("B Button"))
+            {
+                //Roll
+                ActivateRoll(PBB);
+            }
+            if (Input.GetButtonDown("Y Button"))
+            {
+                //No Action yet.
+            }
+            if (Input.GetButtonDown("RB Button"))
+            {
+                //Heavy Attack
+                HeavyAttack(PBB);
+            }
+            if (Input.GetButtonDown("LB Button"))
+            {
+                //No Action yet.
+            }
+            if (Input.GetButtonDown("View Button"))
+            {
+                //No Action yet.
+            }
+            if (Input.GetButtonDown("Menu Button"))
+            {
+                //No Action yet.
+            }
+            if (Input.GetAxis("RT Button") != 0)
+            {
+                //Light Attack
+                LightAttack(PBB);
+            }
+            if (Input.GetAxis("LT Button") != 0)
+            {
+                //Block
+                Block(PBB, moveScript);
+            }
+        }//Collapsable inputs
     }
 
-    void LightAttack()
+    void LightAttack(PlayerBlackboard PBB)
     {
         //Light attack
-        lAttack = true;
-        setAnimation.SetBool("LightAttack", true);
-        setAnimation.SetBool("IsAttacking", true);
-        //Damage(10);
+        if (!PBB.Player.GetComponent<Animator>().GetAnimatorTransitionInfo(0).IsName("LightAttack"))
+        {
+            islAttack = true;
+            PBB.Player.GetComponent<Animator>().SetBool("LightAttack", true);
+            PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", true);
+        }
     }
 
-    void HeavyAttack()
+    void HeavyAttack(PlayerBlackboard PBB)
     {
         //Heavy attack
-        if(!setAnimation.GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
+        if(!PBB.Player.GetComponent<Animator>().GetAnimatorTransitionInfo(0).IsName("HeavyAttack"))
         {
-            hAttack = true;
-            setAnimation.SetBool("HeavyAttack", true);
-            setAnimation.SetBool("IsAttacking", true);
+            ishAttack = true;
+            PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", true);
+            PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", true);
         }
     }
-    void StopAttacking()
+    void StopAttacking(PlayerBlackboard PBB)
     {
-        if (hAttack)
+        if (ishAttack)
         {
-            if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
+            //for (int i = 0; i < PBB.Player.GetComponent<Animator>(); i++)
+            //{
+                
+            //}
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
             {
-                if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-                {
-                    setAnimation.SetBool("HeavyAttack", false);
-                    setAnimation.SetBool("IsAttacking", false);
-                    hAttack = false;
+                if ( PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                {   
+                    PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
+                    ishAttack = false;
                 }
             }
-            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("HeavyAttack"))
             {
-                setAnimation.SetBool("HeavyAttack", false);
-                setAnimation.SetBool("IsAttacking", false);
-                hAttack = false;
+                if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+                {
+                    PBB.Player.GetComponent<Animator>().SetBool("HeavyAttack", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
+                    ishAttack = false;
+                }
             }
         }
-        else if (lAttack)
+        else if (islAttack)
         {
-            if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
             {
-                if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
                 {
-                    setAnimation.SetBool("LightAttack", false);
-                    setAnimation.SetBool("IsAttacking", false);
-                    lAttack = false;
+                    PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
+                    islAttack = false;
                 }
             }
-            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("LightAttack"))
             {
-                setAnimation.SetBool("LightAttack", false);
-                setAnimation.SetBool("IsAttacking", false);
-                lAttack = false;
+                if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+                {
+                    PBB.Player.GetComponent<Animator>().SetBool("LightAttack", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
+                    islAttack = false;
+                }
             }
         }
-        else if (block)
+        else if (isBlock)
         {
-            if (setAnimation.GetCurrentAnimatorStateInfo(0).IsName("Block"))
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Block"))
             {
-                if (setAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
                 {
-                    setAnimation.SetBool("Block", false);
-                    setAnimation.SetBool("IsAttacking", false);
-                    block = false;
+                    PBB.Player.GetComponent<Animator>().SetBool("Block", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
+                    isBlock = false;
                 }
             }
-            else if (setAnimation.GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+            else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("Block"))
             {
-                setAnimation.SetBool("Block", false);
-                setAnimation.SetBool("IsAttacking", false);
-                block = false;
+                if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 1)
+                {
+                    PBB.Player.GetComponent<Animator>().SetBool("Block", false);
+                    PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", false);
+                    isBlock = false;
+                }
             }
         }
     }
-
-    void Block()
+    void Block(PlayerBlackboard PBB, move moveScript)
     {
         //Block with weapon
-        moveScript.GetComponent<move>().SetRun(false);
-        setAnimation.SetBool("Block", true);
-        setAnimation.SetBool("IsAttacking", true);
-        block = true;
+        moveScript.SetRun(false, PBB);
+        PBB.Player.GetComponent<Animator>().SetBool("Block", true);
+        PBB.Player.GetComponent<Animator>().SetBool("IsAttacking", true);
+        isBlock = true;
+    }
+    
+    private void Roll(PlayerBlackboard PBB)
+    {
+        currentpos = PBB.Player.transform.position;
+        updatepos = Vector3.MoveTowards(currentpos, targetpos, PBB.setRollSpeed * Time.fixedDeltaTime);
+        PBB.Player.transform.position = updatepos;
     }
 
-    void ShieldBlock()
+    private void CheckRollStop(PlayerBlackboard PBB)
     {
-        //Block with shield
+        if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+        {
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
+            {
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
+                PBB.isroll = false;
+            }
+        }
+        else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("Roll"))
+        {
+            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9)
+            {
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
+                PBB.isroll = false;
+            }
+        }
+    }
+
+    public void ActivateRoll(PlayerBlackboard PBB)
+    {
+        if (!PBB.isroll && PBB.Player.GetComponent<Animator>().GetBool("IsAttacking") == false)
+        {
+            if (PBB.currentValStamina >= 20f)
+            {
+                PBB.Player.GetComponent<Animator>().SetBool("Roll", true);
+                PBB.isroll = true;
+                targetpos = PBB.Player.transform.position + PBB.Player.transform.forward.normalized * PBB.rollDistance;
+                PBB.currentValStamina -= 20;
+                PBB.ifRecovering = false;
+            }
+        }
     }
 
     void Select()
@@ -182,15 +243,9 @@ public class Actions : MonoBehaviour {
         //For Talent Tree
     }
 
-    void Roll()
-    {
-        //Code Roll in movement use here?
-        moveScript.GetComponent<Movement>().Roll();
-    }
-
     void Dash()
     {
-        //Code Dash in movement use here?
+        //Code Dash 
 
     }
    

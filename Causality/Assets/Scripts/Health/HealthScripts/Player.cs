@@ -3,53 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player
 {
-    [SerializeField]
     private Stat health;
-
-    public Text DeadText;
-    public Text RespawnText;
 
     private IEnumerator playerCoroutine;
     
-    public float Timer = 0;
+    public float Timer = 0.8f;
     public bool checkIfDead = false;
 
-    public Camera Cam1;
-    public Camera Cam2;
+    private Camera Cam1;
+    private Camera Cam2;
     int i;
     public float Cooldown = 5;
     public float CooldownTimer = 5;
     float Running;
     float Wait;
 
-    private Actions ActionsScript;
-
     // Use this for initialization
-    void Start ()
+    public void Init ()
     {
-        DeadText.text = ("You are Dead");
-        RespawnText.text = ("Press space to respawn");
-
-        DeadText.enabled = false;
-        RespawnText.enabled = false;
-
+        health = new Stat();
+        health.Initialize();
+        Cam1 = Camera.main;
+        Cam2 = GameObject.FindGameObjectWithTag("SecondCamera").GetComponentInChildren<Camera>();
         Cam1.enabled = true;
         Cam2.enabled = false;
-
-        ActionsScript = GetComponent<Actions>();
-    }
-
-    private void Awake()
-    {
-        health.Initialize();
     }
 	
 	// Update is called once per frame
-	public void Update ()
+	public void PlayerUpdate (PlayerBlackboard PBB)
     {
-        if (health.CurrentValHealth <= 0)
+        health.StatUpdate(PBB);
+        if (PBB.currentValHealth <= 0)
         {
             Dead();
         }
@@ -104,44 +90,49 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            health.CurrentValHealth -= 50;
+            PBB.currentValHealth -= 10f;
         }
 
-        if(health.CurrentValHealth > health.CurrentValTwoHealth)
+        if(PBB.currentValHealth > PBB.currentValTwoHealth)
         {
-            health.CurrentValTwoHealth = health.CurrentValHealth;
+            PBB.currentValTwoHealth = PBB.currentValHealth;
         }
 
-        if (health.CurrentValHealth < health.CurrentValTwoHealth)
+        if (PBB.currentValHealth < PBB.currentValTwoHealth)
         {
-            playerCoroutine = waitAndDecrease(0.8f);
-            StartCoroutine(playerCoroutine);
+            waitAndDecreaseHealth(PBB);
+        }
+
+        if (PBB.currentValHealth == PBB.currentValTwoHealth)
+        {
+            Timer = 0.8f;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            health.CurrentValHealth += 10;
+            PBB.currentValHealth += 10;
         }
 
         if (checkIfDead == true)
         {
-            RespawnText.enabled = true;
             Respawn();
         }
     }
 
-    private IEnumerator waitAndDecrease(float waitTime)
+    private void waitAndDecreaseHealth(PlayerBlackboard PBB)
     {
-        yield return new WaitForSeconds(waitTime);
-        health.CurrentValTwoHealth -= 40 * Time.deltaTime;
+        Timer -= Time.deltaTime;
+        if(Timer < 0f)
+        {
+            PBB.currentValTwoHealth -= 40 * Time.deltaTime;
+        }
+
     }
 
     public void Respawn()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            DeadText.enabled = false;
-            RespawnText.enabled = false;
             health.CurrentValHealth = 100;
             checkIfDead = false;
         }
@@ -149,12 +140,11 @@ public class Player : MonoBehaviour
 
     public void Dead()
     {
-        DeadText.enabled = true;
         checkIfDead = true;
     }
 
-    public void IncreaseHealth(float healthAmount)
+    public void IncreaseHealth(float healthAmount, PlayerBlackboard PBB)
     {
-        health.CurrentValHealth += healthAmount;
+        PBB.currentValHealth += healthAmount;
     }
 }

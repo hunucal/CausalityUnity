@@ -3,24 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
 public class Stat
 {
-    [SerializeField]
     private BarScript bar;
-    [SerializeField]
-    private float maxValHealth;
-    [SerializeField]
-    private float maxValTwoHealth;
-    [SerializeField]
-    private float currentValHealth;
-    [SerializeField]
-    private float currentValTwoHealth;
-
-    [SerializeField]
+    public float maxValHealth;
+    public float maxValTwoHealth;
+    public float currentValHealth;
+    public float currentValTwoHealth;
+    
     private float maxValStamina;
-    [SerializeField]
     private float currentValStamina;
+    public Stat()
+    {
+        bar = new BarScript();
+    }
+
+    public void StatUpdate(PlayerBlackboard PBB)
+    {
+        maxValHealth = PBB.maxValHealth;
+        maxValTwoHealth = PBB.maxValTwoHealth;
+        currentValHealth = PBB.currentValHealth;
+        currentValTwoHealth = PBB.currentValHealth;
+        maxValStamina = PBB.maxValStamina;
+        currentValStamina = PBB.currentValStamina;
+        checkIfRecovering(PBB);
+    }
+
+    public void checkIfRecovering(PlayerBlackboard PBB)
+    {
+        if(PBB.ifRecovering == true)
+        {
+            PBB.currentValStamina += 10f * Time.deltaTime;
+        }
+
+        if(PBB.currentValStamina >= 100)
+        {
+            PBB.currentValStamina = PBB.maxValStamina;
+        }
+    }
 
     public float CurrentValHealth
     {
