@@ -11,212 +11,340 @@ public class LightAttackOne : State
 {
     GameObject bossObject;
     GameObject bossWeapon;
+    private Status status;
+    private bool commenceAttack;
+    Vector3 euler90;
     public override void Init()
     {
+        commenceAttack = false;
         bossObject = GameObject.FindGameObjectWithTag("Boss");
         bossWeapon = GameObject.FindGameObjectWithTag("BossWeapon");
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack())
-            return Status.Done;
-        else
-            return Status.Success;
+        Attack();        
     }
     public override Status ExitState()
     {
-        return Status.Terminated;
+        return this.status;
     }
-    private bool Attack()
+    private void Attack()
     {
-        //set animation light 1
-        Vector3 euler90 = new Vector3(90, 0, 0);
-        if (bossWeapon.transform.eulerAngles.Equals(euler90))
+        if(!commenceAttack)
+        {
+            //set animation light 1
+           euler90 = new Vector3(90, 0, 0);
+           commenceAttack = true;
+        }
+        if(commenceAttack)
         {
             bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
-        }else
-            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, -euler90, 5f * Time.deltaTime);
-        //if boss animation not done return false
-        return true;
+
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
+            {
+                commenceAttack = false;
+                this.status = Status.Done;
+            }
+            else
+            {
+                this.status = Status.Running;
+            }
+        }
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public class LightAttackTwo : State
 {
     GameObject bossObject;
     GameObject bossWeapon;
+    private Status status;
+    private bool commenceAttack;
+    Vector3 euler90;
     public override void Init()
     {
+        commenceAttack = false;
         bossObject = GameObject.FindGameObjectWithTag("Boss");
         bossWeapon = GameObject.FindGameObjectWithTag("BossWeapon");
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack())
-            return Status.Success;
-        else
-            return Status.Failure;
+        Attack();
     }
     public override Status ExitState()
     {
-        return Status.Terminated;
+        return this.status;
     }
-    private bool Attack()
+    private void Attack()
     {
-        //set animation light 2
-        float h = 10000 * Time.deltaTime;
-        Vector3 rotationVector = new Vector3(-h, 0f, 0f);
-        bossWeapon.transform.Rotate(rotationVector);
-        return true;
+        if (!commenceAttack)
+        {
+            //set animation light 1
+            euler90 = new Vector3(90, 0, 0);
+            commenceAttack = true;
+        }
+        if (commenceAttack)
+        {
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
+            {
+                commenceAttack = false;
+                this.status = Status.Done;
+            }
+            else
+            {
+                this.status = Status.Running;
+            }
+        }
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public class LightAttackThree : State
 {
     GameObject bossObject;
     GameObject bossWeapon;
+    private Status status;
+    private bool commenceAttack;
+    Vector3 euler90;
     public override void Init()
     {
+        commenceAttack = false;
         bossObject = GameObject.FindGameObjectWithTag("Boss");
         bossWeapon = GameObject.FindGameObjectWithTag("BossWeapon");
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack())
-            return Status.Success;
-        else
-            return Status.Failure;
+        Attack();
     }
     public override Status ExitState()
     {
-        return Status.Terminated;
+        return this.status;
     }
-    private bool Attack()
+    private void Attack()
     {
-        //set animation light 3
-        float h = 10 * Time.deltaTime;
-        Vector3 rotationVector = new Vector3(-h, 0f, 0f);
-        bossWeapon.transform.Rotate(rotationVector);
-        return true;
+        if (!commenceAttack)
+        {
+            //set animation light 1
+            euler90 = new Vector3(90, 0, 0);
+            commenceAttack = true;
+        }
+        if (commenceAttack)
+        {
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
+            {
+                commenceAttack = false;
+                this.status = Status.Done;
+            }
+            else
+            {
+                this.status = Status.Running;
+            }
+        }
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public class HeavyAttackOne : State
 {
     GameObject bossObject;
     GameObject bossWeapon;
+    private Status status;
+    private bool commenceAttack;
+    Vector3 euler90;
     public override void Init()
     {
+        commenceAttack = false;
         bossObject = GameObject.FindGameObjectWithTag("Boss");
         bossWeapon = GameObject.FindGameObjectWithTag("BossWeapon");
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack())
-            return Status.Success;
-        else
-            return Status.Failure;
+        Attack();
     }
     public override Status ExitState()
     {
-        return Status.Terminated;
+        return this.status;
     }
-    private bool Attack()
+    private void Attack()
     {
-        //set animation heavy 1
-        float h = 100 * Time.deltaTime;
-        Vector3 rotationVector =  Vector3.Slerp(bossWeapon.transform.eulerAngles, new Vector3(bossWeapon.transform.eulerAngles.x + h, bossWeapon.transform.eulerAngles.y, bossWeapon.transform.eulerAngles.z), 10f * Time.deltaTime);
-      
-        bossWeapon.transform.Rotate(rotationVector);
-        return true;
+        if (!commenceAttack)
+        {
+            //set animation light 1
+            euler90 = new Vector3(90, 0, 0);
+            commenceAttack = true;
+        }
+        if (commenceAttack)
+        {
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
+            {
+                commenceAttack = false;
+                this.status = Status.Done;
+            }
+            else
+            {
+                this.status = Status.Running;
+            }
+        }
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public class HeavyAttackTwo : State
 {
     GameObject bossObject;
     GameObject bossWeapon;
+    private Status status;
+    private bool commenceAttack;
+    Vector3 euler90;
     public override void Init()
     {
+        commenceAttack = false;
         bossObject = GameObject.FindGameObjectWithTag("Boss");
         bossWeapon = GameObject.FindGameObjectWithTag("BossWeapon");
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack())
-            return Status.Success;
-        else
-            return Status.Failure;
+        Attack();
     }
     public override Status ExitState()
     {
-        return Status.Terminated;
+        return this.status;
     }
-    private bool Attack()
+    private void Attack()
     {
-        //set animation heavy 2
-        float h = 10 * Time.deltaTime;
-        Vector3 rotationVector = Vector3.Slerp(bossWeapon.transform.eulerAngles, new Vector3(bossWeapon.transform.eulerAngles.x + h, bossWeapon.transform.eulerAngles.y, bossWeapon.transform.eulerAngles.z), 10f * Time.deltaTime);
-
-        bossWeapon.transform.Rotate(rotationVector);
-        return true;
+        if (!commenceAttack)
+        {
+            //set animation light 1
+            euler90 = new Vector3(90, 0, 0);
+            commenceAttack = true;
+        }
+        if (commenceAttack)
+        {
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
+            {
+                commenceAttack = false;
+                this.status = Status.Done;
+            }
+            else
+            {
+                this.status = Status.Running;
+            }
+        }
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public class HeavyAttackThree : State
 {
     GameObject bossObject;
     GameObject bossWeapon;
+    private Status status;
+    private bool commenceAttack;
+    Vector3 euler90;
     public override void Init()
     {
+        commenceAttack = false;
         bossObject = GameObject.FindGameObjectWithTag("Boss");
         bossWeapon = GameObject.FindGameObjectWithTag("BossWeapon");
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack())
-            return Status.Success;
-        else
-            return Status.Failure;
+        Attack();
     }
     public override Status ExitState()
     {
-        return Status.Terminated;
+        return this.status;
     }
-    private bool Attack()
+    private void Attack()
     {
-        //set animation heavy 3
-        float h = 5 * Time.deltaTime;
-        Vector3 rotationVector = Vector3.Slerp(bossWeapon.transform.eulerAngles, new Vector3(bossWeapon.transform.eulerAngles.x + h, bossWeapon.transform.eulerAngles.y, bossWeapon.transform.eulerAngles.z), 10f * Time.deltaTime);
+        if (!commenceAttack)
+        {
+            //set animation light 1
+            euler90 = new Vector3(90, 0, 0);
+            commenceAttack = true;
+        }
+        if (commenceAttack)
+        {
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
+            {
 
-        bossWeapon.transform.Rotate(rotationVector);
-        return true;
+                commenceAttack = false;
+                this.status = Status.Done;
+            }
+            else
+            {
+                this.status = Status.Running;
+            }
+        }
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public class GrabAttack : State
 {
     GameObject bossObject;
     GameObject bossWeapon;
-    bool getPlayerPos;
-    bool initGrab;
+    private Status status;
+    private bool commenceAttack;
+    Vector3 euler90;
     public override void Init()
     {
+        commenceAttack = false;
         bossObject = GameObject.FindGameObjectWithTag("Boss");
         bossWeapon = GameObject.FindGameObjectWithTag("BossWeapon");
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack())
-            return Status.Success;
-        else
-            return Status.Failure;
+        Attack();
     }
     public override Status ExitState()
     {
-        return Status.Terminated;
+        return this.status;
     }
-    private bool Attack()
+    private void Attack()
     {
-        //set animation grab phase 1
-        float h = 10000 * Time.deltaTime;
-        Vector3 rotationVector = new Vector3(-h, 0f, 0f);
-        bossWeapon.transform.Rotate(rotationVector);
-        return true;
+        if (!commenceAttack)
+        {
+            //set animation light 1
+            euler90 = new Vector3(90, 0, 0);
+            commenceAttack = true;
+        }
+        if (commenceAttack)
+        {
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
+            {
+
+                commenceAttack = false;
+                this.status = Status.Done;
+            }
+            else
+            {
+                this.status = Status.Running;
+            }
+            this.status = Status.Success;
+        }
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public class JumpAttack : State
@@ -230,6 +358,7 @@ public class JumpAttack : State
     private NavMeshAgent agent;
     private float jumpHeight;
     Vector3 jumpBackTarget;
+    private Status status;
     public override void Init()
     {
         setJumpBack = true;
@@ -239,22 +368,19 @@ public class JumpAttack : State
         origRotation = bossWeapon.transform.eulerAngles;
         agent = bossObject.GetComponent<NavMeshAgent>();
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        if (Attack() == Status.Success)
-            return Status.Success;
-        else
-            return Status.Running;
+        Attack();
     }
     public override Status ExitState()
     {
         return Status.Terminated;
     }
-    private Status Attack()
+    private void Attack()
     {
         if(getPos)
         {
-
+            this.status = Status.Running;
             if (setJumpBack)
             {
                 jumpBackTarget = bossObject.transform.position - new Vector3(0f, 0f, 5f);
@@ -283,7 +409,7 @@ public class JumpAttack : State
                 setJumpBack = true;
             }
         }
-        if(!getPos)
+        if (!getPos)
         {
             if (!agent.transform.position.y.Equals(jumpHeight))
             {
@@ -291,7 +417,7 @@ public class JumpAttack : State
                                                     new Vector3(agent.transform.position.x, agent.transform.position.y + jumpHeight, agent.transform.position.z),
                                                     3f * Time.deltaTime);
             }
-            if(agent.transform.position.y.Equals(jumpHeight))
+            if (agent.transform.position.y.Equals(jumpHeight))
             {
                 agent.transform.position = Vector3.Slerp(agent.transform.position,
                                                                  new Vector3(agent.transform.position.x, agent.transform.position.y * 0f, agent.transform.position.z),
@@ -301,10 +427,15 @@ public class JumpAttack : State
             if (agent.transform.position.Equals(target))
             {
                 getPos = true;
-                return Status.Success;
+                this.status = Status.Done;
             }
         }
-        return Status.Running;
+        else
+            this.status = Status.Success;
+    }
+    public override Status GetCompletition()
+    {
+        return this.status;
     }
 }
 public enum ListType
@@ -361,13 +492,13 @@ public class closeCombatAttackStates
         //grab attack inits
         grab.Init();
         //fill attack pool with states
-        //AttackPool.Add(lightOne);
-        //AttackPool.Add(lightTwo);
-        //AttackPool.Add(lightThree);
-        //AttackPool.Add(heavyOne);
-        //AttackPool.Add(heavyTwo);
-        //AttackPool.Add(heavyThree);
-        //AttackPool.Add(grab);
+        AttackPool.Add(lightOne);
+        AttackPool.Add(lightTwo);
+        AttackPool.Add(lightThree);
+        AttackPool.Add(heavyOne);
+        AttackPool.Add(heavyTwo);
+        AttackPool.Add(heavyThree);
+        AttackPool.Add(grab);
         AttackPool.Add(jump);
     }
 

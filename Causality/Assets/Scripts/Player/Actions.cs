@@ -8,6 +8,7 @@ public class Actions {
     //Get scripts from
     //Attribute Script attScript;
     //Animations
+   
     public bool hAttack;
     public bool lAttack;
     private bool block;
