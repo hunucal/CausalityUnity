@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: e063aecc7943873448bb0c7f8788680a
-=======
-guid: 917c23ac417f297498e385d3dc0f8070
->>>>>>> 92a2983410adfd75de1114c0e5f6ddf3c1782c04
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -77,13 +73,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Role_Fixed
       takeName: Role_Fixed
-<<<<<<< HEAD
       firstFrame: 0
       lastFrame: 85
-=======
-      firstFrame: 30
-      lastFrame: 92
->>>>>>> 92a2983410adfd75de1114c0e5f6ddf3c1782c04
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
