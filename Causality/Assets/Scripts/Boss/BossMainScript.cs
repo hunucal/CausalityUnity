@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.AI;
-public class BossMainScript : MonoBehaviour {
+
+public class BossMainScript : MonoBehaviour
+{
         [Header("Boss movement settings")]
     [SerializeField]private float bossMoveSpeed;
     [SerializeField]private float bossRotationSpeed;
@@ -25,6 +27,9 @@ public class BossMainScript : MonoBehaviour {
     leafNodeMoveAway leafNodeMoveAway;
     //behaviour nodes
     NodeChooseAttack nodeChooseAttack;
+
+    private Blackboard bb;
+
     // Use this for initialization
     void Start () {
         //nodes
@@ -79,12 +84,36 @@ public class BossMainScript : MonoBehaviour {
         rootNode.SetCurrentTask(rootNode.GetController().GetChildList().First());
         selector1.SetCurrentTask(selector1.GetController().GetChildList().First());
         sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
+
+        bb.maxValHealth = 100f;
+        bb.maxValTwoHealth = 100f;
+        bb.currentValHealth = 100f;
+        bb.currentValTwoHealth = 100f;
+        
+        bb.fillAmountHealth = 1f;
+        bb.fillAmountTwoHealth = 1f;
     }
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if(rootNode.CheckCondition() != Status.Terminated)
         {
             rootNode.DoAction();
         }      
 	}
+
+    public float GetHealthVal()
+    {
+        return bb.currentValHealth / 100f;
+    }
+
+    public float GetTwoHealthVal()
+    {
+        return bb.currentValTwoHealth / 100f;
+    }
+
+    public float GetMaxValueHealth()
+    {
+        return bb.maxValueHealth;
+    }
 }
