@@ -72,8 +72,8 @@ public class BossMainScript : MonoBehaviour {
         selector1.GetController().AddChild(leafNodeIdle);
         selector1.GetController().AddChild(sequencer1);
         sequencer1.GetController().AddChild(leafNodeMove);
-        sequencer1.GetController().AddChild(checkdst);
-        sequencer1.GetController().AddChild(nodeChooseAttack);
+      //  sequencer1.GetController().AddChild(checkdst);
+       // sequencer1.GetController().AddChild(nodeChooseAttack);
 
         //test for debug
         rootNode.SetCurrentTask(rootNode.GetController().GetChildList().First());

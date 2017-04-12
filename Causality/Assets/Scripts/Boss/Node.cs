@@ -139,12 +139,14 @@ public class SequencerNode : CompositeNode
             }
             if (GetController().GetChildList()[curPos].CheckCondition() == Status.Failure)
             {
+                CompletedWithStatus(Status.Failure);
                 return;
             }
             else if (GetCurrentTask().CheckCondition() == Status.Done)
             {
                 curPos++;
                 SetCurrentTask(GetController().GetChildList()[curPos]);
+                CompletedWithStatus(Status.Done);
                 running = true;
             }
             else if (GetCurrentTask().CheckCondition() == Status.Done && GetCurrentTask().Equals(GetController().GetChildList().Last()))
