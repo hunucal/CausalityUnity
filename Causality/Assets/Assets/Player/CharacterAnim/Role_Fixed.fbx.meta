@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: e063aecc7943873448bb0c7f8788680a
-timeCreated: 1491468730
-licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -62,23 +60,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Role_Fixed' has import animation warnings that
-      might lower retargeting quality:\n\t'Stam2_Spine1' has translation animation
-      that will be discarded.\n\t'Stam2_Head' has translation animation that will
-      be discarded.\n\t'Stam2_RightHand' has translation animation that will be discarded.\n\t'Stam2_LeftFoot'
-      has translation animation that will be discarded.\n\t'Stam2_RightFoot' has translation
-      animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Role_Fixed':\n\tLeftFoot
-      average position error 5.9 mm and maximum position error 20.7 mm at time 1:19
-      (41.9%) Frame 49\n\tRightLowerLeg average position error 0.2 mm and maximum
-      position error 1.8 mm at time 1:16 (39.3%) Frame 46\n\tRightFoot average position
-      error 13.3 mm and maximum position error 46.7 mm at time 1:16 (39.3%) Frame
-      46\n\tLeftHand average position error 3.5 mm and maximum position error 23.7
-      mm at time 2: 6 (56.4%) Frame 66\n\tRightHand average position error 2.4 mm
-      and maximum position error 9.5 mm at time 1:23 (45.3%) Frame 53\n\tHead average
-      position error 13.4 mm and maximum position error 42.7 mm at time 2: 8 (58.1%)
-      Frame 68\n"
-    animationDoRetargetingWarnings: 1
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -89,13 +73,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Role_Fixed
       takeName: Role_Fixed
-<<<<<<< HEAD
       firstFrame: 0
       lastFrame: 85
-=======
-      firstFrame: 28
-      lastFrame: 90
->>>>>>> e9b5144d13e29cc7e8c728777aeb129efc36c954
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -166,7 +145,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -214,64 +193,8 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Stam2_LeftLeg
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_RightLeg
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_LeftFoot
-      humanName: LeftFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_RightFoot
-      humanName: RightFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_Spine
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     - boneName: Stam2_Spine1
-      humanName: Chest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_Neck
-      humanName: Neck
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_Head
-      humanName: Head
+      humanName: Spine
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -294,70 +217,6 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Stam2_LeftArm
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_RightArm
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_LeftForeArm
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_RightForeArm
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_LeftHand
-      humanName: LeftHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_RightHand
-      humanName: RightHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_LeftToeBase
-      humanName: LeftToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Stam2_RightToeBase
-      humanName: RightToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     skeleton:
     - name: Role_Fixed(Clone)
       parentName: 
@@ -366,108 +225,108 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_Hips
       parentName: Role_Fixed(Clone)
-      position: {x: -0.0000000018626451, y: 0.928162, z: -0.16229068}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: -0}
+      rotation: {x: -0.007888156, y: 0.2599524, z: 0.023871798, w: 0.9652941}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftUpLeg
       parentName: Stam2_Hips
-      position: {x: -0.093446866, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.21559495, y: -0.17941757, z: -0.16141106, w: 0.9461895}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftLeg
       parentName: Stam2_LeftUpLeg
-      position: {x: -0, y: -0.42506415, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: -0, z: 0}
+      rotation: {x: 0.25792766, y: -0.04864116, z: 0.005289168, w: 0.9649246}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftFoot
       parentName: Stam2_LeftLeg
-      position: {x: 0.000106200576, y: -0.43178904, z: -0.0011974946}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: -0, z: -0}
+      rotation: {x: -0.03088305, y: 0.038715616, z: 0.10393479, w: 0.9933504}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftToeBase
       parentName: Stam2_LeftFoot
-      position: {x: -0, y: -0.06074046, z: 0.1401703}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: -0, z: 0}
+      rotation: {x: 0.035800993, y: 0.0657476, z: -0.04519229, w: 0.99616927}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightUpLeg
       parentName: Stam2_Hips
-      position: {x: 0.093446866, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.03410386, y: 0.10792694, z: 0.025942964, w: 0.993235}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightLeg
       parentName: Stam2_RightUpLeg
-      position: {x: -0, y: -0.42506415, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: -0, z: 0}
+      rotation: {x: 0.24992597, y: 0.018362764, z: 0.016512454, w: 0.96795}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightFoot
       parentName: Stam2_RightLeg
-      position: {x: 0.00061762333, y: -0.39885813, z: -0.0026121438}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: -0, z: -0}
+      rotation: {x: -0.17365283, y: 0.06305865, z: -0.08035765, w: 0.9794953}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightToeBase
       parentName: Stam2_RightFoot
-      position: {x: -0, y: -0.06074046, z: 0.1401703}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: -0, z: 0}
+      rotation: {x: -0.016391395, y: -0.018093226, z: 0.01368735, w: 0.9996082}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_Spine
       parentName: Stam2_Hips
-      position: {x: -0, y: 0.07662643, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.055615995, y: -0.0026386597, z: 0.0007828145, w: 0.9984485}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_Spine1
       parentName: Stam2_Spine
-      position: {x: -0.000007607043, y: 0.19085127, z: 0.000007867813}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.010509778, y: -0.0008811439, z: -0.0077403844, w: 0.99991447}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftShoulder
       parentName: Stam2_Spine1
-      position: {x: -0.03728695, y: 0.1909284, z: -0.0014569312}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: -0}
+      rotation: {x: 0.031854756, y: 0.07986742, z: -0.011125708, w: 0.9962343}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftArm
       parentName: Stam2_LeftShoulder
-      position: {x: -0.09624044, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.25009546, y: 0.3861009, z: 0.42693526, w: 0.77852726}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftForeArm
       parentName: Stam2_LeftArm
-      position: {x: -0.3553969, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.0631832, y: 0.66386396, z: -0.3655575, w: 0.64935374}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftHand
       parentName: Stam2_LeftForeArm
-      position: {x: -0.2355533, y: -0.000008404255, z: -0.000005990267}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: -0, z: -0}
+      rotation: {x: -0.0965792, y: 0.057710268, z: -0.04218462, w: 0.992755}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_Neck
       parentName: Stam2_Spine1
-      position: {x: -0, y: 0.2033121, z: 0.01848292}
+      position: {x: -0, y: 0, z: 0}
       rotation: {x: 0.12834185, y: -0.08790465, z: -0.04140073, w: 0.98695856}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_Head
       parentName: Stam2_Neck
-      position: {x: 0.0000018924475, y: 0.1473422, z: -0.021043718}
+      position: {x: 0, y: 0, z: -0}
       rotation: {x: 0.041364778, y: -0.06768423, z: 0.13389485, w: 0.98781574}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightShoulder
       parentName: Stam2_Spine1
-      position: {x: 0.03744645, y: 0.1909284, z: -0.0014569312}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: 0, z: -0}
+      rotation: {x: 0.04523097, y: -0.14889412, z: -0.011169309, w: 0.987755}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightArm
       parentName: Stam2_RightShoulder
-      position: {x: 0.09624044, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.123275846, y: -0.42287657, z: -0.40741345, w: 0.7999955}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightForeArm
       parentName: Stam2_RightArm
-      position: {x: 0.3553969, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.04536428, y: 0.8235412, z: -0.40285444, w: -0.39677477}
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_RightHand
       parentName: Stam2_RightForeArm
-      position: {x: 0.24245113, y: -0.00000166893, z: 0.0000028423965}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: -0, z: 0}
+      rotation: {x: -0.11287004, y: 0.023222463, z: 0.10803301, w: 0.9874462}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
@@ -478,7 +337,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
-    hasTranslationDoF: 1
+    hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
