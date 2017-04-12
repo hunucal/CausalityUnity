@@ -42,7 +42,7 @@ public class CompositeNode : Node
     }
     public void Start() { this.started = true; this.ended = false; }
     public void Ended() { this.started = false; this.ended = true; }
-    public void SetCurrentTask(CompositeNode node) { this.controller.SetTask(node); }
+    public void SetCurrentTask(Node node) { this.CurrTask = node; }
     public CompositeNode GetCurrentTask() { return this.controller.currentTask; }
     public override Status CheckCondition(){return taskStatus;}
     public override void CompletedWithStatus(Status status) { taskStatus = status; }

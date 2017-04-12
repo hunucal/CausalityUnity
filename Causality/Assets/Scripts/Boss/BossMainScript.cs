@@ -89,7 +89,7 @@ public class BossMainScript : MonoBehaviour
         //test for debug
         rootNode.SetCurrentTask(rootNode.GetController().GetChildList().First());
         selector1.SetCurrentTask(selector1.GetController().GetChildList().First());
-        sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
+        //sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
     }
 	// Update is called once per frame
 	void Update ()
