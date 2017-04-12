@@ -53,10 +53,7 @@ public class move {
             }
             else
             {
-                // Fixa IDLESTATE
-                PBB.ifRecovering = true;
-                PBB.Player.GetComponent<Animator>().SetBool("Walk", false);
-                PBB.Player.GetComponent<Animator>().SetBool("Run", false);
+                Idle(PBB);
             }
         }
     }
@@ -74,6 +71,12 @@ public class move {
         
     }
 
+    private void Idle(PlayerBlackboard PBB)
+    {
+        PBB.ifRecovering = true;
+        PBB.Player.GetComponent<Animator>().SetBool("Walk", false);
+        PBB.Player.GetComponent<Animator>().SetBool("Run", false);
+    }
 
     private Vector3 PoolInput(float hor, float ver)
     {
