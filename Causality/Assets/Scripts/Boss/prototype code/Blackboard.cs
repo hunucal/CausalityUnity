@@ -44,16 +44,12 @@ public class Blackboard {
     /**
     *movespeed for boss
    */
-    public float maxBossValHealth;
-    public float maxBossValTwoHealth;
-    public float currentBossValHealth;
-    public float currentBossValTwoHealth;
-
+    public float maxValHealth;
+    public float maxValTwoHealth;
+    public float currentValHealth;
+    public float currentValTwoHealth;
     public float fillAmountHealth;
     public float fillAmountTwoHealth;
-
-    public float maxValueHealth { get; set; }
-
     public float movespeed;
     public float aggroRange;
     public float rotationSpeed;
