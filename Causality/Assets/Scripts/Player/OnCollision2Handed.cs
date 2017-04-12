@@ -30,11 +30,6 @@ public class OnCollision2Handed : MonoBehaviour
         Player = GameObject.Find("Player");
     }
 
-    public void Update(PlayerBlackboard PBB, Actions actions)
-    {
-        OnCollisionUpdate(PBB, actions);
-    }
-
     public void OnCollisionUpdate(PlayerBlackboard PBB, Actions actions)
     {
         if (actions.hAttack == true)
