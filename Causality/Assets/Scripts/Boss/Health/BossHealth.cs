@@ -57,29 +57,29 @@ public class BossHealth
             PlayerObject.GetComponentInChildren<OnCollision2Handed>().LightAttack = false;
         }
 
-        if (bb.currentBossValHealth > bb.currentBossValTwoHealth)
-        {
-            bb.currentBossValTwoHealth = bb.currentBossValHealth;
-        }
+        //if (bb.currentBossValHealth > bb.currentBossValTwoHealth)
+        //{
+        //    bb.currentBossValTwoHealth = bb.currentBossValHealth;
+        //}
 
-        if (bb.currentBossValHealth < bb.currentBossValTwoHealth)
-        {
-            waitAndDecrease(bb);
-        }
+        //if (bb.currentBossValHealth < bb.currentBossValTwoHealth)
+        //{
+        //    waitAndDecrease(bb);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            bb.currentBossValHealth += 10;
-        }
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    bb.currentBossValHealth += 10;
+        //}
     }
 
     private void waitAndDecrease(Blackboard bb)
     {
-        timer -= Time.deltaTime;
-        if(timer < 0f)
-        {
-        bb.currentBossValTwoHealth -= 40 * Time.deltaTime;
-        }
+        //timer -= Time.deltaTime;
+        //if(timer < 0f)
+        //{
+        //bb.currentBossValTwoHealth -= 40 * Time.deltaTime;
+        //}
     }
 
 }
