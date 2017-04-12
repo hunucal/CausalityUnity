@@ -137,6 +137,7 @@ public class move {
     void Run(PlayerBlackboard PBB)
     {
         //attri.CurrentValStamina -= 2.0f * Time.fixedDeltaTime;
+        PBB.recoveringTimer = 0;
         PBB.currentValStamina -= 10f * Time.deltaTime;
         moveSpeed = PBB.runSpeed;
         PBB.Player.GetComponent<Animator>().SetBool("Run", true);

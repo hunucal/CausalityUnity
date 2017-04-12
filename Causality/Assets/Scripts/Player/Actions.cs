@@ -229,6 +229,7 @@ public class Actions {
                 targetpos = PBB.Player.transform.position + PBB.Player.transform.forward.normalized * PBB.rollDistance;
                 PBB.currentValStamina -= 20;
                 PBB.ifRecovering = false;
+                PBB.recoveringTimer = 0;
             }
         }
     }
