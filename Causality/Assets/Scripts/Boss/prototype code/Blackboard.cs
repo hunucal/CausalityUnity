@@ -48,6 +48,7 @@ public class Blackboard {
     public float aggroRange;
     public float rotationSpeed;
     public Vector3 velocity;
+    public float healthValue;
     public Blackboard()
     {
         this.moveDirection = new Vector3();
