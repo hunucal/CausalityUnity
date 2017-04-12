@@ -11,7 +11,7 @@ public class BossHealth
     public GameObject PlayerObject;
     public GameObject BossBar;
 
-    private IEnumerator coroutine;
+    public float timer = 0.8f;
 
     public void Init()
     {
@@ -31,6 +31,7 @@ public class BossHealth
 
     public void BossUpdate(Blackboard bb)
     {
+        bossHealth.StatUpdate(bb);
         if (Vector3.Distance(PlayerObject.transform.position, BossObject.transform.position) < 5)
         {
             BossBar.SetActive(true);
@@ -56,27 +57,29 @@ public class BossHealth
             PlayerObject.GetComponentInChildren<OnCollision2Handed>().LightAttack = false;
         }
 
-        if (bossHealth.CurrentBossValHealth > bossHealth.CurrentBossValTwoHealth)
+        if (bb.currentBossValHealth > bb.currentBossValTwoHealth)
         {
-            bossHealth.CurrentBossValTwoHealth = bossHealth.CurrentBossValHealth;
+            bb.currentBossValTwoHealth = bb.currentBossValHealth;
         }
 
-        if (bossHealth.CurrentBossValHealth < bossHealth.CurrentBossValTwoHealth)
+        if (bb.currentBossValHealth < bb.currentBossValTwoHealth)
         {
-            coroutine = waitAndDecrease(0.8f);
-            //StartCoroutine(coroutine);
+            waitAndDecrease(bb);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            bossHealth.CurrentBossValHealth += 10;
+            bb.currentBossValHealth += 10;
         }
     }
 
-    private IEnumerator waitAndDecrease(float waitTime)
+    private void waitAndDecrease(Blackboard bb)
     {
-        yield return new WaitForSeconds(waitTime);
-        bossHealth.CurrentBossValTwoHealth -= 30 * Time.deltaTime;
+        timer -= Time.deltaTime;
+        if(timer < 0f)
+        {
+        bb.currentBossValTwoHealth -= 40 * Time.deltaTime;
+        }
     }
 
 }

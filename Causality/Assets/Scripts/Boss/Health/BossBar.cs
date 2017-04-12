@@ -17,9 +17,9 @@ public class BossBar : MonoBehaviour
 
     public void BarUpdate(BossMainScript BMS)
     {
-        fillAmountBossHealth = BMS.GetHealthVal();
-        fillAmountBossTwoHealth = BMS.GetTwoHealthVal();
-        MaxBossValueHealth = BMS.GetMaxValueHealth();
+        fillAmountBossHealth = BMS.GetBossHealthVal();
+        fillAmountBossTwoHealth = BMS.GetBossTwoHealthVal();
+        MaxBossValueHealth = BMS.GetMaxBossValueHealth();
     }
 
     public float valueBossHealth

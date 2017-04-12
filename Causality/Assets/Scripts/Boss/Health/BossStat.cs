@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
 public class BossStat
 {
-    [SerializeField]
     private BossBar bar;
-    [SerializeField]
     private float maxBossValHealth;
-    [SerializeField]
     private float maxBossValTwoHealth;
-    [SerializeField]
     private float currentBossValHealth;
-    [SerializeField]
     private float currentBossValTwoHealth;
+
+    public BossStat()
+    {
+        bar = new BossBar();
+    }
+
+    public void StatUpdate(Blackboard bb)
+    {
+        maxBossValHealth = bb.maxBossValHealth;
+        maxBossValTwoHealth = bb.maxBossValTwoHealth;
+        currentBossValHealth = bb.currentBossValHealth;
+        currentBossValTwoHealth = bb.currentBossValHealth;
+    }
   
     public float CurrentBossValHealth
     {

@@ -34,7 +34,7 @@ public class Stat
         if(PBB.ifRecovering == true)
         {
             PBB.recoveringTimer += Time.deltaTime;
-            if(PBB.recoveringTimer > 2)
+            if(PBB.recoveringTimer > 1)
             {
                 PBB.currentValStamina += 10f * Time.deltaTime;
             }
