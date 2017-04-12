@@ -478,8 +478,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Block 1
       takeName: Block
-      firstFrame: 0
-      lastFrame: 58
+      firstFrame: 6
+      lastFrame: 45
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
