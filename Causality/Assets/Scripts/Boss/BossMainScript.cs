@@ -81,22 +81,22 @@ public class BossMainScript : MonoBehaviour
         //sequence one children
         rootNode.GetController().AddChild(selector1);
         selector1.GetController().AddChild(leafNodeIdle);
-        selector1.GetController().AddChild(leafNodeMove);
-        //sequencer1.GetController().AddChild(leafNodeMove);
-       //sequencer1.GetController().AddChild(checkdst);
-       // sequencer1.GetController().AddChild(nodeChooseAttack);
+        selector1.GetController().AddChild(sequencer1);
+        sequencer1.GetController().AddChild(leafNodeMove);
+        sequencer1.GetController().AddChild(checkdst);
+        sequencer1.GetController().AddChild(nodeChooseAttack);
 
         //test for debug
         rootNode.SetCurrentTask(rootNode.GetController().GetChildList().First());
         selector1.SetCurrentTask(selector1.GetController().GetChildList().First());
-        //sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
+        sequencer1.SetCurrentTask(sequencer1.GetController().GetChildList().First());
     }
 	// Update is called once per frame
 	void Update ()
     {
         if(rootNode.CheckCondition() != Status.Failure)
         {
-            rootNode.CurrTask.DoAction();
+            rootNode.GetController().currentTask.DoAction();
         }      
 	}
 
