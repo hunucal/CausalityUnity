@@ -23,29 +23,15 @@ public class StateMachine {
         lastState = currentState;
         currentState = stateToChange;
     }
-    public Status RunState()
+    public void RunState()
     {
         if (UnityEngine.UnassignedReferenceException.Equals(currentState, null))
         {
-            return Status.Failure;
+            return;
         }
         else
         {
-            Status status = currentState.RunState();
-            switch (status)
-            {
-                case Status.Success:
-                    return Status.Success;
-                case Status.Failure:
-                    return Status.Failure;
-                case Status.Running:
-                    return Status.Running;
-                case Status.Terminated:
-                    return Status.Terminated;
-                default:
-                    break;
-            }
-            return Status.Failure;
+            currentState.RunState();
         }
     }
     public State GetCurrentState()
