@@ -93,18 +93,17 @@ public class SelectorNode : CompositeNode
             }
             if (GetController().GetChildList()[curPos].CheckCondition() == Status.Failure)
             {
-                GetCurrentTask().taskStatus = Status.Running;
-                curPos++;
-                SetCurrentTask(GetController().GetChildList()[curPos]);
-            }
-            else if (GetCurrentTask().CheckCondition() == Status.Done)
-            {
-                GetCurrentTask().taskStatus = Status.Success;
                 curPos++;
                 SetCurrentTask(GetController().GetChildList()[curPos]);
                 running = true;
             }
-            else if (GetCurrentTask().CheckCondition() == Status.Success && GetCurrentTask().Equals(GetController().GetChildList().Last()))
+            else if (GetCurrentTask().CheckCondition() == Status.Done)
+            {
+                curPos++;
+                SetCurrentTask(GetController().GetChildList()[curPos]);
+                running = true;
+            }
+            else if (GetCurrentTask().Equals(GetController().GetChildList().Last()) && GetController().GetChildList().Last().CheckCondition() == Status.Done)
             {
                 SetCurrentTask(GetController().GetChildList().First());
                 running = true;
@@ -140,14 +139,13 @@ public class SequencerNode : CompositeNode
             }
             if (GetController().GetChildList()[curPos].CheckCondition() == Status.Failure)
             {
-                GetCurrentTask().taskStatus = Status.Success;
                 return;
             }
             else if (GetCurrentTask().CheckCondition() == Status.Done)
             {
-                GetCurrentTask().taskStatus = Status.Success;
                 curPos++;
                 SetCurrentTask(GetController().GetChildList()[curPos]);
+                running = true;
             }
             else if (GetCurrentTask().CheckCondition() == Status.Done && GetCurrentTask().Equals(GetController().GetChildList().Last()))
             {

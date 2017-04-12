@@ -34,13 +34,14 @@ public class LightAttackOne : State
         {
             //set animation light 1
            euler90 = new Vector3(90, 0, 0);
-            commenceAttack = true;
+           commenceAttack = true;
         }
         if(commenceAttack)
         {
-            if (bossWeapon.transform.eulerAngles.Equals(euler90))
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
             {
-                bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
                 commenceAttack = false;
                 this.status = Status.Done;
             }
@@ -48,7 +49,6 @@ public class LightAttackOne : State
             {
                 this.status = Status.Running;
             }
-            this.status = Status.Success;
         }
     }
     public override Status GetCompletition()
@@ -87,9 +87,9 @@ public class LightAttackTwo : State
         }
         if (commenceAttack)
         {
-            if (bossWeapon.transform.eulerAngles.Equals(euler90))
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
             {
-                bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
                 commenceAttack = false;
                 this.status = Status.Done;
             }
@@ -97,7 +97,6 @@ public class LightAttackTwo : State
             {
                 this.status = Status.Running;
             }
-            this.status = Status.Success;
         }
     }
     public override Status GetCompletition()
@@ -136,9 +135,9 @@ public class LightAttackThree : State
         }
         if (commenceAttack)
         {
-            if (bossWeapon.transform.eulerAngles.Equals(euler90))
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
             {
-                bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
                 commenceAttack = false;
                 this.status = Status.Done;
             }
@@ -146,7 +145,6 @@ public class LightAttackThree : State
             {
                 this.status = Status.Running;
             }
-            this.status = Status.Success;
         }
     }
     public override Status GetCompletition()
@@ -185,9 +183,9 @@ public class HeavyAttackOne : State
         }
         if (commenceAttack)
         {
-            if (bossWeapon.transform.eulerAngles.Equals(euler90))
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
             {
-                bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
                 commenceAttack = false;
                 this.status = Status.Done;
             }
@@ -195,7 +193,6 @@ public class HeavyAttackOne : State
             {
                 this.status = Status.Running;
             }
-            this.status = Status.Success;
         }
     }
     public override Status GetCompletition()
@@ -234,9 +231,9 @@ public class HeavyAttackTwo : State
         }
         if (commenceAttack)
         {
-            if (bossWeapon.transform.eulerAngles.Equals(euler90))
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
             {
-                bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
                 commenceAttack = false;
                 this.status = Status.Done;
             }
@@ -244,7 +241,6 @@ public class HeavyAttackTwo : State
             {
                 this.status = Status.Running;
             }
-            this.status = Status.Success;
         }
     }
     public override Status GetCompletition()
@@ -283,9 +279,10 @@ public class HeavyAttackThree : State
         }
         if (commenceAttack)
         {
-            if (bossWeapon.transform.eulerAngles.Equals(euler90))
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
             {
-                bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+
                 commenceAttack = false;
                 this.status = Status.Done;
             }
@@ -293,7 +290,6 @@ public class HeavyAttackThree : State
             {
                 this.status = Status.Running;
             }
-            this.status = Status.Success;
         }
     }
     public override Status GetCompletition()
@@ -332,9 +328,10 @@ public class GrabAttack : State
         }
         if (commenceAttack)
         {
-            if (bossWeapon.transform.eulerAngles.Equals(euler90))
+            bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+            if (Mathf.Approximately(bossWeapon.transform.eulerAngles.x, euler90.x))
             {
-                bossWeapon.transform.eulerAngles = Vector3.Lerp(bossWeapon.transform.eulerAngles, euler90, 5f * Time.deltaTime);
+
                 commenceAttack = false;
                 this.status = Status.Done;
             }
