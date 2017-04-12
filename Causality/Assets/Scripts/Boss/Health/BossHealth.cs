@@ -57,6 +57,22 @@ public class BossHealth
             PlayerObject.GetComponentInChildren<OnCollision2Handed>().LightAttack = false;
         }
 
+<<<<<<< HEAD
+        //if (bb.currentBossValHealth > bb.currentBossValTwoHealth)
+        //{
+        //    bb.currentBossValTwoHealth = bb.currentBossValHealth;
+        //}
+
+        //if (bb.currentBossValHealth < bb.currentBossValTwoHealth)
+        //{
+        //    waitAndDecrease(bb);
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    bb.currentBossValHealth += 10;
+        //}
+=======
         if (bb.currentValHealth > bb.currentValTwoHealth)
         {
             bb.currentValTwoHealth = bb.currentValHealth;
@@ -71,15 +87,24 @@ public class BossHealth
         {
             bb.currentValHealth += 10;
         }
+>>>>>>> 093dd924ce2d3b59aba4114e254795ab92521409
     }
 
     private void waitAndDecrease(Blackboard bb)
     {
+<<<<<<< HEAD
+        //timer -= Time.deltaTime;
+        //if(timer < 0f)
+        //{
+        //bb.currentBossValTwoHealth -= 40 * Time.deltaTime;
+        //}
+=======
         timer -= Time.deltaTime;
         if(timer < 0f)
         {
         bb.currentValTwoHealth -= 40 * Time.deltaTime;
         }
+>>>>>>> 093dd924ce2d3b59aba4114e254795ab92521409
     }
 
 }
