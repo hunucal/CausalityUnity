@@ -18,11 +18,15 @@ public class State {
     {
 
     }
-    public virtual Status RunState()
+    public virtual void RunState()
     {
-        return Status.Failure;
+        
     }
     public virtual Status ExitState()
+    {
+        return Status.Terminated;
+    }
+    public virtual Status GetCompletition()
     {
         return Status.Terminated;
     }

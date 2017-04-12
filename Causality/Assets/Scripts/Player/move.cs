@@ -10,15 +10,7 @@ public class move {
     private float moveSpeed;
 
     private bool isRunning;
-
-    //Roll variables
-    private bool isroll;
-
-    private Vector3 targetpos;
-    private Vector3 currentpos;
-    private Vector3 updatepos;
-
-
+    
     // Use this for initialization
     public void InitStart (PlayerBlackboard PBB) {
         //Activate Rigidbody
@@ -35,12 +27,8 @@ public class move {
         PBB.horizontalForce = Input.GetAxisRaw("Horizontal");
         PBB.verticalForce = Input.GetAxisRaw("Vertical");
 
-        if (isroll)
-        {
-            Roll(PBB);
-            CheckRollStop(PBB);
-        }
-        if (!isroll)
+    
+        if (!PBB.isroll)
         {
             //Check if Horizontal and vertical isn't zero.
             if (PBB.verticalForce != 0 || PBB.horizontalForce != 0)
@@ -49,6 +37,7 @@ public class move {
                 {
                     //Move
                     if (isRunning)
+
                         Run(PBB);
                     else
                         Walk(PBB);
@@ -64,6 +53,8 @@ public class move {
             }
             else
             {
+                // Fixa IDLESTATE
+                PBB.ifRecovering = true;
                 PBB.Player.GetComponent<Animator>().SetBool("Walk", false);
                 PBB.Player.GetComponent<Animator>().SetBool("Run", false);
             }
@@ -123,36 +114,16 @@ public class move {
         }
     }
 
-    private void Roll(PlayerBlackboard PBB)
-    {
-        currentpos = PBB.Player.transform.position;
-        updatepos = Vector3.MoveTowards(currentpos, targetpos, PBB.setRollSpeed * Time.fixedDeltaTime);
-        PBB.Player.transform.position = updatepos;
-    }
+  
 
-    private void CheckRollStop(PlayerBlackboard PBB)
+    public void SetRun(bool b, PlayerBlackboard PBB)
     {
-        if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+        if (PBB.currentValStamina > 0)
         {
-            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
-            {
-                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
-                isroll = false;
-            }
+            isRunning = b;
         }
-        else if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).IsName("Roll"))
-        {
-            if (PBB.Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9)
-            {
-                PBB.Player.GetComponent<Animator>().SetBool("Roll", false);
-                isroll = false;
-            }
-        }
-    }
-
-    public void SetRun(bool b)
-    {
-        isRunning = b;
+        else
+            isRunning = false;
     }
 
     void Walk(PlayerBlackboard PBB)
@@ -160,27 +131,18 @@ public class move {
         moveSpeed = PBB.walkSpeed;
         PBB.Player.GetComponent<Animator>().SetBool("Run", false);
         PBB.Player.GetComponent<Animator>().SetBool("Walk", true);
+        PBB.ifRecovering = true;
     }
 
     void Run(PlayerBlackboard PBB)
     {
         //attri.CurrentValStamina -= 2.0f * Time.fixedDeltaTime;
+        PBB.recoveringTimer = 0;
+        PBB.currentValStamina -= 10f * Time.deltaTime;
         moveSpeed = PBB.runSpeed;
         PBB.Player.GetComponent<Animator>().SetBool("Run", true);
-
+        PBB.ifRecovering = false;
     }
 
-    public void ActivateRoll(PlayerBlackboard PBB)
-    {
-        if (!isroll)
-        {
-            if (true) //Set Stamina
-            {
-                PBB.Player.GetComponent<Animator>().SetBool("Roll", true);
-                isroll = true;
-                targetpos = PBB.Player.transform.position + PBB.Player.transform.forward.normalized * PBB.rollDistance;
-                //TODO:: Use stamina
-            }
-        }
-    }
+   
 }

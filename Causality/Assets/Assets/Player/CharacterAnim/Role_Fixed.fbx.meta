@@ -1,5 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e063aecc7943873448bb0c7f8788680a
+=======
+guid: 917c23ac417f297498e385d3dc0f8070
+timeCreated: 1491899899
+licenseType: Free
+>>>>>>> e1c162e5941307004ab5cec25b25611ef4ad8da0
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -60,9 +66,29 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
+<<<<<<< HEAD
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+=======
+    animationImportWarnings: "\nClip 'Role_Fixed' has import animation warnings that
+      might lower retargeting quality:\n\t'Stam2_Spine1' has translation animation
+      that will be discarded.\n\t'Stam2_Head' has translation animation that will
+      be discarded.\n\t'Stam2_RightHand' has translation animation that will be discarded.\n\t'Stam2_LeftFoot'
+      has translation animation that will be discarded.\n\t'Stam2_RightFoot' has translation
+      animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Role_Fixed':\n\tLeftFoot
+      average position error 6.3 mm and maximum position error 22.1 mm at time 1:19
+      (41.9%) Frame 49\n\tRightLowerLeg average position error 0.2 mm and maximum
+      position error 1.9 mm at time 1:16 (39.3%) Frame 46\n\tRightFoot average position
+      error 14.1 mm and maximum position error 49.7 mm at time 1:16 (39.3%) Frame
+      46\n\tLeftHand average position error 3.7 mm and maximum position error 25.2
+      mm at time 2: 6 (56.4%) Frame 66\n\tRightHand average position error 2.6 mm
+      and maximum position error 10.2 mm at time 1:23 (45.3%) Frame 53\n\tHead average
+      position error 14.2 mm and maximum position error 45.4 mm at time 2: 8 (58.1%)
+      Frame 68\n"
+    animationDoRetargetingWarnings: 1
+>>>>>>> e1c162e5941307004ab5cec25b25611ef4ad8da0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -73,8 +99,13 @@ ModelImporter:
     - serializedVersion: 16
       name: Role_Fixed
       takeName: Role_Fixed
+<<<<<<< HEAD
       firstFrame: 0
       lastFrame: 85
+=======
+      firstFrame: 30
+      lastFrame: 92
+>>>>>>> e1c162e5941307004ab5cec25b25611ef4ad8da0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -225,8 +256,13 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_Hips
       parentName: Role_Fixed(Clone)
+<<<<<<< HEAD
       position: {x: -0, y: 0, z: -0}
       rotation: {x: -0.007888156, y: 0.2599524, z: 0.023871798, w: 0.9652941}
+=======
+      position: {x: -0.0000000018626451, y: 0.8674377, z: -0.16229068}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> e1c162e5941307004ab5cec25b25611ef4ad8da0
       scale: {x: 1, y: 1, z: 1}
     - name: Stam2_LeftUpLeg
       parentName: Stam2_Hips

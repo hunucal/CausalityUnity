@@ -11,6 +11,7 @@ public enum Status
     Terminated
 }
 public class Node {
+    public bool started, ended;
     public Blackboard blackboard;
     public string name;
     public Status taskStatus;
@@ -27,6 +28,8 @@ public class CompositeNode : Node
     private NodeController controller;
     public void InitCompositeNode(Blackboard bb, string name)
     {
+        started = false;
+        ended = false;
         InitNode(bb, name);
         this.CurrTask = null;
         this.controller = new NodeController();
@@ -37,6 +40,8 @@ public class CompositeNode : Node
     {
         this.controller.currentTask.DoAction();
     }
+    public void Start() { this.started = true; this.ended = false; }
+    public void Ended() { this.started = false; this.ended = true; }
     public void SetCurrentTask(CompositeNode node) { this.controller.SetTask(node); }
     public CompositeNode GetCurrentTask() { return this.controller.currentTask; }
     public override Status CheckCondition(){return taskStatus;}
@@ -90,6 +95,7 @@ public class SelectorNode : CompositeNode
             {
                 curPos++;
                 SetCurrentTask(GetController().GetChildList()[curPos]);
+                running = true;
             }
             else if (GetCurrentTask().CheckCondition() == Status.Done)
             {
@@ -97,8 +103,13 @@ public class SelectorNode : CompositeNode
                 SetCurrentTask(GetController().GetChildList()[curPos]);
                 running = true;
             }
-            else if (GetCurrentTask().CheckCondition() == Status.Success)
+            else if (GetCurrentTask().Equals(GetController().GetChildList().Last()) && GetController().GetChildList().Last().CheckCondition() == Status.Done)
+            {
                 SetCurrentTask(GetController().GetChildList().First());
+                running = true;
+            }
+            else
+                running = true;
         }
         if(running)
             GetController().GetChildList()[curPos].DoAction();
@@ -134,6 +145,12 @@ public class SequencerNode : CompositeNode
             {
                 curPos++;
                 SetCurrentTask(GetController().GetChildList()[curPos]);
+                running = true;
+            }
+            else if (GetCurrentTask().CheckCondition() == Status.Done && GetCurrentTask().Equals(GetController().GetChildList().Last()))
+            {
+                SetCurrentTask(GetController().GetChildList().First());
+                running = true;
             }
             else
                 running = true;

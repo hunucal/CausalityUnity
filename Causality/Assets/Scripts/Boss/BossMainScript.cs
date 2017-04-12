@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.AI;
 public class BossMainScript : MonoBehaviour {
         [Header("Boss movement settings")]
     [SerializeField]private float bossMoveSpeed;
@@ -45,23 +46,34 @@ public class BossMainScript : MonoBehaviour {
         //repeater nodes
         repeatSetTimes1 = new RepeatSetTimesNode();
 
+        DecoratorNodeCheckDist checkdst = new DecoratorNodeCheckDist(); 
+
         Blackboard bb = new Blackboard();
+        bb.Boss = GameObject.FindGameObjectWithTag("Boss");
+        bb.agent = bb.Boss.GetComponent<NavMeshAgent>();
+        bb.closestEnemyCursor = GameObject.FindGameObjectWithTag("Player");
+        bb.movespeed = bossMoveSpeed;
+        bb.aggroRange = bossAggroRange;
+        bb.rotationSpeed = bossRotationSpeed;
 
         //node inits
         rootNode.InitSelector(bb, "Root");
-        nodeChooseAttack.Init();
-        leafNodeIdle.Init(bossAggroRange);
-        leafNodeMove.Init(bossMoveSpeed, bossRotationSpeed);
+        nodeChooseAttack.InitAttack(bb,"Attack");
+        leafNodeIdle.InitIdle(bb, "Idle");
+        leafNodeMove.InitMove(bb, "Move");
         leafNodeMoveAway.Init(bossMoveSpeed, bossRotationSpeed);
         selector1.InitSelector(bb, "Selector");
-        rootNode.GetController().AddChild(selector1);
         sequencer1.InitSequenser(bb, "Sequence");
-        
+
+        checkdst.initDistCheck(bb, "distanceCheck");
 
         //sequence one children
+        rootNode.GetController().AddChild(selector1);
         selector1.GetController().AddChild(leafNodeIdle);
-        selector1.GetController().AddChild(leafNodeMove);
         selector1.GetController().AddChild(sequencer1);
+        sequencer1.GetController().AddChild(leafNodeMove);
+        sequencer1.GetController().AddChild(checkdst);
+        sequencer1.GetController().AddChild(nodeChooseAttack);
 
         //test for debug
         rootNode.SetCurrentTask(rootNode.GetController().GetChildList().First());

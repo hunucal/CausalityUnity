@@ -5,52 +5,116 @@ using UnityEngine;
 public class PhaseOne : State {
     private closeCombatAttackStates bossCCStates;
     private bool commenceAttack;
-
+    private State attackState;
     private StateMachine internalStateMachine;
+    private Status status;
+    private bool chooseAttack;
+    public override Status GetCompletition()
+    {
+        return this.status;
+    }
     public override void Init()
     {
         bossCCStates = new closeCombatAttackStates();
-
+        bossCCStates.InitStates();
         //internal state machine
         internalStateMachine = new StateMachine();
 
-        commenceAttack = false;
+        commenceAttack = true;
+        chooseAttack = true;
     }
-    public override Status RunState()
+    public override void RunState()
     {
-        return StartAttack(ChooseAttack());
+        if (chooseAttack)
+        {
+            ChooseAttack();
+            chooseAttack = false;
+        }
+        internalStateMachine.RunState();
+        this.status = internalStateMachine.GetCurrentState().GetCompletition();
+        if(internalStateMachine.GetCurrentState().GetCompletition() == Status.Done || internalStateMachine.GetCurrentState().GetCompletition() == Status.Failure)
+        {
+            commenceAttack = true;
+            chooseAttack = true;
+        }
     }
     public override Status ExitState()
     {
         return Status.Terminated;
     }
-    private State ChooseAttack()
+    private void ChooseAttack()
     {
-        State attackState = null;
-
         if (commenceAttack)
         {
-            attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[Random.Range(0, bossCCStates.GetAttackPool(ListType.CloseCombat).Count)];
-            //set attack state
-            internalStateMachine.ChangeState(attackState);
-            commenceAttack = false;
+            
+            int randomAttack = 0;
+            int precent = Random.Range(0, 100);
+            if (precent < 10)
+            {
+                randomAttack = 0;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
+            else if (precent > 10 && precent < 20)
+            {
+                randomAttack = 1;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
+            else if (precent > 20 && precent < 40)
+            {
+                randomAttack = 2;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
+            else if (precent > 40 && precent < 60)
+            {
+                randomAttack = 3;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
+            else if (precent > 60 && precent < 70)
+            {
+                randomAttack = 4;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
+            else if (precent > 70 && precent < 80)
+            {
+                randomAttack = 5;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
+            else if (precent > 80 && precent < 90)
+            {
+                randomAttack = 6;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
+            else if (precent > 90 && precent <= 100)
+            {
+                randomAttack = 7;
+                attackState = bossCCStates.GetAttackPool(ListType.CloseCombat)[randomAttack];
+                //set attack state
+                internalStateMachine.ChangeState(attackState);
+                commenceAttack = false;
+            }
         }
-        if (!UnityEngine.UnassignedReferenceException.Equals(attackState, null))
-            return attackState;
-        else
-            return null;
-    }
-    private Status StartAttack(State state)
-    {
-        if (internalStateMachine.RunState() == Status.Failure)
-        {
-            commenceAttack = true;
-            return Status.Failure;
-        }
-        else if (internalStateMachine.RunState() == Status.Running)
-            return Status.Running;
-        else
-            return Status.Success;
-
+        if (UnityEngine.UnassignedReferenceException.Equals(attackState, null))
+            this.status = Status.Failure;
     }
 }

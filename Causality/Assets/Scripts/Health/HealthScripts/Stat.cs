@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
 public class Stat
 {
     private BarScript bar;
-    private float maxValHealth;
-    private float maxValTwoHealth;
-    private float currentValHealth;
-    private float currentValTwoHealth;
+    public float maxValHealth;
+    public float maxValTwoHealth;
+    public float currentValHealth;
+    public float currentValTwoHealth;
     
     private float maxValStamina;
     private float currentValStamina;
@@ -18,16 +17,33 @@ public class Stat
     {
         bar = new BarScript();
     }
+
     public void StatUpdate(PlayerBlackboard PBB)
     {
-
         maxValHealth = PBB.maxValHealth;
         maxValTwoHealth = PBB.maxValTwoHealth;
         currentValHealth = PBB.currentValHealth;
-        currentValTwoHealth = PBB.currentValTwoHealth;
-        currentValStamina = PBB.maxValStamina;
+        currentValTwoHealth = PBB.currentValHealth;
+        maxValStamina = PBB.maxValStamina;
         currentValStamina = PBB.currentValStamina;
+        checkIfRecovering(PBB);
+    }
 
+    public void checkIfRecovering(PlayerBlackboard PBB)
+    {
+        if(PBB.ifRecovering == true)
+        {
+            PBB.recoveringTimer += Time.deltaTime;
+            if(PBB.recoveringTimer > 2)
+            {
+                PBB.currentValStamina += 10f * Time.deltaTime;
+            }
+        }
+
+        if(PBB.currentValStamina >= 100)
+        {
+            PBB.currentValStamina = PBB.maxValStamina;
+        }
     }
 
     public float CurrentValHealth

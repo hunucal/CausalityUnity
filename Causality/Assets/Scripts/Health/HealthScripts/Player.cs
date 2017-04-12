@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Player
 {
-    [SerializeField]
     private Stat health;
 
     private IEnumerator playerCoroutine;
@@ -24,9 +23,10 @@ public class Player
     // Use this for initialization
     public void Init ()
     {
+        health = new Stat();
+        health.Initialize();
         Cam1 = Camera.main;
         Cam2 = GameObject.FindGameObjectWithTag("SecondCamera").GetComponentInChildren<Camera>();
-        health = new Stat();
         Cam1.enabled = true;
         Cam2.enabled = false;
     }
@@ -90,7 +90,7 @@ public class Player
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            PBB.currentValHealth -= 50;
+            PBB.currentValHealth -= 10f;
         }
 
         if(PBB.currentValHealth > PBB.currentValTwoHealth)
@@ -100,9 +100,12 @@ public class Player
 
         if (PBB.currentValHealth < PBB.currentValTwoHealth)
         {
-            //playerCoroutine = waitAndDecreaseHealth(0.8f, PBB);
-            //StartCoroutine(playerCoroutine);
             waitAndDecreaseHealth(PBB);
+        }
+
+        if (PBB.currentValHealth == PBB.currentValTwoHealth)
+        {
+            Timer = 0.8f;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -122,7 +125,6 @@ public class Player
         if(Timer < 0f)
         {
             PBB.currentValTwoHealth -= 40 * Time.deltaTime;
-            Timer = 0.8f;
         }
 
     }
