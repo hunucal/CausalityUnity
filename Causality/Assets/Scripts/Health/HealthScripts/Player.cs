@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class Player
 {
     private Stat health;
-
-    private IEnumerator playerCoroutine;
     
     public float Timer = 0.8f;
     public bool checkIfDead = false;
