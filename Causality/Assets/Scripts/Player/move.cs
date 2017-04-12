@@ -8,14 +8,12 @@ public class move {
     private Vector3 moveVector { set; get; }
     private Transform camTransform;
     private float moveSpeed;
-
     private bool isRunning;
     
     // Use this for initialization
     public void InitStart (PlayerBlackboard PBB) {
         //Activate Rigidbody
         PBB.Player.GetComponent<Rigidbody>().maxAngularVelocity = PBB.terminalRotationSpeed;
-        
         //Activate animator
         isRunning = false;
         moveSpeed = PBB.walkSpeed;
@@ -26,8 +24,7 @@ public class move {
         //Get Axis from Horizontal and Vertical from left stick
         PBB.horizontalForce = Input.GetAxisRaw("Horizontal");
         PBB.verticalForce = Input.GetAxisRaw("Vertical");
-
-    
+        
         if (!PBB.isroll)
         {
             //Check if Horizontal and vertical isn't zero.
@@ -37,7 +34,6 @@ public class move {
                 {
                     //Move
                     if (isRunning)
-
                         Run(PBB);
                     else
                         Walk(PBB);
@@ -53,10 +49,7 @@ public class move {
             }
             else
             {
-                // Fixa IDLESTATE
-                PBB.ifRecovering = true;
-                PBB.Player.GetComponent<Animator>().SetBool("Walk", false);
-                PBB.Player.GetComponent<Animator>().SetBool("Run", false);
+                Idle(PBB);
             }
         }
     }
@@ -74,6 +67,12 @@ public class move {
         
     }
 
+    private void Idle(PlayerBlackboard PBB)
+    {
+        PBB.ifRecovering = true;
+        PBB.Player.GetComponent<Animator>().SetBool("Walk", false);
+        PBB.Player.GetComponent<Animator>().SetBool("Run", false);
+    }
 
     private Vector3 PoolInput(float hor, float ver)
     {
@@ -114,8 +113,6 @@ public class move {
         }
     }
 
-  
-
     public void SetRun(bool b, PlayerBlackboard PBB)
     {
         if (PBB.currentValStamina > 0)
@@ -143,6 +140,4 @@ public class move {
         PBB.Player.GetComponent<Animator>().SetBool("Run", true);
         PBB.ifRecovering = false;
     }
-
-   
 }
