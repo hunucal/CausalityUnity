@@ -42,7 +42,7 @@ public class CompositeNode : Node
     }
     public void Start() { this.started = true; this.ended = false; }
     public void Ended() { this.started = false; this.ended = true; }
-    public void SetCurrentTask(Node node) { this.CurrTask = node; }
+    public void SetCurrentTask(CompositeNode node) { this.controller.SetTask(node); }
     public CompositeNode GetCurrentTask() { return this.controller.currentTask; }
     public override Status CheckCondition(){return taskStatus;}
     public override void CompletedWithStatus(Status status) { taskStatus = status; }
@@ -81,9 +81,10 @@ public class SelectorNode : CompositeNode
         {
             if (GetController().GetChildList()[i].CheckCondition() != Status.Failure)
             {
-               // GetController().GetChildList()[i].DoAction();
+                GetController().GetChildList()[i].GetController().currentTask.DoAction();
                 CompletedWithStatus(GetController().GetChildList()[i].CheckCondition());
-                SetCurrentTask(GetController().GetChildList()[i]);
+                if(GetController().GetChildList()[i].CheckCondition() == Status.Done)
+                    SetCurrentTask(GetController().GetChildList()[i]);
             }
             else
                 CompletedWithStatus(Status.Failure);
@@ -134,9 +135,12 @@ public class SequencerNode : CompositeNode
         {
             if (GetController().GetChildList()[i].CheckCondition() != Status.Done)
             {
+                GetController().GetChildList()[i].CurrTask.DoAction();
                 CompletedWithStatus(GetController().GetChildList()[i].CheckCondition());
-               // GetController().GetChildList()[i].DoAction();
-            }else
+                if (GetController().GetChildList()[i].CheckCondition() == Status.Done)
+                    SetCurrentTask(GetController().GetChildList()[i]);
+            }
+            else
                 GetController().FinishedWithFailiure();
         }
         //int curPos = GetController().GetChildList().IndexOf(GetCurrentTask());
