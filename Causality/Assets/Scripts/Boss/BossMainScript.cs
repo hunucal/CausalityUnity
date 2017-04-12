@@ -60,12 +60,6 @@ public class BossMainScript : MonoBehaviour
         bb.movespeed = bossMoveSpeed;
         bb.aggroRange = bossAggroRange;
         bb.rotationSpeed = bossRotationSpeed;
-        bb.maxValHealth = 100f;
-        bb.maxValTwoHealth = 100f;
-        bb.currentValHealth = 100f;
-        bb.currentValTwoHealth = 100f;
-        bb.fillAmountHealth = 1f;
-        bb.fillAmountTwoHealth = 1f;
 
         //node inits
         rootNode.InitSelector(bb, "Root");
@@ -99,19 +93,4 @@ public class BossMainScript : MonoBehaviour
             rootNode.CurrTask.DoAction();
         }      
 	}
-
-    public float GetHealthVal()
-    {
-        return bb.currentValHealth / 100f;
-    }
-
-    public float GetTwoHealthVal()
-    {
-        return bb.currentValTwoHealth / 100f;
-    }
-
-    public float GetMaxValueHealth()
-    {
-        return bb.maxValHealth;
-    }
 }
