@@ -18,7 +18,6 @@ public class OnCollision2Handed : MonoBehaviour
         if (col.gameObject.tag == "Boss")
         {
             GetComponent<Collider>().enabled = false;
-            bossHit = true;
             coroutine = waitToEnableCollider(2.0f);
             StartCoroutine(coroutine);
         }
@@ -29,6 +28,11 @@ public class OnCollision2Handed : MonoBehaviour
     void Start()
     {
         Player = GameObject.Find("Player");
+    }
+
+    public void Update(PlayerBlackboard PBB, Actions actions)
+    {
+        OnCollisionUpdate(PBB, actions);
     }
 
     public void OnCollisionUpdate(PlayerBlackboard PBB, Actions actions)

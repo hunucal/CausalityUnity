@@ -1,6 +1,10 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
+- path: Assets/Scenes/MainRobin.unity
+=======
 - path: Assets/Scenes/MainAxel.unity
+>>>>>>> 28fe408fe13f757e8de508beddc65cb97783e6b4
 =======
 <<<<<<< HEAD
 - path: Assets/Scenes/MainChristoffer.unity
