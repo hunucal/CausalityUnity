@@ -8,12 +8,7 @@ public class Actions {
     //Get scripts from
     //Attribute Script attScript;
     //Animations
-<<<<<<< HEAD
-    Animator setAnimation;
-    public bool Blocking = false;
-
-=======
->>>>>>> 4f26a3fca301783ecb3abbebeb954f4a24a30dde
+   
     public bool hAttack;
     public bool lAttack;
     private bool block;
