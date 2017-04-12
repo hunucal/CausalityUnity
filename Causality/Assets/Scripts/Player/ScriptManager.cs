@@ -40,6 +40,7 @@ public class ScriptManager : MonoBehaviour
         PBB.fillAmountTwoHealth = 1f;
         PBB.fillAmountStamina = 1f;
         PBB.ifRecovering = false;
+        PBB.recoveringTimer = 0;
 
         Move.InitStart(PBB);
         Player.Init();

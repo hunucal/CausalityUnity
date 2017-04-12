@@ -23,6 +23,8 @@ public class PlayerBlackboard
     public float fillAmountTwoHealth;
     public float fillAmountStamina;
 
+    public float recoveringTimer;
+
     public float maxValueHealth { get; set; }
     public float maxValueStamina { get; set; }
 
