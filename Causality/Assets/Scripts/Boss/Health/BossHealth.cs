@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossHealth : MonoBehaviour
+public class BossHealth
 {
-    [SerializeField]
     private BossStat bossHealth;
 
     public GameObject BossObject;
@@ -14,8 +13,9 @@ public class BossHealth : MonoBehaviour
 
     private IEnumerator coroutine;
 
-    private void Awake()
+    public void Init()
     {
+        bossHealth = new BossStat();
         bossHealth.Initialize();
     }
 
@@ -29,7 +29,7 @@ public class BossHealth : MonoBehaviour
 
     }
 
-    public void Update()
+    public void BossUpdate(Blackboard bb)
     {
         if (Vector3.Distance(PlayerObject.transform.position, BossObject.transform.position) < 5)
         {
@@ -64,7 +64,7 @@ public class BossHealth : MonoBehaviour
         if (bossHealth.CurrentBossValHealth < bossHealth.CurrentBossValTwoHealth)
         {
             coroutine = waitAndDecrease(0.8f);
-            StartCoroutine(coroutine);
+            //StartCoroutine(coroutine);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
